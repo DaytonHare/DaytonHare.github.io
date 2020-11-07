@@ -1,1 +1,3 @@
-# DaytonHare.github.io
+---
+permalink: /index.html
+---
