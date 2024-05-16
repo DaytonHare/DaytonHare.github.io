@@ -60,9 +60,16 @@
     <script src="js/vendor/foundation.min.js"></script>
     <script>
       $(document).foundation();
-      $(function(){
-        $("navbar").load("navbar.html");
+    // Load the navbar and log success or failure
+    $(function(){
+      $("#navbar").load("navbar.html", function(response, status, xhr) {
+        if (status == "error") {
+          console.error("Error loading navbar: ", xhr.status, xhr.statusText);
+        } else {
+          console.log("Navbar loaded successfully.");
+        }
       });
+    });
     </script>
   </body>
 </html>
