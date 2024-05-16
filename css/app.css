@@ -1,6 +1,8 @@
 .responsive-logo {
-    height: 50px;
+    height: 100%;
+    max-height: 55px;
     width: auto;
+    vertical-align: middle;
 }
 
 /* Font info:
@@ -51,19 +53,25 @@ font-family: 'Crimson Text', serif; (normal)
     margin-bottom: 1em;
   }
     
-html {
-position: relative;
-min-height: 100%;
-}
+
 body {
-padding-top: 0px;
-margin-bottom: 60px;
-font-size: 15px;
-background-color: black;
-color: white;
-font-family: 'Crimson Text', serif;
-font-weight: 400;
+    padding-top: 0px;
+    margin-bottom: 60px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
 }
+
+.top-bar, .title-bar {
+    background-color: black;
+}
+
+.menu-text {
+    padding: 0;
+}
+
 .footer {
 position: absolute;
 bottom: 0;
@@ -85,65 +93,29 @@ text-decoration: none;
 background-color: #ffcdcd;
 }
 
-/*NAV-BAR RELATED*/
 
-.navbar {
-font-size: x-large;
-font-family: 'Crimson Text', serif;
-background-color: black;
-font-weight: 400;
-color: white;
-margin-bottom: 0px;
-}
-
-.navbar-inverse {
-background-image: linear-gradient(to bottom, black 0,black 100%);
-border-color: black;
-color: white;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-color: white;
-}
-
-.navbar-inverse .navbar-brand {
-cursor:default; 
-margin: 0px;
-font-family: 'Playfair Display', serif;
-color: white;
-font-size: xx-large;
-}
-.navbar-nav>li>a {
-line-height: 50px;
-padding-top: 5px;
-padding-bottom: 5px;
-}
-
+/* Link coloring */
 
 /* unvisited link */
 a:link {    
-color: lightskyblue;
-text-decoration: underline;
+    color: white;
 }
 
 /* visited link */
 a:visited {
-color: lightskyblue;
-text-decoration: underline;
+    color: white;
 }
 
 /* mouse over link */
 a:hover {
-color: cornflowerblue;
-text-decoration: underline;
+    color: lightskyblue;
 
 }
 
 /* selected link */
 a:active {
-color: blue;
-text-decoration: underline;
-
+    color: lightskyblue;
+    text-decoration: underline;
 }
 
 @media print {
