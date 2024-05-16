@@ -5011,7 +5011,7 @@ select:not([multiple]) {
 }
 .dropdown.menu > li.is-active > a {
   background: transparent;
-  color: lightblue;
+  color: lightskyblue;
 }
 .no-js .dropdown.menu ul {
   display: none;
@@ -5043,7 +5043,7 @@ select:not([multiple]) {
   border-width: 6px;
   content: "";
   border-left-width: 0;
-  border-color: transparent #1779ba transparent transparent;
+  border-color: transparent white transparent transparent;
   right: auto;
   left: 5px;
 }
@@ -5055,7 +5055,7 @@ select:not([multiple]) {
   border-width: 6px;
   content: "";
   border-right-width: 0;
-  border-color: transparent transparent transparent #1779ba;
+  border-color: transparent transparent transparent white;
 }
 @media print, screen and (min-width: 40em) {
   .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {
