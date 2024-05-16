@@ -4998,7 +4998,7 @@ select:not([multiple]) {
   border-width: 6px;
   content: "";
   border-bottom-width: 0;
-  border-color: #1779ba transparent transparent;
+  border-color: white transparent transparent;
   right: 5px;
   left: auto;
   margin-top: -3px;
@@ -5011,7 +5011,7 @@ select:not([multiple]) {
 }
 .dropdown.menu > li.is-active > a {
   background: transparent;
-  color: #1779ba;
+  color: lightblue;
 }
 .no-js .dropdown.menu ul {
   display: none;
