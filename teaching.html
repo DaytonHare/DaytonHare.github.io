@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dayton Hare&mdash;Composer :: Teacher</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="navbar"></div>
+    
+    <h1>Hello, teacher!</h1>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    
+    // Load the navbar and log success or failure
+    $(function(){
+      $("#navbar").load("navbar.html", function(response, status, xhr) {
+        if (status == "error") {
+          console.error("Error loading navbar: ", xhr.status, xhr.statusText);
+        } else {
+          console.log("Navbar loaded successfully.");
+          $(document).foundation();
+        }
+      });
+    });
+    </script>
+  </body>
+</html>
