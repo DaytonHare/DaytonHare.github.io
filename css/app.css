@@ -64,10 +64,6 @@ body {
     font-weight: 400;
 }
 
-.top-bar, .title-bar {
-    background-color: black;
-}
-
 .menu-text {
     padding: 0;
 }
