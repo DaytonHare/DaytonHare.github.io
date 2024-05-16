@@ -67,6 +67,7 @@
           console.error("Error loading navbar: ", xhr.status, xhr.statusText);
         } else {
           console.log("Navbar loaded successfully.");
+          $(document).foundation();
         }
       });
     });
