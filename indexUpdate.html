@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="css/foundation.css" />
   </head>
   <body>
+    <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
+      </div>
+      
+      <div class="top-bar" id="example-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            
+            <!--Dayton Logo-->
+            <li class="menu-text">Site Title</li>
+            
+            <!--Home / Landing page-->
+            <li><a href="#0">home</a></li>
+            
+            <!--About Page - has long form bio-->
+            <li><a href="#0">about</a></li>
+            
+            <!--Music page - with sub-menus for specific genres-->
+            <li class="has-submenu">
+              <a href="#0">music</a>
+              <ul class="submenu menu vertical" data-submenu>
+                <li><a href="#0">large ensemble</a></li>
+                <li><a href="#0">small ensemble</a></li>
+                <li><a href="#0">solo / duo</a></li>
+                <li><a href="#0">vocal</a></li>
+              </ul>
+            </li>
+          
+            <li><a href="#0">writing</a></li>
+      
+            <li><a href="#0">events</a></li>
+      
+            <li><a href="#0">contact</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><input type="search" placeholder="Search"></li>
+            <li><button type="button" class="button">Search</button></li>
+          </ul>
+        </div>
+      </div>
+      
     <div id="navbar"></div>
     <h1>Hello, world!</h1>
 
@@ -17,7 +61,7 @@
     <script>
       $(document).foundation();
       $(function(){
-        $("navbar").load("navbar.html");
+        $("navbar").load("/navbar.html");
       });
     </script>
   </body>
