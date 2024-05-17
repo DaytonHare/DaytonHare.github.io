@@ -160,66 +160,74 @@ font-weight: 400;
 }
 
 .orbit-container {
-position: relative;
-min-height: 400px; /* Set a minimum height that can accommodate the tallest slide */
-transition: height 0.5s ease-in-out; /* Smooth height adjustment */
+  position: relative;
+  min-width: 80%;
+  min-height: 10%; /* Adjust this as needed */
+  transition: height 0.5s ease-in-out; /* Smooth height adjustment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.orbit-previous, .orbit-next {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background-color: rgba(0, 0, 0, 0.5);
-border: none;
-color: white;
-padding: 10px;
-cursor: pointer;
-z-index: 1;
-}
-
-.orbit-previous {
-left: 10px;
-}
-
-.orbit-next {
-right: 10px;
-}
-
-.orbit-bullets {
-text-align: center;
-margin-top: 10px;
-}
-
-.orbit-bullets button {
-display: inline-block;
-background-color: rgba(0, 0, 0, 0.5);
-border: none;
-width: 12px;
-height: 12px;
-margin: 0 3px;
-border-radius: 50%;
-cursor: pointer;
-}
-
-.orbit-bullets button.is-active {
-background-color: white;
-}
-
-/* Slide content styling */
 .orbit-slide {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.docs-example-orbit-slide {
-padding: 20px;
-background-color: #fff; /* Adjust the background color as needed */
-border: 1px solid #ccc;
-border-radius: 5px;
-}
-
-.responsive-score {
-width: 100%;
-height: auto;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .docs-example-orbit-slide {
+    padding: 20px;
+    background-color: #fff; /* Adjust the background color as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 1000px; /* Adjust the max width as needed */
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .responsive-score {
+    width: 100%;
+    height: auto;
+  }
+  
+  .orbit-previous, .orbit-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .orbit-previous {
+    left: 10px;
+  }
+  
+  .orbit-next {
+    right: 10px;
+  }
+  
+  .orbit-bullets {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .orbit-bullets button {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .orbit-bullets button.is-active {
+    background-color: white;
+  }

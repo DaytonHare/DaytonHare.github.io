@@ -46,18 +46,8 @@ $.getJSON('../jsonFiles/compositions.json', function(data) { // Updated path to 
   // Reinitialize Foundation after dynamic content is added
   $(document).foundation();
 
-  // Calculate and set the minimum height of the Orbit container based on the tallest slide
-  let maxHeight = 0;
-  $('.orbit-slide').each(function() {
-    const slideHeight = $(this).outerHeight();
-    if (slideHeight > maxHeight) {
-      maxHeight = slideHeight;
-    }
-  });
-  orbitContainer.css('min-height', maxHeight);
-
-  // Adjust Orbit container height on window resize
-  $(window).on('resize', function() {
+// Calculate and set the minimum height of the Orbit container based on the tallest slide
+function updateOrbitHeight() {
     let maxHeight = 0;
     $('.orbit-slide').each(function() {
       const slideHeight = $(this).outerHeight();
@@ -66,6 +56,20 @@ $.getJSON('../jsonFiles/compositions.json', function(data) { // Updated path to 
       }
     });
     orbitContainer.css('min-height', maxHeight);
-  }).trigger('resize');
+  }
+
+  // Initial height calculation
+  updateOrbitHeight();
+
+  // Adjust Orbit container height on window resize
+  $(window).on('resize', function() {
+    updateOrbitHeight();
+  });
+
+  // Set up Orbit autoadvance
+  $('.orbit').foundation({
+    autoPlay: true,
+    timerDelay: 5000 // Adjust the delay as needed
+  });
 });
 

@@ -5886,7 +5886,7 @@ select:not([multiple]) {
 .orbit-container {
   position: relative;
   height: 0;
-  min-height: 400px;
+  min-height: 100px;
   margin: 0;
   list-style: none;
   overflow: hidden;
