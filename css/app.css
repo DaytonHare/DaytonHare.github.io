@@ -299,7 +299,7 @@ font-weight: 400;
     top: 0;
     width: 100%;
     z-index: 1000;
-    font-size: 17pt;
+    font-size: medium;
   }
   
   /* Ensure the top bar content is centered */
@@ -327,3 +327,71 @@ font-weight: 400;
       display: none;
     }
   }
+
+  /* Ensure the large image is responsive */
+.responsive-large-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .relative-cell {
+    position: relative;
+  }
+  
+  /* Overlay on the left third of the large image */
+  .overlay-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33.33%;
+    height: 100%;
+    background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
+    color: black;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure the left image is responsive */
+  .responsive-left-image {
+    width: 100%;
+    height: auto;
+    margin-right: 20px; /* Adjust padding between left image and purple box */
+  }
+  
+  /* Purple box with white text */
+  .purple-box {
+    background-color: #5205cebc; /* Adjust the background color as needed */
+    border: 1px solid #5205ce;    
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure padding between rows */
+  .orbit-padding {
+    padding-top: 20px;
+  }
+  
+  /* Bio text styling */
+  .bio-text p {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+  
+  /* Hobbies text styling */
+  .hobbies-text {
+    text-align: left;
+  }
+  
+  .hobbies-text h2 {
+    margin-top: 0;
+  }
+  
+  .hobbies-text p {
+    margin: 0;
+  }
+  
