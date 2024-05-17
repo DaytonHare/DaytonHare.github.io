@@ -50,6 +50,9 @@
         <nav class="orbit-bullets" id="orbit-bullets">
         </nav>
     </div>
+    
+    <div class="orbit-padding"></div>
+    <div id="contactfooter"></div>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
@@ -64,6 +67,18 @@
           console.error("Error loading navbar: ", xhr.status, xhr.statusText);
         } else {
           console.log("Navbar loaded successfully.");
+          $(document).foundation();
+        }
+      });
+    });
+    
+    // Load the footer
+    $(function(){
+      $("#contactfooter").load("footer.html", function(response, status, xhr) {
+        if (status == "error") {
+          console.error("Error loading footer: ", xhr.status, xhr.statusText);
+        } else {
+          console.log("Footer loaded successfully.");
           $(document).foundation();
         }
       });
