@@ -69,12 +69,12 @@ body {
 }
 
 .footer {
-position: absolute;
-bottom: 0;
-width: 100%;
-/* Set the fixed height of the footer here */
-height: 60px;
-background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: black;
 }
 .footer > .container {
 margin-top: 20px;
@@ -127,34 +127,48 @@ body {
 
 /*headers*/
 table, th, td {
-border: 1px solid black;
-padding-top: 5px;
-padding-bottom: 5px;
-padding-right: 50px;
-color: #a1a1a1;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 50px;
+    color: #a1a1a1;
 }
 
 .h1, h1 {
-color: white;
-font-family: 'Crimson Text', serif;
-font-size: 36px;
+    color: white;
+    font-family: 'Crimson Text', serif;
+    font-size: 36px;
 }
 
 .h3, h3 {
-color: white;
-font-family: 'Crimson Text', serif;
-font-size: x-large;
+    color: white;
+    font-family: 'Crimson Text', serif;
+    font-size: x-large;
 }
 
 .h4, h4 {
-color: white;
-display: inline;
-font-family: 'Crimson Text', serif;
-font-size: larger;
+    color: white;
+    display: inline;
+    font-family: 'Crimson Text', serif;
+    font-size: larger;
 }
 
 footer {
 color: white;
 font-family: 'Crimson Text', serif;
 font-weight: 400;
+}
+
+/*orbit bar*/
+
+.orbit-slide-content {
+    background-color: darkred; /* Adjust the background color as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.responsive-score {
+    width: 100%;
+    height: auto;
 }
