@@ -140,6 +140,11 @@ table, th, td {
     font-size: 36px;
 }
 
+.h2, h2 {
+    color: white;
+    font-family: 'Crimson Text', serif;
+}
+
 .h3, h3 {
     color: white;
     font-family: 'Crimson Text', serif;
@@ -160,8 +165,9 @@ font-weight: 400;
 }
 
 .orbit-container {
+  font-family: 'Crimson Text', serif;
   position: relative;
-  min-width: 80%;
+  min-width: 90%;
   min-height: 10%; /* Adjust this as needed */
   transition: height 0.5s ease-in-out; /* Smooth height adjustment */
   display: flex;
@@ -187,6 +193,8 @@ font-weight: 400;
   box-sizing: border-box;
   text-align: center;
   margin: 0 auto; /* Center the content horizontally */
+  font-family: 'Crimson Text', serif;
+
 }
 
 .responsive-score {
@@ -198,9 +206,9 @@ font-weight: 400;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(47, 47, 47, 0.5);
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 10px;
   cursor: pointer;
   z-index: 1;
@@ -259,16 +267,20 @@ font-weight: 400;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(144, 144, 144, 0.456); /* Light grey transparent overlay */
+    background: rgba(83, 83, 83, 0.308); /* Light grey transparent overlay */
     color: white;
     padding: 20px;
     box-sizing: border-box;
-    border: 1px solid white;
+    border: 1px solid rgba(83, 83, 83, 0.308);
+    font-family: 'Crimson Text', serif;
+
   }
   
   .overlay h2, .overlay p {
     margin: 0;
     padding: 10px 0;
+    font-family: 'Crimson Text', serif;
+
   }
 
   .orbit-padding {
@@ -283,14 +295,14 @@ font-weight: 400;
   
   .title-bar,
   .top-bar {
+    position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
+    font-size: large;
   }
   
-  .title-bar {
-    display: none; /* Hide by default */
-  }
-  
+  /* Ensure the top bar content is centered */
   .top-bar {
     display: flex;
     justify-content: space-between;
@@ -305,7 +317,7 @@ font-weight: 400;
     display: flex;
     justify-content: center;
   }
-  
+
   /* Display the title bar on smaller screens */
   @media screen and (max-width: 640px) {
     .title-bar {
