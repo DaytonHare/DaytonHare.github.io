@@ -166,7 +166,52 @@ font-weight: 400;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    color: white;
 }
+
+.orbit-container {
+    position: relative;
+  }
+  
+  .orbit-previous, .orbit-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .orbit-previous {
+    left: 10px;
+  }
+  
+  .orbit-next {
+    right: 10px;
+  }
+  
+  .orbit-bullets {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .orbit-bullets button {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .orbit-bullets button.is-active {
+    background-color: white;
+  }
 
 .responsive-score {
     width: 100%;

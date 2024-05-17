@@ -40,4 +40,6 @@ $.getJSON('../jsonFiles/compositions.json', function(data) {
       </button>
     `);
   });
+    // Reinitialize Foundation after dynamic content is added
+    $(document).foundation();
 });
