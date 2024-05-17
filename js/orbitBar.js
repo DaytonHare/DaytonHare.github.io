@@ -1,7 +1,7 @@
 $(document).foundation();
 
 // List of IDs to include in the Orbit slides
-const slideIds = [9, 20, 21]; // Update with your list of IDs
+const slideIds = [21, 9, 17]; // Update with your list of IDs
 
 // Load the JSON data and dynamically create the slides
 $.getJSON('../jsonFiles/compositions.json', function(data) { // Updated path to data.json
@@ -28,7 +28,7 @@ $.getJSON('../jsonFiles/compositions.json', function(data) { // Updated path to 
                 <p><strong>Duration:</strong> ${item.duration}</p>
                 <blockquote>Placeholder for quote about the piece.</blockquote>
                 <div class="soundcloud-placeholder">SoundCloud link will go here.</div>
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23000000&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;background-color:#cbc3e3;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dayton-hare-410661494" title="Dayton Hare" target="_blank" style="color:#cbc3e3; text-decoration: none;">Dayton Hare</a> · <a href="https://soundcloud.com/dayton-hare-410661494/kaleidoscopic-harmonic" title="kaleidoscopic harmonic" target="_blank" style="color:#cbc3e3; text-decoration: none;">kaleidoscopic harmonic</a></div>
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23000000&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
               </div>
             </div>
           </div>
