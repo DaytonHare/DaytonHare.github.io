@@ -233,3 +233,41 @@ font-weight: 400;
 .orbit-bullets button.is-active {
   background-color: white;
 }
+
+/* Ensure the headshot is responsive */
+.responsive-headshot {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Optional: add rounded corners */
+  }
+  
+  /* Ensure the background image is responsive */
+  .relative-cell {
+    position: relative;
+  }
+  
+  .responsive-background {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Overlay with transparent background and text */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid white;
+  }
+  
+  .overlay h2, .overlay p {
+    margin: 0;
+    padding: 10px 0;
+  }
+  
