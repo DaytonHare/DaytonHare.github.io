@@ -179,8 +179,8 @@ font-weight: 400;
 
 .docs-example-orbit-slide {
   padding: 20px;
-  background-color: #fff; /* Adjust the background color as needed */
-  border: 1px solid #ccc;
+  background-color: #5205cebc; /* Adjust the background color as needed */
+  border: 1px solid #5205ce;
   border-radius: 5px;
   width: 100%;
   max-width: 1000px; /* Adjust the max width as needed */
@@ -221,7 +221,7 @@ font-weight: 400;
 
 .orbit-bullets button {
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: grey;
   border: none;
   width: 12px;
   height: 12px;
