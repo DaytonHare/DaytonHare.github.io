@@ -284,7 +284,7 @@ font-weight: 400;
   }
 
   .orbit-padding {
-    padding-top: 20px;
+    padding-top: 30px;
   }
 
 /* Ensure the top bar sticks to the top of the screen */
@@ -299,7 +299,7 @@ font-weight: 400;
     top: 0;
     width: 100%;
     z-index: 1000;
-    font-size: large;
+    font-size: 17pt;
   }
   
   /* Ensure the top bar content is centered */
