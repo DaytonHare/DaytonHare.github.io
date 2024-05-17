@@ -334,7 +334,8 @@ font-weight: 400;
     height: auto;
   }
   
-  .relative-cell {
+ 
+.relative-cell {
     position: relative;
   }
   
@@ -343,15 +344,22 @@ font-weight: 400;
     position: absolute;
     top: 0;
     left: 0;
-    width: 38%;
-    height: 90%;
+    width: 38.33%;
+    height: 100%;
     background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
     color: black;
-    overflow-y: auto;
     padding: 20px;
     box-sizing: border-box;
-    align-content: center;
-    align-self: center;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Optional, to center horizontally if needed */
+    box-shadow: inset 0 0 0 15px rgba(0, 0, 0, 0); /* Transparent border effect */
+  }
+  
+  /* Bio text styling */
+  .bio-text {
+    text-align: left; /* Left align text */
+    padding: 10px; /* Add padding for the text */
   }
   
   /* Ensure the left image is responsive */
@@ -371,11 +379,6 @@ font-weight: 400;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-  }
-  
-  /* Ensure padding between rows */
-  .orbit-padding {
-    padding-top: 20px;
   }
   
   /* Bio text styling */
