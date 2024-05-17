@@ -1,10 +1,10 @@
 $(document).foundation();
 
 // List of IDs to include in the Orbit slides
-const slideIds = [21, 20]; // Update with your list of IDs
+const slideIds = [20, 21]; // Update with your list of IDs
 
 // Load the JSON data and dynamically create the slides
-$.getJSON('../jsonFiles/compositions.json', function(data) {
+$.getJSON('../jsonFiles/compositions.json', function(data) { // Updated path to data.json
   let orbitContainer = $('#orbit-container');
   let orbitBullets = $('#orbit-bullets');
   
@@ -17,16 +17,18 @@ $.getJSON('../jsonFiles/compositions.json', function(data) {
     // Add the slide
     orbitContainer.append(`
       <li class="orbit-slide ${activeClass}">
-        <div class="grid-x grid-padding-x align-middle orbit-slide-content">
-          <div class="cell small-6">
-            <img src="${item.scoreImageLoc}" alt="${item.title} Score" class="responsive-score">
-          </div>
-          <div class="cell small-6">
-            <h2>${item.title}</h2>
-            <p><strong>Instrumentation:</strong> ${item.instrumentation}</p>
-            <p><strong>Duration:</strong> ${item.duration}</p>
-            <blockquote>Placeholder for quote about the piece.</blockquote>
-            <div class="soundcloud-placeholder">SoundCloud link will go here.</div>
+        <div class="docs-example-orbit-slide">
+          <div class="grid-x grid-padding-x align-middle">
+            <div class="cell small-6">
+              <img src="${item.scoreImageLoc}" alt="${item.title} Score" class="responsive-score">
+            </div>
+            <div class="cell small-6">
+              <h2>${item.title}</h2>
+              <p><strong>Instrumentation:</strong> ${item.instrumentation}</p>
+              <p><strong>Duration:</strong> ${item.duration}</p>
+              <blockquote>Placeholder for quote about the piece.</blockquote>
+              <div class="soundcloud-placeholder">SoundCloud link will go here.</div>
+            </div>
           </div>
         </div>
       </li>
@@ -40,6 +42,7 @@ $.getJSON('../jsonFiles/compositions.json', function(data) {
       </button>
     `);
   });
-    // Reinitialize Foundation after dynamic content is added
-    $(document).foundation();
+
+  // Reinitialize Foundation after dynamic content is added
+  $(document).foundation();
 });

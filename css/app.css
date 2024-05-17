@@ -159,16 +159,6 @@ font-family: 'Crimson Text', serif;
 font-weight: 400;
 }
 
-/*orbit bar*/
-
-.orbit-slide-content {
-    background-color: darkred; /* Adjust the background color as needed */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: white;
-}
-
 .orbit-container {
     position: relative;
   }
@@ -212,8 +202,22 @@ font-weight: 400;
   .orbit-bullets button.is-active {
     background-color: white;
   }
-
-.responsive-score {
+  
+  /* Slide content styling */
+  .orbit-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .docs-example-orbit-slide {
+    padding: 20px;
+    background-color: #fff; /* Adjust the background color as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .responsive-score {
     width: 100%;
     height: auto;
-}
+  }
