@@ -24,7 +24,7 @@ $(function() {
     // Adjust content padding based on navbar height
     function adjustContentPadding() {
         var navbarHeight = $('#navbar').outerHeight();
-        $('#navbar-padding').css('padding-top', navbarHeight + 'px');
+        $('#navbar-padding').height(navbarHeight);
     }
 
     // Debounce function to limit the rate at which a function can fire.
