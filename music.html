@@ -16,14 +16,20 @@
   <div class="orbit-padding"></div>
 
   <ul class="tabs" data-tabs id="example-tabs">
-    <li class="tabs-title is-active"><a href="#largeEnsemble" aria-selected="true">large ensemble</a></li>
+    <li class="tabs-title is-active"><a href="#all" aria-selected="true">all</a></li>
+    <li class="tabs-title"><a href="#largeEnsemble">large ensemble</a></li>
     <li class="tabs-title"><a href="#smallEnsemble">small ensemble</a></li>
     <li class="tabs-title"><a href="#soloDuo">solo / duo</a></li>
     <li class="tabs-title"><a href="#vocal">vocal</a></li>
   </ul>
 
   <div class="tabs-content" data-tabs-content="example-tabs">
-    <div class="tabs-panel is-active" id="largeEnsemble">
+    <div class="tabs-panel is-active" id="all">
+      <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3" data-equalizer id="allContent">
+        <!-- Dynamic Content -->
+      </div>
+    </div>
+    <div class="tabs-panel" id="largeEnsemble">
       <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3" data-equalizer id="largeEnsembleContent">
         <!-- Dynamic Content -->
       </div>

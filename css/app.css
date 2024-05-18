@@ -477,6 +477,47 @@ font-weight: 400;
 }
 
 /* SoundCloud iframe responsiveness */
+/* Tabs and Tab Content Styles */
+.tabs {
+  background-color: black;
+}
+
+.tabs-title {
+  background-color: black;
+}
+
+.tabs-title a {
+  color: white;
+  padding: 10px;
+}
+
+.tabs-title a:hover {
+  background-color: #333;
+  color: white;
+}
+
+.tabs-panel {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+/* Card Styles */
+.card {
+  background-color: #2e1a47; /* Dark purple blue */
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-section h4 {
+  margin-bottom: 10px;
+}
+
+/* SoundCloud iframe responsiveness */
 .responsive-soundcloud {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */

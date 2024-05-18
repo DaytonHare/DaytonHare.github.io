@@ -4,6 +4,11 @@ $(document).foundation();
 
 // Load JSON data and populate tabs
 $.getJSON("../jsonFiles/compositions.json", function(data) {
+// Sort data by year in descending order
+    data.sort(function(a, b) {
+    return b.year - a.year;
+  });
+
   data.forEach(function(item) {
     var contentId = "";
     switch(item.type) {
@@ -35,7 +40,8 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
       </div>
     `;
 
-    $(contentId).append(cardHtml);
+    $("#allContent").append(cardHtml); // Add to "All" tab
+    $(contentId).append(cardHtml); // Add to specific category tab
   });
 
   // Setup click handlers for buttons to populate and show the modal
