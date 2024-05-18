@@ -10,7 +10,7 @@ $(function() {
         } else {
             console.log("Navbar loaded successfully.");
             $(document).foundation(); // Reinitialize Foundation
-            setTimeout(adjustContentPadding, 100); // Increase delay to ensure rendering
+            setTimeout(adjustContentPadding, 50); // Increase delay to ensure rendering
         }
     });
 
