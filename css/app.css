@@ -74,8 +74,8 @@ body {
 footer {
   position: relative;
   width: 100%;
-  min-height: 55px; /* FIX THIS */
-  max-height: 15vh; /* Never more than 15% of the viewport height */
+  min-height: 150px; /* FIX THIS */
+  max-height: 30vh; /* Never more than 15% of the viewport height */
   overflow: hidden;
 }
 
@@ -85,7 +85,7 @@ footer {
   object-fit: cover;
   object-position: center;
   justify-content:center;
-  align.items: center;
+  align-items: center;
   display: flex;
   flex-direction: column; 
 }
