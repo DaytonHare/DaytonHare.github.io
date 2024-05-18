@@ -229,7 +229,7 @@ font-weight: 400;
 .orbit-container {
   font-family: 'Crimson Text', serif;
   position: relative;
-  min-width: 90%;
+  min-width: 100%;
   min-height: 10%; /* Adjust this as needed */
   transition: height 0.5s ease-in-out; /* Smooth height adjustment */
   display: flex;
@@ -329,7 +329,7 @@ font-weight: 400;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(68, 68, 68, 0.47); /* Light grey transparent overlay */
+    background: rgba(46, 46, 46, 0.337); /* Light grey transparent overlay */
     color: white;
     padding: 20px;
     box-sizing: border-box;
