@@ -24,11 +24,28 @@ $(function() {
     // Adjust content padding based on navbar height
     function adjustContentPadding() {
         var navbarHeight = $('#navbar').outerHeight();
-        $('#content').css('padding-top', navbarHeight + 'px');
+        $('#navbar-padding').css('padding-top', navbarHeight + 'px');
+    }
+
+    // Debounce function to limit the rate at which a function can fire.
+    function debounce(func, wait) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                func.apply(context, args);
+            }, wait);
+        };
     }
 
     // Adjust padding on window resize
-    $(window).resize(function() {
+    $(window).resize(debounce(function() {
+        adjustContentPadding();
+    }, 100));
+
+    // Initial adjustment after document is ready
+    $(document).ready(function() {
         adjustContentPadding();
     });
 });
