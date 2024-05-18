@@ -10,7 +10,7 @@ $(function() {
         } else {
             console.log("Navbar loaded successfully.");
             $(document).foundation(); // Reinitialize Foundation
-            setTimeout(adjustContentPadding, 300); // Increase delay to ensure rendering
+            setTimeout(adjustContentPadding, 100); // Increase delay to ensure rendering
         }
     });
 
@@ -23,20 +23,20 @@ $(function() {
         }
     });
 
-    // Adjust content padding based on the maximum height of the title bar and top bar
+    // Adjust content padding based on the active bar height
     function adjustContentPadding() {
         console.log("adjustContentPadding called...");
-        var titleBarHeight = $('.title-bar').outerHeight() || 0;
-        var topBarHeight = $('.top-bar').outerHeight() || 0;
-        var maxHeight = Math.max(titleBarHeight, topBarHeight) + 20; // Add 20px for extra padding
+        var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
+        var topBarHeight = $('.top-bar').is(':visible') ? $('.top-bar').outerHeight() : 0;
+        var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20; // Add 20px for extra padding
 
         console.log('Title bar height:', titleBarHeight); // Debug log
         console.log('Top bar height:', topBarHeight); // Debug log
-        console.log('Max height:', maxHeight); // Debug log
+        console.log('Active bar height:', activeBarHeight); // Debug log
 
-        if (maxHeight > 20) { // Ensure at least 20px padding
-            $('#navbar-padding').height(maxHeight);
-            console.log('Padding set to:', maxHeight); // Debug log
+        if (activeBarHeight > 20) { // Ensure at least 20px padding
+            $('#navbar-padding').height(activeBarHeight);
+            console.log('Padding set to:', activeBarHeight); // Debug log
         } else {
             console.log('Calculated height is too small, retrying...');
             setTimeout(adjustContentPadding, 300); // Retry after a short delay
