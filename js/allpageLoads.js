@@ -24,7 +24,9 @@ $(function() {
     // Adjust content padding based on navbar height
     function adjustContentPadding() {
         var navbarHeight = $('#navbar').outerHeight();
+        console.log('Navbar height:', navbarHeight); // Debug log
         $('#navbar-padding').height(navbarHeight);
+        console.log('Padding set to:', navbarHeight); // Debug log
     }
 
     // Debounce function to limit the rate at which a function can fire.
