@@ -10,8 +10,7 @@ $(function() {
         } else {
             console.log("Navbar loaded successfully.");
             $(document).foundation(); // Reinitialize Foundation
-            console.log("Calling adjustContentPadding after navbar load...");
-            adjustContentPadding(); // Adjust content padding after navbar is loaded
+            setTimeout(adjustContentPadding, 300); // Increase delay to ensure rendering
         }
     });
 
@@ -24,16 +23,27 @@ $(function() {
         }
     });
 
-    // Adjust content padding based on navbar height
+    // Adjust content padding based on the maximum height of the title bar and top bar
     function adjustContentPadding() {
         console.log("adjustContentPadding called...");
-        var navbarHeight = $('#navbar').outerHeight();
-        console.log('Navbar height:', navbarHeight); // Debug log
-        $('#navbar-padding').height(navbarHeight);
-        console.log('Padding set to:', navbarHeight); // Debug log
+        var titleBarHeight = $('.title-bar').outerHeight() || 0;
+        var topBarHeight = $('.top-bar').outerHeight() || 0;
+        var maxHeight = Math.max(titleBarHeight, topBarHeight) + 20; // Add 20px for extra padding
+
+        console.log('Title bar height:', titleBarHeight); // Debug log
+        console.log('Top bar height:', topBarHeight); // Debug log
+        console.log('Max height:', maxHeight); // Debug log
+
+        if (maxHeight > 20) { // Ensure at least 20px padding
+            $('#navbar-padding').height(maxHeight);
+            console.log('Padding set to:', maxHeight); // Debug log
+        } else {
+            console.log('Calculated height is too small, retrying...');
+            setTimeout(adjustContentPadding, 300); // Retry after a short delay
+        }
     }
 
-    // Debounce function to limit the rate at which a function can fire.
+    // Debounce function to limit the rate at which a function can fire
     function debounce(func, wait) {
         var timeout;
         return function() {
@@ -54,6 +64,6 @@ $(function() {
     // Initial adjustment after document is ready
     $(document).ready(function() {
         console.log("Document ready, calling adjustContentPadding...");
-        adjustContentPadding();
+        setTimeout(adjustContentPadding, 300); // Increase delay to ensure rendering
     });
 });
