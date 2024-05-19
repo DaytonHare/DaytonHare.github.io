@@ -550,3 +550,7 @@ font-weight: 400;
   box-sizing: border-box;
 }
 
+.thumbnail {
+  max-width: 100%;
+  height: auto;
+}
