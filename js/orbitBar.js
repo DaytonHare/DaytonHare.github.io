@@ -24,10 +24,8 @@ $.getJSON('../jsonFiles/compositions.json', function(data) { // Updated path to 
               </div>
               <div class="cell small-6">
                 <h2>${item.title}</h2>
-                <p><strong>Instrumentation:</strong> ${item.instrumentation}</p>
-                <p><strong>Duration:</strong> ${item.duration}</p>
+                <p>${item.instrumentation}, ${item.duration}, ${item.year}</p>
                 <blockquote>Placeholder for quote about the piece.</blockquote>
-                <div class="soundcloud-placeholder">SoundCloud link will go here.</div>
                 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
               </div>
             </div>
