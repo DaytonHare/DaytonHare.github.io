@@ -15,7 +15,7 @@
   <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->
 
   <ul class="tabs" data-tabs id="example-tabs">
-    <li class="tabs-title is-active"><a href="#all" aria-selected="true">all</a></li>
+    <li class="tabs-title"><a href="#all">all</a></li>
     <li class="tabs-title"><a href="#largeEnsemble">large ensemble</a></li>
     <li class="tabs-title"><a href="#smallEnsemble">small ensemble</a></li>
     <li class="tabs-title"><a href="#soloDuo">solo / duo</a></li>
@@ -23,7 +23,7 @@
   </ul>
 
   <div class="tabs-content" data-tabs-content="example-tabs">
-    <div class="tabs-panel is-active" id="all">
+    <div class="tabs-panel" id="all">
       <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3" data-equalizer id="allContent">
         <!-- Dynamic Content -->
       </div>
@@ -78,5 +78,29 @@
   <script src="js/vendor/foundation.min.js"></script>
   <script src="js/allpageLoads.js"></script> 
   <script src="js/loadMusic.js"></script> <!-- Include the new JS file -->
+
+  <script>
+    $(document).foundation();
+
+    // Activate the correct tab based on the URL fragment
+    function activateTabFromHash() {
+      var hash = window.location.hash;
+      if (hash) {
+        var $tab = $('a[href="' + hash + '"]');
+        if ($tab.length) {
+          $tab.click();
+        }
+      }
+    }
+
+    $(document).ready(function() {
+      activateTabFromHash();
+
+      // Re-check the hash on hash change
+      $(window).on('hashchange', function() {
+        activateTabFromHash();
+      });
+    });
+  </script>
 </body>
 </html>
