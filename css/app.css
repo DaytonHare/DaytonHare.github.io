@@ -567,14 +567,7 @@ font-weight: 400;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Align items to the right */
-}
-
-.form-container-wrapper {
-  width: 33.33%; /* Ensure the wrapper takes up the right third of the image */
+  width: 33.33%; /* Take up the right third of the image */
   display: flex;
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally within the right third */
@@ -593,7 +586,9 @@ font-weight: 400;
   background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
   padding: 20px;
   border-radius: 10px;
-  max-width: 400px; /* Limit the form width for better readability */
+  max-width: 100%; /* Ensure the form does not overflow */
   width: 100%;
+  box-sizing: border-box;
 }
+
 
