@@ -570,11 +570,15 @@ font-weight: 400;
   background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 20px;
-  color: white;
+  justify-content: center;
 }
-.overlayContact form {
-  max-width: 400px;
-  width: 100%;
+.form-container {
+  background: rgba(0, 0, 0, 0.6); /* Dark transparent background for the form */
+  padding: 20px;
+  border-radius: 10px;
+}
+.form-container form {
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  padding: 20px;
+  border-radius: 10px;
 }
