@@ -573,15 +573,27 @@ font-weight: 400;
   justify-content: flex-end; /* Align items to the right */
 }
 
+.form-container-wrapper {
+  width: 33.33%; /* Ensure the wrapper takes up the right third of the image */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally within the right third */
+}
+
 .form-container {
   background: rgba(0, 0, 0, 0.6); /* Dark transparent background for the form */
   padding: 20px;
   border-radius: 10px;
-  margin-right: 5%; /* Add some margin from the right edge */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-container form {
   background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
   padding: 20px;
   border-radius: 10px;
+  max-width: 400px; /* Limit the form width for better readability */
+  width: 100%;
 }
+
