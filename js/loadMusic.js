@@ -34,7 +34,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             <h3>${item.title}</h3>
             <p>${item.instrumentation}</p>
             <p>${item.duration}</p>
-            <button class="button" data-open="exampleModal1" data-id="${item.id}">More Info</button>
+            <button class="button" data-open="exampleModal1" data-id="${item.id}">More Information</button>
           </div>
         </div>
       </div>

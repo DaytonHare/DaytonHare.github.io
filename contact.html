@@ -1,24 +1,63 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dayton Hare&mdash;Composer :: Contact</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="navbar"></div>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dayton Hare&mdash;Composer :: Contact</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar"></div>
 
-    <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->
-    <!-- Footer -->
-    <div id="footer"></div>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.min.js"></script>
-    <script src="js/allpageLoads.js"></script> <!-- Ensure this path is correct -->
-  </body>
+  <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->
+
+  <!-- Contact Section -->
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="cell">
+        <div class="relative">
+          <img src="photos/SmileWide.jpg" alt="Contact Image" class="contact-image">
+          <div class="overlayContact">
+            <form id="contactForm" action="mailto:dayton@example.com" method="post" enctype="text/plain">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your Name" required>
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="Your Email" required>
+              </label>
+              <label>
+                Subject
+                <select name="subject">
+                  <option value="Commission Inquiry">Commission Inquiry</option>
+                  <option value="Teaching Inquiry">Teaching Inquiry</option>
+                  <option value="Writing Inquiry">Writing Inquiry</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label>
+                Message
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+              </label>
+              <button type="submit" class="button">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/what-input.js"></script>
+  <script src="js/vendor/foundation.min.js"></script>
+  <script src="js/allpageLoads.js"></script> <!-- Ensure this path is correct -->
+</body>
 </html>

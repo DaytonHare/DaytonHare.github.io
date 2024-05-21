@@ -552,3 +552,29 @@ font-weight: 400;
   max-width: 100%;
   height: auto;
 }
+
+/* Contact Form*/
+
+.contact-image {
+  width: 100%;
+  height: 50vh; /* Adjust as needed */
+  object-fit: cover;
+  position: relative;
+}
+.overlayContact {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+}
+.overlayContact form {
+  max-width: 400px;
+  width: 100%;
+}
