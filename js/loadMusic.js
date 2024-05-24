@@ -29,7 +29,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
     var cardHtml = `
       <div class="cell" data-equalizer-watch>
         <div class="card">
-        ${item.scoreImageLoc ? `<img src="${item.scoreImageLoc}" alt="Score Image" class="thumbnail">` : ''}
+        <!--${item.scoreImageLoc ? `<img src="${item.scoreImageLoc}" alt="Score Image" class="thumbnail">` : ''}-->
         <div class="card-section">
             <h3>${item.title}</h3>
             <p>${item.instrumentation}</p>
@@ -60,7 +60,7 @@ $(".button[data-open='exampleModal1']").on("click", function() {
     }
 
     if (item.programNote) {
-      $("#programNote").text("src", item.programNote).show();
+      $("#programNote").text(item.programNote).show();
     } else {
       $("#programNote").hide();
     }
