@@ -77,7 +77,7 @@ $(".button[data-open='exampleModal1']").on("click", function() {
         $("#modalYouTube").hide();
     }
 
-    $("#modalBuyLink").attr("href", `mailto:dayton@example.com?subject=Inquiry about ${item.title}`);
+    $("#modalBuyLink").attr("href", `mailto:dayton.hare@yale.edu?subject=Inquiry about ${item.title}`);
 
     $('#exampleModal1').foundation('open');
 });
