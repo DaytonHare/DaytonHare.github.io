@@ -535,13 +535,14 @@ font-weight: 400;
 
 /* Modal Styles */
 .reveal {
-  background: #fff;
+  background: #f6e7fb;
   padding: 20px;
+  color: #000;
 }
 
 .reveal img {
-  max-width: 100%;
-  height: auto;
+  max-height: 200px;
+  width: auto;
 }
 
 *, *::before, *::after {
@@ -549,8 +550,8 @@ font-weight: 400;
 }
 
 .thumbnail {
-  max-width: 100%;
-  height: auto;
+  max-height: 100px;
+  width: auto;
 }
 
 /* Contact Form */

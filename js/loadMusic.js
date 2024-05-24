@@ -59,6 +59,12 @@ $(".button[data-open='exampleModal1']").on("click", function() {
         $("#modalImage").hide();
     }
 
+    if (item.programNote) {
+      $("#programNote").text("src", item.programNote).show();
+    } else {
+      $("#programNote").hide();
+    }
+
     if (item.soundCloudLink) {
         $("#modalSoundCloud iframe").attr("src", `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23ff5500&inverse=false&auto_play=false&show_user=true`).show();
     } else {
