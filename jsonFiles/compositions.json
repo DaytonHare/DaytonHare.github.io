@@ -1,5 +1,21 @@
 [
     {
+        "id": 22,
+        "type": "vocal",
+        "instrumentation": "SATB acapella choir",
+        "title": "whereof one cannot speak",
+        "year": "2024",
+        "duration": "6'",
+        "premierDate": "17 August, 2024",
+        "premierLocation": "Norfolk Music Shed, Norfolk CT",
+        "premierEnsemble": "Norfolk Festival Chamber ChoirChorus",
+        "commission": true,
+        "programNote": "When I was a kid I had an impossibly difficult time understanding lyrics in music. Whether it was the top 40 hits on the car radio or hymns in church, my brain always wanted to classify the voices I heard as just more instruments, timbres and nothing more. It took a deliberate effort on my part to be able to hear the voices as actually saying something, as meaning something, adding an additional layer of communication to the message of the music. 'whereof one cannot speak' in some ways tries to dramatize this experiential movement. It starts with the text — a little poem about language I cobbled together from fragments of Wittgenstein — broken into their smallest constituent phonemes, signifying nothing, functioning as sound alone. Over the course of the piece these sounds are pulled together into larger and larger chunks of the text, laboriously moved out of the realm of abstraction and, bit by bit, into recognizable language with meaning to convey. Only by the final sections of the piece can one actually hear what the words are trying to say.",
+        "scoreImageLoc": "",
+        "soundCloudLink": "1902301800",
+        "youtubeLink": ""
+    }, 
+    {
         "id": 21,
         "type": "large ensemble",
         "instrumentation": "orchestra",
