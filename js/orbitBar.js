@@ -12,71 +12,46 @@ $.getJSON('../jsonFiles/compositions.json', function(data) {
     let filteredData = data.filter(item => slideIds.includes(item.id));
     
     filteredData.forEach((item, index) => {
-        let activeClass = index === 0 ? 'is-active' : '';
-        let contentHtml;
+      let activeClass = index === 0 ? 'is-active' : '';
+      let contentHtml;
 
-        // Check if scoreImageLoc exists and preload the image
-        if (item.scoreImageLoc) {
-            let img = new Image();
-            img.src = item.scoreImageLoc;
-            
-            img.onload = function() {
-                // If image loads successfully, set contentHtml to the image
-                contentHtml = `<img src="${item.scoreImageLoc}" alt="${item.title} Score" class="responsive-score">`;
-                appendSlide(contentHtml);
-            };
-
-            img.onerror = function() {
-                // If image fails to load, check for YouTube link
-                if (item.youtubeLink) {
-                    contentHtml = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${item.youtubeLink}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-                } else {
-                    // If no YouTube link, leave the content blank
-                    contentHtml = `<div class="blank-placeholder"></div>`;
-                }
-                appendSlide(contentHtml);
-            };
-        } else if (item.youtubeLink) {
-            // If no score image, but there is a YouTube link
-            contentHtml = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${item.youtubeLink}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-            appendSlide(contentHtml);
-        } else {
-            // If neither, leave blank
-            contentHtml = `<div class="blank-placeholder"></div>`;
-            appendSlide(contentHtml);
-        }
-
-        function appendSlide(contentHtml) {
-            // Add the slide with the content
-            orbitContainer.append(`
-                <li class="orbit-slide ${activeClass}">
-                  <div class="docs-example-orbit-slide">
-                    <div class="grid-x grid-padding-x align-middle">
-                      <div class="cell small-6">
-                        ${contentHtml}
-                      </div>
-                      <div class="cell small-6">
-                        <h2>${item.title}</h2>
-                        <p>${item.instrumentation}, ${item.duration}, ${item.year}</p>
-                        <blockquote>${item.programNote || ''}</blockquote>
-                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-            `);
-            
-            // Add the bullet
-            orbitBullets.append(`
-                <button class="${activeClass}" data-slide="${index}">
-                  <span class="show-for-sr">${item.title} details.</span>
-                  ${index === 0 ? '<span class="show-for-sr" data-slide-active-label>Current Slide</span>' : ''}
-                </button>
-            `);
-
-            // Reinitialize Orbit and update height
-            updateOrbitHeight();
-        }
+      if (item.scoreImageLoc) {
+        // Use the score image if it exists
+        contentHtml = `<img src="${item.scoreImageLoc}" alt="${item.title} Score" class="responsive-score">`;
+      } else if (item.youtubeLink) {
+        // Use the YouTube link if the score image is empty
+        contentHtml = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${item.youtubeLink}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      } else {
+        // Leave blank if neither exists
+        contentHtml = `<div class="blank-placeholder"></div>`;
+      }
+      
+      // Add the slide
+      orbitContainer.append(`
+        <li class="orbit-slide ${activeClass}">
+          <div class="docs-example-orbit-slide">
+            <div class="grid-x grid-padding-x align-middle">
+              <div class="cell small-6">
+                ${contentHtml}
+              </div>
+              <div class="cell small-6">
+                <h2>${item.title}</h2>
+                <p>${item.instrumentation}, ${item.duration}, ${item.year}</p>
+                <blockquote></blockquote>
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
+              </div>
+            </div>
+          </div>
+        </li>
+      `);
+      
+      // Add the bullet
+      orbitBullets.append(`
+        <button class="${activeClass}" data-slide="${index}">
+          <span class="show-for-sr">${item.title} details.</span>
+          ${index === 0 ? '<span class="show-for-sr" data-slide-active-label>Current Slide</span>' : ''}
+        </button>
+      `);
     });
   
     // Reinitialize the Orbit component after adding dynamic content
