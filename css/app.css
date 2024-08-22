@@ -218,6 +218,13 @@ table, th, td {
     font-size: larger;
 }
 
+.h5, h5 {
+  color: white;
+  display: inline;
+  font-family: 'Crimson Text', serif;
+  font-size: larger;
+}
+
 footer {
 color: white;
 font-family: 'Crimson Text', serif;
@@ -258,7 +265,7 @@ font-weight: 400;
 }
 
 .responsive-score  {
-  max-height: 200px;
+  max-height: 300px;
   height: auto;
   width: auto;
   max-width: 100%;

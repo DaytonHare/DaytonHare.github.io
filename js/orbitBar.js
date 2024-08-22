@@ -1,7 +1,7 @@
 $(document).foundation();
 
 // List of IDs to include in the Orbit slides
-const slideIds = [21, 9, 17]; // Update with your list of IDs
+const slideIds = [21, 22, 17]; // Update with your list of IDs
 
 // Load the JSON data and dynamically create the slides
 $.getJSON('../jsonFiles/compositions.json', function(data) { 
