@@ -15,34 +15,40 @@
   <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->
 
   <!-- Contact Section -->
-  <div class="relative">
-    <img src="photos/SmileWideCompressed.jpeg" alt="Contact Image" class="contact-image">
-    <div class="overlayContact">
-      <div class="form-container">
-        <form id="contactForm" action="mailto:dayton@example.com" method="post" enctype="text/plain">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your Name" required>
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="Your Email" required>
-          </label>
-          <label>
-            Subject
-            <select name="subject">
-              <option value="Commission Inquiry">Commission Inquiry</option>
-              <option value="Teaching Inquiry">Teaching Inquiry</option>
-              <option value="Writing Inquiry">Writing Inquiry</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
-          <label>
-            Message
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-          </label>
-          <button type="submit" class="button">Send</button>
-        </form>
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-middle">
+      <div class="cell medium-8">
+        <img src="photos/SmileWideCompressed.jpeg" alt="Contact Image" class="contact-image">
+      </div>
+      <div class="cell medium-4">
+        <div class="overlayContact">
+          <div class="form-container">
+            <form id="contactForm" action="mailto:dayton@example.com" method="post" enctype="text/plain">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your Name" required>
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="Your Email" required>
+              </label>
+              <label>
+                Subject
+                <select name="subject">
+                  <option value="Commission Inquiry">Commission Inquiry</option>
+                  <option value="Teaching Inquiry">Teaching Inquiry</option>
+                  <option value="Writing Inquiry">Writing Inquiry</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label>
+                Message
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+              </label>
+              <button type="submit" class="button">Send</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
