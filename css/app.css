@@ -390,28 +390,81 @@ font-weight: 400;
     display: block;
   }
   
-  /* Overlay with transparent background and text */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(50, 50, 50, 0.385); /* Dark grey transparent overlay */
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid rgba(83, 83, 83, 0.308);
-    font-family: 'Crimson Text', serif;
+/* Overlay with transparent background and text */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 50, 50, 0.385); /* Dark grey transparent overlay */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(83, 83, 83, 0.308);
+  font-family: 'Crimson Text', serif;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between heading and tagline */
+}
 
-  }
-  
-  .overlay h2, .overlay p {
-    margin: 0;
-    padding: 10px 0;
-    font-family: 'Crimson Text', serif;
+.overlay-heading {
+  margin-top: 10px; /* Ensure space from the top */
+}
 
+.overlay-tagline {
+  margin-bottom: 10px; /* Ensure space from the bottom */
+}
+
+/* Responsive Font Sizes */
+.overlay h2 {
+  font-size: 2em; /* Base font size */
+  margin: 0;
+}
+
+.overlay h5 {
+  font-size: 1.2em; /* Base font size */
+  font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+  .overlay h2 {
+      font-size: 1.5em; /* Smaller font size for medium screens */
   }
+
+  .overlay h5 {
+      font-size: 1em; /* Smaller font size for medium screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .overlay h2 {
+      font-size: 1.2em; /* Even smaller font size for small screens */
+  }
+
+  .overlay h5 {
+      font-size: 0.9em; /* Even smaller font size for small screens */
+  }
+}
+
+/* Additional styles to manage positioning and spacing */
+.relative-cell {
+  position: relative;
+}
+
+.responsive-background {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure image covers the area */
+}
+
+.overlay h2, .overlay p {
+  margin: 0;
+  padding: 10px 0;
+  font-family: 'Crimson Text', serif;
+}
+
 
   .orbit-padding {
     padding-top: 30px;
