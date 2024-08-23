@@ -738,7 +738,7 @@ font-weight: 400;
 .overlayContact {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px;
   width: 33.33%; /* Take up the right third of the image */
   height: 100%;
   background: rgba(0, 0, 0, 0); /* Dark transparent overlay */
