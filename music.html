@@ -56,18 +56,33 @@
 
     <!-- Modal for Detailed Info -->
     <div class="reveal" id="exampleModal1" data-reveal>
-        <h1 id="modalTitle" style="color: black;">Title</h1>
-        <p id="modalInstrumentation">Instrumentation</p>
-        <p id="modalDuration">Duration</p>
-        <img src="" alt="Score Image" id="modalImage" style="display: none;">
-        <p id="programNote">Program Note</p>
-        <div class="responsive-soundcloud" id="modalSoundCloud" style="display: none;"></div>
-        <div class="responsive-embed" id="modalYouTube" style="display: none;"></div>
-        <a href="" id="modalBuyLink" class="button">Buy</a>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+      <div class="grid-x grid-margin-x align-middle">
+          <!-- Right column for text -->
+          <div class="cell small-12 medium-8 large-8">
+              <h1 id="modalTitle" style="color: black;">Title</h1>
+              <p id="modalInstrumentation">Instrumentation</p>
+              <p id="modalDuration">Duration</p>
+          </div>
+  
+          <!-- Left column for the score image -->
+          <div class="cell small-12 medium-4 large-4">
+              <img src="" alt="Score Image" id="modalImage" class="thumbnail" style="display: none;">
+          </div>
+      </div>
+      
+      <p id="programNote" style="padding-top: 20px;">Program Note</p>
+      
+      <div class="responsive-soundcloud" id="modalSoundCloud" style="display: none; padding-top: 20px;"></div>
+      
+      <div class="responsive-embed" id="modalYouTube" style="display: none; padding-top: 20px;"></div>
+      
+      <a href="" id="modalBuyLink" class="button" style="margin-top: 20px;">Purchase Inquiry</a>
+      
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  
 
     <div class="orbit-padding"></div>
 
