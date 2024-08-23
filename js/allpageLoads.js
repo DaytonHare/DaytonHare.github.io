@@ -10,7 +10,10 @@ $(function() {
         } else {
             console.log("Navbar loaded successfully.");
             $(document).foundation(); // Reinitialize Foundation
-            setTimeout(adjustContentPadding, 50); // Ensure rendering before adjusting
+            setTimeout(function() {
+                adjustContentPadding();
+                forceReflow();
+            }, 200); // Small delay to ensure rendering before adjusting
         }
     });
 
@@ -43,6 +46,16 @@ $(function() {
         }
     }
 
+    // Force reflow to make sure layout calculations are re-triggered
+    function forceReflow() {
+        console.log("Forcing reflow to recalculate layout...");
+        document.body.offsetHeight; // Accessing offsetHeight triggers a reflow
+        setTimeout(function() {
+            adjustContentPadding();
+            console.log("Reflow completed and padding adjusted.");
+        }, 100);
+    }
+
     // Debounce function to limit the rate at which a function can fire
     function debounce(func, wait) {
         var timeout;
@@ -64,7 +77,10 @@ $(function() {
     // Initial adjustment after document is ready
     $(document).ready(function() {
         console.log("Document ready, calling adjustContentPadding...");
-        setTimeout(adjustContentPadding, 300); // Ensure rendering before adjusting
+        setTimeout(function() {
+            adjustContentPadding();
+            forceReflow();
+        }, 300); // Ensure rendering before adjusting
     });
 
     // Activate the correct tab based on the URL fragment
@@ -74,7 +90,10 @@ $(function() {
             var $tab = $('a[href="' + hash + '"]');
             if ($tab.length) {
                 $tab.click();
-                setTimeout(adjustContentPadding, 100); // Adjust padding after tab activation
+                setTimeout(function() {
+                    adjustContentPadding();
+                    forceReflow();
+                }, 100); // Adjust padding after tab activation
             }
         }
     }
@@ -90,6 +109,9 @@ $(function() {
 
     // Explicit padding adjustment when the DOM is fully ready and elements are displayed
     $(document).on('click', '.tabs-title a', function() {
-        setTimeout(adjustContentPadding, 300); // Adjust padding after tab switch
+        setTimeout(function() {
+            adjustContentPadding();
+            forceReflow();
+        }, 300); // Adjust padding after tab switch
     });
 });
