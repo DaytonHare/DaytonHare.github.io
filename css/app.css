@@ -655,6 +655,7 @@ font-weight: 400;
 /* Tabs and Tab Content Styles */
 .tabs {
   background-color: black;
+  font-size: large;
 }
 
 .tabs-title {
