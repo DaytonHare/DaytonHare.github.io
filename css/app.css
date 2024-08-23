@@ -511,32 +511,44 @@ font-weight: 400;
     }
   }
 
+/* Container for image and overlay */
+.image-container {
+  position: relative;
+  background-color: #f4f4f4; /* Light background to prevent overlap issues */
+  overflow: hidden;
+}
+
 /* Ensure the large image is responsive */
 .responsive-large-image {
   width: 100%;
   height: auto;
   object-fit: cover; /* Ensures the image covers the area */
   object-position: center; /* Centers the image within its container */
+  display: block; /* Make sure image behaves as a block element */
 }
 
 .relative-cell {
   position: relative;
 }
 
-/* Responsive overlay on the left */
+/* Responsive overlay on the left third of the large image */
 .overlay-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38.33%;
+  height: 100%;
   background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
   color: black;
   padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto; /* Allows scrolling if content overflows */
-  transition: all 0.5s ease; /* Smooth transition for all changes */
-  height: 100%; /* Full height */
-  min-height: 250px; /* Minimum height to prevent collapsing */
-  background-color: #f4f4f4; /* Light background to match overall color scheme */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  transition: all 0.5s ease; /* Smooth transition for all changes */
+  min-height: 250px; /* Minimum height to prevent collapsing */
+  backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a more polished look */
 }
 
 /* Adjust font size and layout dynamically */
@@ -549,7 +561,7 @@ font-weight: 400;
 
 @media screen and (max-width: 1024px) {
   .overlay-left {
-      width: 100%; /* Full width on medium screens */
+      width: 50%; /* Expand overlay to cover half the image on smaller screens */
       min-height: auto; /* Adjust height to fit content */
   }
 
@@ -560,8 +572,8 @@ font-weight: 400;
 
 @media screen and (max-width: 768px) {
   .overlay-left {
-      width: 100%; /* Full width on smaller screens */
-      height: auto; /* Adjust height to fit content */
+      width: 65%; /* Further expand overlay on smaller screens */
+      transition: width 0.5s ease; /* Smooth transition */
   }
 
   .bio-text p {
@@ -572,6 +584,7 @@ font-weight: 400;
 @media screen and (max-width: 480px) {
   .overlay-left {
       width: 100%; /* Full width on very small screens */
+      min-height: auto; /* Allow width to adjust completely */
       height: auto; /* Adjust height to fit content */
       padding: 10px; /* Reduce padding */
   }
