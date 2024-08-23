@@ -688,6 +688,12 @@ font-weight: 400;
   font-size: large;
 }
 
+.centered-tabs-container {
+  max-width: 1200px; /* Adjust this value as needed */
+  margin: 0 auto; /* Centers the container */
+  padding: 0 15px; /* Adds some padding */
+}
+
 
 /* Modal Styles */
 .reveal {
