@@ -44,9 +44,9 @@
         "commission": "National Orchestra Institute + Festival",
         "programNote": "Ever since I was a child I've been captivated by the beauty of changing weather and storm systems. I have memories from when I was growing up in Boulder, Colorado, of thunderstorms that felt at once terrifying and entrancing rolling down off the mountains, and my fascination with them was reinforced by elementary school field trips to NCAR — the meteorological and climate research facility nestled at the edge of the nearby the Rocky Mountains — where I learned the rudiments of how changes in atmospheric pressure result in the weather we experience.\n\nAs I wrote \"Pressure System,\" these memories resurfaced for me. While I don't think of this piece as programmatic, per se, in my mind it nevertheless follows a kind of linear progression that tracks the movement of a storm as it moves towards and then away from a vantage point from which you can watch the shifting clouds and changing colors from afar.",
         "scoreImageLoc": "photos/covers/PressureSystem.png  ",
-        "soundCloudLink": "1689927204",
-        "youtubeLink": "w3pqUOCkLVE"
-    },
+        "soundCloudLink": "1689927204%3Fsecret_token%3Ds-CmceU4IfCTo",
+        "youtubeLink": null
+    }, 
     {
         "id": 19,
         "type": "large ensemble",
@@ -61,7 +61,7 @@
         "programNote": "Things have a tendency to disappear into the haze of our memories. In the moment, an event or person can seem like the most important thing in the world, momentous and unparalleled, the locus of all our attention. But however large it may seem at the time, as months and years slip by the event dims, loses its particular luster, and joins with many others as an accumulating stream of experiences that go into making up a person. It becomes part of the landscape of our personality, blending together with other elements until we can no longer recognize its unique hue. If we pay attention, we might even notice this process as it happens, but we are powerless to stop it, and unsure if we would want to. The memory continues inexorably to dim, and like a watcher of the setting sun, we trace its path to the distant point where its light at last vanishes.",
         "scoreImageLoc": null,
         "soundCloudLink": null,
-        "youtubeLink": null
+        "youtubeLink": "w3pqUOCkLVE"
     },
     {
         "id": 18,
@@ -316,7 +316,7 @@
         "commission": false,
         "programNote": "",
         "scoreImageLoc": null,
-        "soundCloudLink": "1707544998",
+        "soundCloudLink": "1707544998%3Fsecret_token%3Ds-z4rimeDsvDT",
         "youtubeLink": null
     },
     {
