@@ -728,7 +728,7 @@ font-weight: 400;
   height: auto; /* Maintain aspect ratio */
   padding-left: 15px; /* Add space between text and image */
   padding-right: 15px; /* Add space between image and right edge of the modal */
-  max-height: 150px;
+  border: none;
 }
 
 #programNote, #modalSoundCloud, #modalYouTube {
