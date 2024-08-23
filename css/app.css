@@ -125,7 +125,7 @@ footer {
 }
 
 .footer-overlay a.button:hover {
-  background-color: #004d99;
+  background-color: #075fb8;
 }
 
 .footer-credit {
@@ -397,7 +397,7 @@ font-weight: 400;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(50, 50, 50, 0.385); /* Dark grey transparent overlay */
+  background: rgba(50, 50, 50, 0.466); /* Dark grey transparent overlay */
   color: white;
   padding: 20px;
   box-sizing: border-box;
@@ -511,65 +511,93 @@ font-weight: 400;
     }
   }
 
-  /* Ensure the large image is responsive */
+/* Ensure the large image is responsive */
 .responsive-large-image {
-    width: 100%;
-    height: auto;
-  }
-  
- 
+  width: 100%;
+  height: auto;
+}
+
 .relative-cell {
-    position: relative;
-  }
-  
-  /* Overlay on the left third of the large image */
+  position: relative;
+}
+
+/* Responsive overlay on the left third of the large image */
+.overlay-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38.33%;
+  height: 100%;
+  background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
+  color: black;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  transition: width 0.3s ease; /* Smooth transition when width changes */
+}
+
+/* Responsive Font Sizes */
+.bio-text p {
+  margin: 0;
+  padding-bottom: 10px;
+  align-content: center;
+  font-family: 'Crimson Text', serif;
+}
+
+@media screen and (max-width: 1024px) {
   .overlay-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 38.33%;
-    height: 100%;
-    background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
-    color: black;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Optional, to center horizontally if needed */
-    box-shadow: inset 0 0 0 15px rgba(0, 0, 0, 0); /* Transparent border effect */
+    width: 50%; /* Expand overlay to cover half the image on smaller screens */
   }
-  
-  /* Bio text styling */
-  .bio-text {
-    text-align: left; /* Left align text */
-    padding: 10px; /* Add padding for the text */
-  }
-  
-  /* Ensure the left image is responsive */
-  .responsive-left-image {
-    width: 100%;
-    height: auto;
-    margin-right: 20px; /* Adjust padding between left image and purple box */
-  }
-  
-  /* Purple box with white text */
-  .purple-box {
-    background-color: #5205cebc; /* Adjust the background color as needed */
-    border: 1px solid #5205ce;    
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-  
-  /* Bio text styling */
+
   .bio-text p {
-    margin: 0;
-    padding-bottom: 10px;
-    align-content: center;
+    font-size: 1em; /* Adjust font size for smaller screens */
   }
+}
+
+@media screen and (max-width: 768px) {
+  .overlay-left {
+    width: 65%; /* Further expand overlay on smaller screens */
+  }
+
+  .bio-text p {
+    font-size: 0.9em; /* Smaller font size for medium screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .overlay-left {
+    width: 100%; /* Full width on very small screens */
+    height: auto; /* Adjust height to fit content */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .bio-text p {
+    font-size: 0.8em; /* Even smaller font size for small screens */
+  }
+}
+
+/* Ensure the left image is responsive */
+.responsive-left-image {
+  width: 100%;
+  height: auto;
+  margin-right: 20px; /* Adjust padding between left image and purple box */
+}
+
+/* Purple box with white text */
+.purple-box {
+  background-color: #5205cebc; /* Adjust the background color as needed */
+  border: 1px solid #5205ce;    
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
   
   /* Hobbies text styling */
   .hobbies-text {
