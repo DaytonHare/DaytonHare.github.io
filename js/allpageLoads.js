@@ -10,7 +10,7 @@ $(function() {
         } else {
             console.log("Navbar loaded successfully.");
             $(document).foundation(); // Reinitialize Foundation
-            setTimeout(adjustContentPadding, 50); // Increase delay to ensure rendering
+            setTimeout(adjustContentPadding, 50); // Ensure rendering before adjusting
         }
     });
 
@@ -64,6 +64,27 @@ $(function() {
     // Initial adjustment after document is ready
     $(document).ready(function() {
         console.log("Document ready, calling adjustContentPadding...");
-        setTimeout(adjustContentPadding, 300); // Increase delay to ensure rendering
+        setTimeout(adjustContentPadding, 300); // Ensure rendering before adjusting
+    });
+
+    // Activate the correct tab based on the URL fragment
+    function activateTabFromHash() {
+        var hash = window.location.hash;
+        if (hash) {
+            var $tab = $('a[href="' + hash + '"]');
+            if ($tab.length) {
+                $tab.click();
+                setTimeout(adjustContentPadding, 100); // Adjust padding after tab activation
+            }
+        }
+    }
+
+    $(document).ready(function() {
+        activateTabFromHash();
+
+        // Re-check the hash on hash change
+        $(window).on('hashchange', function() {
+            activateTabFromHash();
+        });
     });
 });
