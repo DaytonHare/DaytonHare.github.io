@@ -74,7 +74,7 @@ footer {
   position: relative;
   width: 100%;
   min-height: 250px; /* Ensure minimum height to fit content */
-  background-color: #1a374d; /* Dark sky blue background that matches the image tones */
+  background-color: #24277a; /* Dark sky blue background that matches the image tones */
 }
 
 .footer-image-container {
@@ -300,8 +300,8 @@ font-weight: 400;
 
 .docs-example-orbit-slide {
   padding: 20px;
-  background-color: #5205cebc; /* Adjust the background color as needed */
-  border: 1px solid #5205ce;
+  background-color: #2e1a47; /* Adjust the background color as needed */
+  border: 1px solid #2e1a47;
   border-radius: 5px;
   width: 100%;
   max-width: 20000px; /* Adjust the max width as needed */
@@ -611,8 +611,8 @@ font-weight: 400;
 
 /* Purple box with white text */
 .purple-box {
-  background-color: #5205cebc; /* Adjust the background color as needed */
-  border: 1px solid #5205ce;    
+  background-color: #2e1a47; /* Adjust the background color as needed */
+  border: 1px solid #2e1a47;    
   color: white;
   padding: 20px;
   display: flex;
