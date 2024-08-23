@@ -737,7 +737,7 @@ font-weight: 400;
 .overlayContact {
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 20px;
   width: 33.33%; /* Take up the right third of the image */
   height: 100%;
   background: rgba(0, 0, 0, 0); /* Dark transparent overlay */
@@ -760,12 +760,9 @@ font-weight: 400;
   width: 100%;
 }
 
-.form-container  input {
-  background-color: #f6e7fb;
-}
+
 
 .form-container  label {
-  color: #f6e7fb;
   font-size: large;
 }
 /* Media query to stack the form below the image if necessary */
