@@ -761,11 +761,11 @@ font-weight: 400;
   width: 100%;
 }
 
-.contactForm input {
+.form-container  input {
   background-color: #f6e7fb;
 }
 
-.contactForm label {
+.form-container  label {
   color: #f6e7fb;
   font-size: large;
 }
