@@ -75,7 +75,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         // Check for SoundCloud link and include it in the modal
         if (item.soundCloudLink) {
             $("#modalSoundCloud").html(`
-                <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dayton-hare-410661494" title="Dayton Hare" target="_blank" style="color: #cccccc; text-decoration: none;">Dayton Hare</a> · ${item.title}</div>
+                <iframe width="100%" height="30" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true" style="background:black;"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dayton-hare-410661494" title="Dayton Hare" target="_blank" style="color: #cccccc; text-decoration: none;">Dayton Hare</a> · ${item.title}</div>
             `).show();
         } else {
             $("#modalSoundCloud").hide();
