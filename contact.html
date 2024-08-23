@@ -15,34 +15,36 @@
   <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->
 
   <!-- Contact Section -->
-  <div class="relative-cell">
-    <img src="photos/SmileWideCompressed.jpeg" alt="Contact Image" class="contact-image">
-    <div class="overlayContact">
-      <div class="form-container">
-        <form id="contactForm" action="mailto:dayton@example.com" method="post" enctype="text/plain">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your Name" required>
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="Your Email" required>
-          </label>
-          <label>
-            Subject
-            <select name="subject">
-              <option value="Commission Inquiry">Commission Inquiry</option>
-              <option value="Teaching Inquiry">Teaching Inquiry</option>
-              <option value="Writing Inquiry">Writing Inquiry</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
-          <label>
-            Message
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-          </label>
-          <button type="submit" class="button">Send</button>
-        </form>
+  <div class="contact-container">
+    <div class="relative-cell">
+      <img src="photos/SmileWideCompressed.jpeg" alt="Contact Image" class="contact-image">
+      <div class="overlayContact">
+        <div class="form-container">
+          <form id="contactForm" action="mailto:dayton@example.com" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your Name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Your Email" required>
+            </label>
+            <label>
+              Subject
+              <select name="subject">
+                <option value="Commission Inquiry">Commission Inquiry</option>
+                <option value="Teaching Inquiry">Teaching Inquiry</option>
+                <option value="Writing Inquiry">Writing Inquiry</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            </label>
+            <button type="submit" class="button">Send</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -58,5 +60,33 @@
   <script src="js/vendor/what-input.js"></script>
   <script src="js/vendor/foundation.min.js"></script>
   <script src="js/allpageLoads.js"></script> <!-- Ensure this path is correct -->
+
+  <script>
+    $(document).ready(function() {
+        function adjustLayout() {
+            var imageHeight = $('.contact-image').outerHeight();
+            var formHeight = $('.overlayContact').outerHeight();
+            if (formHeight > imageHeight) {
+                $('.relative-cell').css('flex-direction', 'column');
+                $('.overlayContact').css({
+                    'position': 'relative',
+                    'width': '100%',
+                    'order': 1
+                });
+                $('.contact-image').css('order', 0);
+            } else {
+                $('.relative-cell').css('flex-direction', 'row');
+                $('.overlayContact').css({
+                    'position': 'absolute',
+                    'width': '33.33%',
+                    'order': 0
+                });
+            }
+        }
+
+        $(window).on('resize', adjustLayout);
+        adjustLayout(); // Initial check to ensure layout is correct on page load
+    });
+  </script>
 </body>
 </html>

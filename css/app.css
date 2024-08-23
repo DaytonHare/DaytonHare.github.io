@@ -718,9 +718,15 @@ font-weight: 400;
 }
 /* Contact Form */
 
+.contact-container {
+  width: 100%;
+}
+
 .relative-cell {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .contact-image {
@@ -751,6 +757,22 @@ font-weight: 400;
 
 .form-container form {
   width: 100%;
+}
+
+/* Media query to stack the form below the image if necessary */
+@media (max-width: 800px), (max-height: 400px) {
+  .relative-cell {
+    flex-direction: column;
+  }
+  .overlayContact {
+    position: relative;
+    width: 100%;
+    height: auto;
+    order: 1; /* Place below the image */
+  }
+  .contact-image {
+    order: 0;
+  }
 }
 
 
