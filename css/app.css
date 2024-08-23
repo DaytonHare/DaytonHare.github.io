@@ -717,6 +717,43 @@ font-weight: 400;
   width: auto;
   max-width: 100%;
 }
+
+#exampleModal1 .grid-x {
+  align-items: center; /* Center the content vertically within the grid */
+}
+
+#exampleModal1 h1 {
+  margin-bottom: 10px;
+}
+
+#modalInstrumentation, #modalDuration {
+  margin-bottom: 10px;
+}
+
+#modalImage {
+  max-width: 100%; /* Ensure the image does not overflow its container */
+  height: auto; /* Maintain aspect ratio */
+  padding-left: 15px; /* Add space between text and image */
+  padding-right: 15px; /* Add space between image and right edge of the modal */
+}
+
+#programNote, #modalSoundCloud, #modalYouTube {
+  padding-top: 20px; /* Consistent padding above each element */
+}
+
+#modalBuyLink {
+  margin-top: 20px;
+}
+
+#exampleModal1 .cell.small-12.medium-4.large-4 {
+  padding-right: 20px; /* Additional space to the right of the image */
+}
+
+.close-button {
+  right: 10px; /* Ensure the close button stays at the corner */
+  top: 10px;
+}
+
 /* Contact Form */
 
 .contact-container {
