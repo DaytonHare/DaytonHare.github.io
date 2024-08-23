@@ -765,6 +765,10 @@ font-weight: 400;
   background-color: #f6e7fb;
 }
 
+.contactForm label {
+  color: #f6e7fb;
+  font-size: large;
+}
 /* Media query to stack the form below the image if necessary */
 @media (max-width: 800px), (max-height: 400px) {
   .relative-cell {

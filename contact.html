@@ -20,20 +20,20 @@
       <img src="photos/SmileWideCompressed.jpeg" alt="Contact Image" class="contact-image">
       <div class="overlayContact">
         <div class="form-container">
-          <form id="contactForm" action="mailto:dayton.hare@yale.edu" method="post" enctype="text/plain" style="color:white;font-size:large">
+          <form id="contactForm" style="color:white;font-size:large">
             <label>
               Name
-              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
             </label>
             <label>
               Email
-              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
             </label>
             <label>
               Subject
-              <select name="subject">
+              <select id="subject" name="subject">
                 <option value="Commission Inquiry">Commission Inquiry</option>
-                <option value="Score Purchase">Commission Inquiry</option>
+                <option value="Score Purchase">Score Purchase</option>
                 <option value="Teaching Inquiry">Teaching Inquiry</option>
                 <option value="Writing Inquiry">Writing Inquiry</option>
                 <option value="Other">Other</option>
@@ -41,9 +41,9 @@
             </label>
             <label>
               Message
-              <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+              <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
             </label>
-            <button type="submit" class="button">Send</button>
+            <button type="button" class="button" onclick="sendEmail()">Send</button>
           </form>
         </div>
       </div>
@@ -88,6 +88,21 @@
         $(window).on('resize', adjustLayout);
         adjustLayout(); // Initial check to ensure layout is correct on page load
     });
+
+    function sendEmail() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var message = document.getElementById("message").value;
+
+        var mailtoLink = 'mailto:dayton.hare@yale.edu' +
+                         '?subject=' + encodeURIComponent(subject) +
+                         '&body=' + encodeURIComponent('Name: ' + name + '\n' +
+                                                       'Email: ' + email + '\n' +
+                                                       'Message: ' + message);
+
+        window.location.href = mailtoLink;
+    }
   </script>
 </body>
 </html>
