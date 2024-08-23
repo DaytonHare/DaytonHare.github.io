@@ -759,6 +759,10 @@ font-weight: 400;
   width: 100%;
 }
 
+.contactForm input {
+  background-color: #f6e7fb;
+}
+
 /* Media query to stack the form below the image if necessary */
 @media (max-width: 800px), (max-height: 400px) {
   .relative-cell {
