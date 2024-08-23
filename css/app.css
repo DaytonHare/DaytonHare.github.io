@@ -548,6 +548,7 @@ font-weight: 400;
   overflow-y: auto; /* Always allow scrolling if content overflows */
   transition: all 0.5s ease; /* Smooth transition for all changes */
   min-height: 250px; /* Minimum height to prevent collapsing */
+  max-height: 100vh; /* Limit to viewport height */
   backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a more polished look */
 }
 
@@ -564,6 +565,7 @@ font-weight: 400;
       width: 50%; /* Expand overlay to cover half the image on smaller screens */
       height: 100%; /* Maintain full height */
       overflow-y: auto; /* Ensure scrolling */
+      max-height: 100vh; /* Limit to viewport height */
   }
 
   .bio-text p {
@@ -576,6 +578,7 @@ font-weight: 400;
       width: 65%; /* Further expand overlay on smaller screens */
       height: 100%; /* Maintain full height */
       overflow-y: auto; /* Ensure scrolling */
+      max-height: 100vh; /* Limit to viewport height */
   }
 
   .bio-text p {
@@ -586,10 +589,10 @@ font-weight: 400;
 @media screen and (max-width: 480px) {
   .overlay-left {
       width: 100%; /* Full width on very small screens */
-      min-height: auto; /* Allow width to adjust completely */
-      height: auto; /* Adjust height to fit content */
+      height: auto; /* Allow height to adjust to content */
       padding: 10px; /* Reduce padding */
-      overflow-y: auto; /* Ensure scrolling even if it covers the whole area */
+      overflow-y: auto; /* Ensure scrolling if content overflows */
+      max-height: 100vh; /* Limit to viewport height */
   }
 
   .bio-text p {
