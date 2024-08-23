@@ -753,6 +753,8 @@ font-weight: 400;
   border-radius: 10px;
   width: 100%;
   box-sizing: border-box;
+  color: white;
+  font-size: larger;
 }
 
 .form-container form {
