@@ -89,8 +89,8 @@ footer {
   display: inline-block;
   vertical-align: middle;
   width: auto; /* Maintain aspect ratio by adjusting width */
-  max-height: 250px; /* Limit the maximum height */
-  max-width: 100%; /* Ensure the image doesn't overflow the container width */
+  max-height: 300px; /* Limit the maximum height */
+  max-width: max-content; /* Ensure the image doesn't overflow the container width */
   object-fit: cover; /* Ensures the image covers the area without stretching */
   object-position: center center; /* Center the image both horizontally and vertically */
 }
