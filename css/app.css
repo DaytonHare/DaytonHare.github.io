@@ -515,6 +515,8 @@ font-weight: 400;
 .responsive-large-image {
   width: 100%;
   height: auto;
+  object-fit: cover; /* Ensures the image covers the area */
+  object-position: center; /* Centers the image within its container */
 }
 
 .relative-cell {
@@ -527,6 +529,7 @@ font-weight: 400;
   top: 0;
   left: 0;
   width: 38.33%;
+  min-width: 250px; /* Set a minimum width to prevent it from getting too small */
   height: 100%;
   background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
   color: black;
@@ -536,7 +539,7 @@ font-weight: 400;
   flex-direction: column;
   justify-content: center;
   overflow-y: auto; /* Allows scrolling if content overflows */
-  transition: width 0.3s ease; /* Smooth transition when width changes */
+  transition: width 0.5s ease, min-width 0.5s ease; /* Smooth transition for width changes */
 }
 
 /* Responsive Font Sizes */
@@ -549,33 +552,36 @@ font-weight: 400;
 
 @media screen and (max-width: 1024px) {
   .overlay-left {
-    width: 50%; /* Expand overlay to cover half the image on smaller screens */
+      width: 50%; /* Expand overlay to cover half the image on smaller screens */
+      transition: width 0.5s ease; /* Smooth transition */
   }
 
   .bio-text p {
-    font-size: 1em; /* Adjust font size for smaller screens */
+      font-size: 1em; /* Adjust font size for smaller screens */
   }
 }
 
 @media screen and (max-width: 768px) {
   .overlay-left {
-    width: 65%; /* Further expand overlay on smaller screens */
+      width: 65%; /* Further expand overlay on smaller screens */
+      transition: width 0.5s ease; /* Smooth transition */
   }
 
   .bio-text p {
-    font-size: 0.9em; /* Smaller font size for medium screens */
+      font-size: 0.9em; /* Smaller font size for medium screens */
   }
 }
 
 @media screen and (max-width: 480px) {
   .overlay-left {
-    width: 100%; /* Full width on very small screens */
-    height: auto; /* Adjust height to fit content */
-    padding: 10px; /* Reduce padding */
+      width: 100%; /* Full width on very small screens */
+      min-width: auto; /* Allow width to adjust completely */
+      height: auto; /* Adjust height to fit content */
+      padding: 10px; /* Reduce padding */
   }
 
   .bio-text p {
-    font-size: 0.8em; /* Even smaller font size for small screens */
+      font-size: 0.8em; /* Even smaller font size for small screens */
   }
 }
 
@@ -584,6 +590,8 @@ font-weight: 400;
   width: 100%;
   height: auto;
   margin-right: 20px; /* Adjust padding between left image and purple box */
+  object-fit: cover; /* Ensure the image covers the area */
+  object-position: center; /* Centers the image within its container */
 }
 
 /* Purple box with white text */
@@ -597,6 +605,7 @@ font-weight: 400;
   justify-content: center;
   box-sizing: border-box;
 }
+
 
   
   /* Hobbies text styling */
