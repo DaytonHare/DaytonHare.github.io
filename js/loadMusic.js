@@ -24,14 +24,21 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
                 break;
         }
 
+        var soundCloudHtml = item.soundCloudLink ? `
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+            </iframe>
+        ` : '';
+
         var cardHtml = `
             <div class="cell" data-equalizer-watch>
                 <div class="card">
-                    <!--${item.scoreImageLoc ? `<img src="${item.scoreImageLoc}" alt="Score Image" class="thumbnail">` : ''}-->
+                    ${item.scoreImageLoc ? `<img src="${item.scoreImageLoc}" alt="Score Image" class="thumbnail">` : ''}
                     <div class="card-section">
                         <h3>${item.title}</h3>
                         <p>${item.instrumentation}</p>
                         <p>${item.duration}</p>
+                        ${soundCloudHtml}
                         <button class="button" data-open="exampleModal1" data-id="${item.id}">More Information</button>
                     </div>
                 </div>
@@ -78,9 +85,28 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         $("#modalBuyLink").attr("href", `mailto:dayton.hare@yale.edu?subject=Inquiry about ${item.title}`);
 
         $('#exampleModal1').foundation('open');
-        setTimeout(adjustContentPadding, 100); // Adjust padding after modal interaction
     });
 
     $(document).foundation(); // Reinitialize Foundation after dynamic content is added
     setTimeout(adjustContentPadding, 100); // Adjust padding after dynamic content is added
 });
+
+// Adjust content padding based on the active bar height
+function adjustContentPadding() {
+    console.log("adjustContentPadding called...");
+    var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
+    var topBarHeight = $('.top-bar').is(':visible') ? $('.top-bar').outerHeight() : 0;
+    var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20; // Add 20px for extra padding
+
+    console.log('Title bar height:', titleBarHeight); // Debug log
+    console.log('Top bar height:', topBarHeight); // Debug log
+    console.log('Active bar height:', activeBarHeight); // Debug log
+
+    if (activeBarHeight > 20) { // Ensure at least 20px padding
+        $('#navbar-padding').height(activeBarHeight);
+        console.log('Padding set to:', activeBarHeight); // Debug log
+    } else {
+        console.log('Calculated height is too small, retrying...');
+        setTimeout(adjustContentPadding, 300); // Retry after a short delay
+    }
+}
