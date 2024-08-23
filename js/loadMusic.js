@@ -33,7 +33,6 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         var cardHtml = `
             <div class="cell" data-equalizer-watch>
                 <div class="card">
-                    ${item.scoreImageLoc ? `<img src="${item.scoreImageLoc}" alt="Score Image" class="thumbnail">` : ''}
                     <div class="card-section">
                         <h3>${item.title}</h3>
                         <p>${item.instrumentation}</p>
@@ -73,8 +72,13 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             $("#programNote").hide();
         }
 
+        // Check for SoundCloud link and include it in the modal
         if (item.soundCloudLink) {
-            $("#modalSoundCloud iframe").attr("src", `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23ff5500&inverse=false&auto_play=false&show_user=true`).show();
+            $("#modalSoundCloud").html(`
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%23ff5500&inverse=false&auto_play=false&show_user=true">
+                </iframe>
+            `).show();
         } else {
             $("#modalSoundCloud").hide();
         }
