@@ -50,10 +50,13 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
     });
 
     // Setup click handlers for buttons to populate and show the modal
-    $(".button[data-open='exampleModal1']").on("click", function() {
+    $(".button[data-open='exampleModal1']").on("click", function(event) {
+        event.preventDefault(); // Prevent default action to avoid scrolling
+
         var id = $(this).data("id");
         var item = data.find(i => i.id == id);
 
+        // Populate modal with data
         $("#modalTitle").text(item.title);
         $("#modalInstrumentation").text(item.instrumentation);
         $("#modalDuration").text(item.duration);
@@ -85,6 +88,14 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         $("#modalBuyLink").attr("href", `mailto:dayton.hare@yale.edu?subject=Inquiry about ${item.title}`);
 
         $('#exampleModal1').foundation('open');
+
+        // Prevent body scroll when modal is open
+        $('body').css('overflow', 'hidden');
+
+        // Re-enable body scroll when modal is closed
+        $('#exampleModal1').on('closed.zf.reveal', function() {
+            $('body').css('overflow', 'auto');
+        });
     });
 
     $(document).foundation(); // Reinitialize Foundation after dynamic content is added

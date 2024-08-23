@@ -771,3 +771,19 @@ font-weight: 400;
 }
 
 
+/* Card Styles */
+.card {
+  background-color: #2e1a47; /* Dark purple blue */
+  color: white;
+  min-height: 350px; /* Set a consistent minimum height */
+}
+
+/* Ensure SoundCloud iframe fits within card */
+iframe {
+  max-width: 100%;
+}
+
+/* Body scroll control for modals */
+body.modal-open {
+  overflow: hidden; /* Prevent background scroll when modal is open */
+}
