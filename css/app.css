@@ -717,33 +717,39 @@ font-weight: 400;
 }
 /* Contact Form */
 
+.relative-cell {
+  position: relative;
+  width: 100%;
+}
+
 .contact-image {
   width: 100%;
-  height: auto; /* Remove fixed height to allow image to scale with content */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
 }
 
 .overlayContact {
-  height: 100%; /* Ensure the overlay takes up full height of the grid cell */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 33.33%; /* Take up the right third of the image */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally within the right third */
 }
 
 .form-container {
-  background: rgba(0, 0, 0, 0.6); /* Dark transparent background for the form */
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
   padding: 20px;
   border-radius: 10px;
-  width: 100%; /* Ensure the container uses full width of the overlay */
+  width: 100%;
   box-sizing: border-box;
 }
 
 .form-container form {
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%; /* Ensure the form does not overflow */
-  box-sizing: border-box;
+  width: 100%;
 }
 
 
