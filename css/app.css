@@ -741,14 +741,14 @@ font-weight: 400;
   right: 0;
   width: 33.33%; /* Take up the right third of the image */
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
+  background: rgba(0, 0, 0, 0); /* Dark transparent overlay */
   display: flex;
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally within the right third */
 }
 
 .form-container {
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  background: rgba(66, 3, 86, 0.679); /* Slightly transparent white background */
   padding: 20px;
   border-radius: 10px;
   width: 100%;
