@@ -651,6 +651,18 @@ font-weight: 400;
   margin-bottom: 10px;
 }
 
+.card {
+  background-color: #2e1a47; /* Dark purple blue */
+  color: white;
+  min-height: 300px; /* Set a consistent minimum height */
+  width: 100%;
+}
+
+.cell {
+  max-width: 400px;
+}
+
+
 /* SoundCloud iframe responsiveness */
 /* Tabs and Tab Content Styles */
 .tabs {
@@ -680,20 +692,6 @@ font-weight: 400;
   font-size: large;
 }
 
-/* Card Styles */
-.card {
-  background-color: #2e1a47; /* Dark purple blue */
-  color: white;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card-section h4 {
-  margin-bottom: 10px;
-}
 
 /* Modal Styles */
 .reveal {
@@ -789,12 +787,7 @@ font-weight: 400;
 
 
 /* Card Styles */
-.card {
-  background-color: #2e1a47; /* Dark purple blue */
-  color: white;
-  min-height: 300px; /* Set a consistent minimum height */
-  max-width: 400px;
-}
+
 
 /* Ensure SoundCloud iframe fits within card */
 iframe {
