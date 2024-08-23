@@ -523,26 +523,23 @@ font-weight: 400;
   position: relative;
 }
 
-/* Responsive overlay on the left third of the large image */
+/* Responsive overlay on the left */
 .overlay-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 38.33%;
-  min-width: 250px; /* Set a minimum width to prevent it from getting too small */
-  height: 100%;
   background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
   color: black;
   padding: 20px;
   box-sizing: border-box;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  transition: all 0.5s ease; /* Smooth transition for all changes */
+  height: 100%; /* Full height */
+  min-height: 250px; /* Minimum height to prevent collapsing */
+  background-color: #f4f4f4; /* Light background to match overall color scheme */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: auto; /* Allows scrolling if content overflows */
-  transition: width 0.5s ease, min-width 0.5s ease; /* Smooth transition for width changes */
 }
 
-/* Responsive Font Sizes */
+/* Adjust font size and layout dynamically */
 .bio-text p {
   margin: 0;
   padding-bottom: 10px;
@@ -552,8 +549,8 @@ font-weight: 400;
 
 @media screen and (max-width: 1024px) {
   .overlay-left {
-      width: 50%; /* Expand overlay to cover half the image on smaller screens */
-      transition: width 0.5s ease; /* Smooth transition */
+      width: 100%; /* Full width on medium screens */
+      min-height: auto; /* Adjust height to fit content */
   }
 
   .bio-text p {
@@ -563,8 +560,8 @@ font-weight: 400;
 
 @media screen and (max-width: 768px) {
   .overlay-left {
-      width: 65%; /* Further expand overlay on smaller screens */
-      transition: width 0.5s ease; /* Smooth transition */
+      width: 100%; /* Full width on smaller screens */
+      height: auto; /* Adjust height to fit content */
   }
 
   .bio-text p {
@@ -575,7 +572,6 @@ font-weight: 400;
 @media screen and (max-width: 480px) {
   .overlay-left {
       width: 100%; /* Full width on very small screens */
-      min-width: auto; /* Allow width to adjust completely */
       height: auto; /* Adjust height to fit content */
       padding: 10px; /* Reduce padding */
   }
@@ -605,6 +601,7 @@ font-weight: 400;
   justify-content: center;
   box-sizing: border-box;
 }
+
 
 
   
