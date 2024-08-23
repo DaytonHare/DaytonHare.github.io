@@ -787,3 +787,19 @@ iframe {
 body.modal-open {
   overflow: hidden; /* Prevent background scroll when modal is open */
 }
+
+.reveal-overlay {
+  z-index: 9999; /* Ensure the overlay is above other content */
+  overflow: hidden;
+}
+
+.reveal {
+  z-index: 10000; /* Ensure the modal is above the overlay */
+  /*top: 0 !important;  Prevent manual top adjustments */
+}
+
+html.is-reveal-open, body.is-reveal-open {
+  overflow: hidden;
+  /*position: fixed; Def not workable*/
+  width: 100%;
+}
