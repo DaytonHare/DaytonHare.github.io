@@ -76,20 +76,17 @@ footer {
   max-height: 50vh; /* Keeps it from taking too much of the viewport */
   min-height: 250px; /* Minimum height to ensure content fits */
   overflow: hidden;
+  background: #1a374d; /* Dark sky blue background that matches the image tones */
 }
 
 .footer-image-container {
   position: relative;
   width: 100%;
   height: 100%;
-}
-
-.footer-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the area */
-  object-position: center; /* Center the image */
-  display: block; /* Remove inline element space */
+  background-image: url('photos/NarrowerMountainsCompressed.jpg');
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center center; /* Center the image both horizontally and vertically */
+  background-repeat: no-repeat;
 }
 
 .footer-overlay {
@@ -180,6 +177,7 @@ footer {
     min-height: 200px; /* Further reduce min height for very small screens */
   }
 }
+
 
 
 
