@@ -75,7 +75,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         // Check for SoundCloud link and include it in the modal
         if (item.soundCloudLink) {
             $("#modalSoundCloud").html(`
-                <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true" style="background:black;padding:10px;"></iframe>
+                <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true" style="background:black;"></iframe>
             `).show();
         } else {
             $("#modalSoundCloud").hide();
