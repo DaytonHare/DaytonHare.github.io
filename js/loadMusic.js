@@ -78,28 +78,9 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         $("#modalBuyLink").attr("href", `mailto:dayton.hare@yale.edu?subject=Inquiry about ${item.title}`);
 
         $('#exampleModal1').foundation('open');
+        setTimeout(adjustContentPadding, 100); // Adjust padding after modal interaction
     });
 
     $(document).foundation(); // Reinitialize Foundation after dynamic content is added
     setTimeout(adjustContentPadding, 100); // Adjust padding after dynamic content is added
 });
-
-// Adjust content padding based on the active bar height
-function adjustContentPadding() {
-    console.log("adjustContentPadding called...");
-    var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
-    var topBarHeight = $('.top-bar').is(':visible') ? $('.top-bar').outerHeight() : 0;
-    var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20; // Add 20px for extra padding
-
-    console.log('Title bar height:', titleBarHeight); // Debug log
-    console.log('Top bar height:', topBarHeight); // Debug log
-    console.log('Active bar height:', activeBarHeight); // Debug log
-
-    if (activeBarHeight > 20) { // Ensure at least 20px padding
-        $('#navbar-padding').height(activeBarHeight);
-        console.log('Padding set to:', activeBarHeight); // Debug log
-    } else {
-        console.log('Calculated height is too small, retrying...');
-        setTimeout(adjustContentPadding, 300); // Retry after a short delay
-    }
-}

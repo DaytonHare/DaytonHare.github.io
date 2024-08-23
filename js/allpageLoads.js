@@ -87,4 +87,9 @@ $(function() {
             activateTabFromHash();
         });
     });
+
+    // Explicit padding adjustment when the DOM is fully ready and elements are displayed
+    $(document).on('click', '.tabs-title a', function() {
+        setTimeout(adjustContentPadding, 300); // Adjust padding after tab switch
+    });
 });
