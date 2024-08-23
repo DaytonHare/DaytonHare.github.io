@@ -711,13 +711,6 @@ font-weight: 400;
   box-sizing: border-box;
 }
 
-.thumbnail {
-  max-height: 100px;
-  height: auto;
-  width: auto;
-  max-width: 100%;
-}
-
 #exampleModal1 .grid-x {
   align-items: center; /* Center the content vertically within the grid */
 }
@@ -735,6 +728,7 @@ font-weight: 400;
   height: auto; /* Maintain aspect ratio */
   padding-left: 15px; /* Add space between text and image */
   padding-right: 15px; /* Add space between image and right edge of the modal */
+  max-height: 150px;
 }
 
 #programNote, #modalSoundCloud, #modalYouTube {
