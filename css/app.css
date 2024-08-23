@@ -589,7 +589,7 @@ font-weight: 400;
 @media screen and (max-width: 480px) {
   .overlay-left {
       width: 100%; /* Full width on very small screens */
-      height: auto; /* Allow height to adjust to content */
+      height: 100%; /* Allow height to adjust to content */
       padding: 10px; /* Reduce padding */
       overflow-y: auto; /* Ensure scrolling if content overflows */
       max-height: 100vh; /* Limit to viewport height */
