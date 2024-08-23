@@ -544,8 +544,8 @@ font-weight: 400;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow-y: auto; /* Allows scrolling if content overflows */
+  justify-content: flex-start; /* Align content to the top */
+  overflow-y: auto; /* Always allow scrolling if content overflows */
   transition: all 0.5s ease; /* Smooth transition for all changes */
   min-height: 250px; /* Minimum height to prevent collapsing */
   backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a more polished look */
@@ -562,7 +562,8 @@ font-weight: 400;
 @media screen and (max-width: 1024px) {
   .overlay-left {
       width: 50%; /* Expand overlay to cover half the image on smaller screens */
-      min-height: auto; /* Adjust height to fit content */
+      height: 100%; /* Maintain full height */
+      overflow-y: auto; /* Ensure scrolling */
   }
 
   .bio-text p {
@@ -573,7 +574,8 @@ font-weight: 400;
 @media screen and (max-width: 768px) {
   .overlay-left {
       width: 65%; /* Further expand overlay on smaller screens */
-      transition: width 0.5s ease; /* Smooth transition */
+      height: 100%; /* Maintain full height */
+      overflow-y: auto; /* Ensure scrolling */
   }
 
   .bio-text p {
@@ -587,6 +589,7 @@ font-weight: 400;
       min-height: auto; /* Allow width to adjust completely */
       height: auto; /* Adjust height to fit content */
       padding: 10px; /* Reduce padding */
+      overflow-y: auto; /* Ensure scrolling even if it covers the whole area */
   }
 
   .bio-text p {
@@ -614,6 +617,7 @@ font-weight: 400;
   justify-content: center;
   box-sizing: border-box;
 }
+
 
 
 
