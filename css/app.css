@@ -726,8 +726,6 @@ font-weight: 400;
 #modalImage {
   max-width: 100%; /* Ensure the image does not overflow its container */
   height: auto; /* Maintain aspect ratio */
-  padding-left: 15px; /* Add space between text and image */
-  padding-right: 15px; /* Add space between image and right edge of the modal */
   border: none;
 }
 
