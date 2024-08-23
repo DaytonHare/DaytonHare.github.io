@@ -793,6 +793,7 @@ font-weight: 400;
   background-color: #2e1a47; /* Dark purple blue */
   color: white;
   min-height: 300px; /* Set a consistent minimum height */
+  max-width: 400px;
 }
 
 /* Ensure SoundCloud iframe fits within card */
