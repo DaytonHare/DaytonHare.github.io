@@ -34,7 +34,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             <div class="cell" data-equalizer-watch>
                 <div class="card">
                     <div class="card-section">
-                        <h3>${item.title}</h3>
+                        <h3>${item.title} (${item.year})</h3>
                         <p>${item.instrumentation}</p>
                         <p>${item.duration}</p>
                         ${soundCloudHtml}
@@ -56,7 +56,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         var item = data.find(i => i.id == id);
 
         // Populate modal with data
-        $("#modalTitle").text(item.title);
+        $("#modalTitle").text(`${item.title} (${item.year})`);
         $("#modalInstrumentation").text(item.instrumentation);
         $("#modalDuration").text(item.duration);
 
