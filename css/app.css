@@ -795,6 +795,7 @@ font-weight: 400;
 
 .form-container  label {
   font-size: large;
+  color: white;
 }
 /* Media query to stack the form below the image if necessary */
 @media (max-width: 800px), (max-height: 400px) {
