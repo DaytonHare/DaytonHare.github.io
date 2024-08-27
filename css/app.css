@@ -659,6 +659,33 @@ font-weight: 400;
 }
 
 
+/* Ensure SoundCloud iframe fits within card */
+iframe {
+  max-width: 100%;
+}
+
+/* Body scroll control for modals */
+body.modal-open {
+  overflow: hidden; /* Prevent background scroll when modal is open */
+}
+
+.reveal-overlay {
+  z-index: 9999; /* Ensure the overlay is above other content */
+  overflow: hidden;
+}
+
+.reveal {
+  z-index: 10000; /* Ensure the modal is above the overlay */
+  /*top: 0 !important;  Prevent manual top adjustments */
+}
+
+html.is-reveal-open, body.is-reveal-open {
+  overflow: hidden;
+  /*position: fixed; Def not workable*/
+  width: 100%;
+}
+
+
 /* SoundCloud iframe responsiveness */
 /* Tabs and Tab Content Styles */
 .tabs {
@@ -694,12 +721,21 @@ font-weight: 400;
   padding: 0 15px; /* Adds some padding */
 }
 
+/* Prevent body scroll when the modal is open */
+.no-scroll {
+  overflow: hidden;
+}
 
 /* Modal Styles */
 .reveal {
   background: #f6e7fb;
   padding: 20px;
   color: #000;
+  max-height: 80vh; /* Limit modal height to 80% of viewport height */
+  overflow-y: auto; /* Enable vertical scrolling within the modal */
+  width: 90%; /* Adjust width for better responsiveness */
+  max-width: 800px; /* Set a maximum width for larger screens */
+  margin: 0 auto; /* Center the modal horizontally */
 }
 
 .reveal img {
@@ -712,7 +748,7 @@ font-weight: 400;
 }
 
 #exampleModal1 .grid-x {
-  align-items: center; /* Center the content vertically within the grid */
+  align-items: flex-start; /* Align items to the top to allow scrolling */
 }
 
 #exampleModal1 h1 {
@@ -814,32 +850,3 @@ font-weight: 400;
 }
 
 
-
-/* Card Styles */
-
-
-/* Ensure SoundCloud iframe fits within card */
-iframe {
-  max-width: 100%;
-}
-
-/* Body scroll control for modals */
-body.modal-open {
-  overflow: hidden; /* Prevent background scroll when modal is open */
-}
-
-.reveal-overlay {
-  z-index: 9999; /* Ensure the overlay is above other content */
-  overflow: hidden;
-}
-
-.reveal {
-  z-index: 10000; /* Ensure the modal is above the overlay */
-  /*top: 0 !important;  Prevent manual top adjustments */
-}
-
-html.is-reveal-open, body.is-reveal-open {
-  overflow: hidden;
-  /*position: fixed; Def not workable*/
-  width: 100%;
-}

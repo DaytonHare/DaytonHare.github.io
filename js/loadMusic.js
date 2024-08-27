@@ -92,11 +92,11 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         $('#exampleModal1').foundation('open');
 
         // Prevent body scroll when modal is open
-        $('body').css('overflow', 'hidden');
+        $('body').addClass('no-scroll'); // Add a class to prevent scrolling
 
         // Re-enable body scroll when modal is closed
         $('#exampleModal1').on('closed.zf.reveal', function() {
-            $('body').css('overflow', 'auto');
+            $('body').removeClass('no-scroll'); // Remove the class when modal is closed
         });
     });
 

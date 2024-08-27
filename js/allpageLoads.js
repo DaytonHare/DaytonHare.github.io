@@ -2,18 +2,18 @@ $(document).foundation();
 
 // Load the navbar and footer, then reinitialize Foundation
 $(function() {
-    console.log("Starting script..."); // Debug log
+    console.log("Starting script...");
 
     $("#navbar").load("navbar.html", function(response, status, xhr) {
         if (status == "error") {
             console.error("Error loading navbar: ", xhr.status, xhr.statusText);
         } else {
             console.log("Navbar loaded successfully.");
-            $(document).foundation(); // Reinitialize Foundation
+            $(document).foundation();
             setTimeout(function() {
                 adjustContentPadding();
                 forceReflow();
-            }, 200); // Small delay to ensure rendering before adjusting
+            }, 200);
         }
     });
 
@@ -22,41 +22,38 @@ $(function() {
             console.error("Error loading footer: ", xhr.status, xhr.statusText);
         } else {
             console.log("Footer loaded successfully.");
-            $(document).foundation(); // Reinitialize Foundation
+            $(document).foundation();
         }
     });
 
-    // Adjust content padding based on the active bar height
     function adjustContentPadding() {
         console.log("adjustContentPadding called...");
         var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
         var topBarHeight = $('.top-bar').is(':visible') ? $('.top-bar').outerHeight() : 0;
-        var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20; // Add 20px for extra padding
+        var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20;
 
-        console.log('Title bar height:', titleBarHeight); // Debug log
-        console.log('Top bar height:', topBarHeight); // Debug log
-        console.log('Active bar height:', activeBarHeight); // Debug log
+        console.log('Title bar height:', titleBarHeight);
+        console.log('Top bar height:', topBarHeight);
+        console.log('Active bar height:', activeBarHeight);
 
-        if (activeBarHeight > 20) { // Ensure at least 20px padding
+        if (activeBarHeight > 20) {
             $('#navbar-padding').height(activeBarHeight);
-            console.log('Padding set to:', activeBarHeight); // Debug log
+            console.log('Padding set to:', activeBarHeight);
         } else {
             console.log('Calculated height is too small, retrying...');
-            setTimeout(adjustContentPadding, 300); // Retry after a short delay
+            setTimeout(adjustContentPadding, 300);
         }
     }
 
-    // Force reflow to make sure layout calculations are re-triggered
     function forceReflow() {
         console.log("Forcing reflow to recalculate layout...");
-        document.body.offsetHeight; // Accessing offsetHeight triggers a reflow
+        document.body.offsetHeight;
         setTimeout(function() {
             adjustContentPadding();
             console.log("Reflow completed and padding adjusted.");
         }, 100);
     }
 
-    // Debounce function to limit the rate at which a function can fire
     function debounce(func, wait) {
         var timeout;
         return function() {
@@ -68,22 +65,19 @@ $(function() {
         };
     }
 
-    // Adjust padding on window resize
     $(window).resize(debounce(function() {
         console.log("Window resized, adjusting content padding...");
         adjustContentPadding();
     }, 100));
 
-    // Initial adjustment after document is ready
     $(document).ready(function() {
         console.log("Document ready, calling adjustContentPadding...");
         setTimeout(function() {
             adjustContentPadding();
             forceReflow();
-        }, 300); // Ensure rendering before adjusting
+        }, 300);
     });
 
-    // Activate the correct tab based on the URL fragment
     function activateTabFromHash() {
         var hash = window.location.hash;
         if (hash) {
@@ -93,7 +87,7 @@ $(function() {
                 setTimeout(function() {
                     adjustContentPadding();
                     forceReflow();
-                }, 100); // Adjust padding after tab activation
+                }, 100);
             }
         }
     }
@@ -101,17 +95,22 @@ $(function() {
     $(document).ready(function() {
         activateTabFromHash();
 
-        // Re-check the hash on hash change
         $(window).on('hashchange', function() {
             activateTabFromHash();
         });
     });
 
-    // Explicit padding adjustment when the DOM is fully ready and elements are displayed
     $(document).on('click', '.tabs-title a', function() {
         setTimeout(function() {
             adjustContentPadding();
             forceReflow();
-        }, 300); // Adjust padding after tab switch
+        }, 300);
+    });
+
+    // Prevent scrolling issues on body when the modal is open
+    $('#exampleModal1').on('open.zf.reveal', function() {
+        $('body').addClass('no-scroll');
+    }).on('closed.zf.reveal', function() {
+        $('body').removeClass('no-scroll');
     });
 });
