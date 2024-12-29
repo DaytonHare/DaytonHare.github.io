@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-Latf">
+<head>
+  <title>Dayton Hare :: Princeton Application</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap -->
+  <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <!-- Optional theme -->
+  <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" 
+    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" 
+    crossorigin="anonymous"
+  >
+
+  <!-- Google Fonts -->
+  <link 
+    href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" 
+    rel="stylesheet" 
+    type="text/css"
+  >
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@400;700&family=Reenie+Beanie&display=swap" 
+    rel="stylesheet"
+  >
+
+  <style type="text/css">
+    /* Match your existing styles */
+
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+
+    body {
+      padding-top: 0px;
+      margin-bottom: 60px;
+      font-size: 15px;
+      background-color: black;
+      color: white;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px; /* Set the fixed height of the footer here */
+      background-color: black;
+    }
+
+    .footer > .container {
+      margin-top: 20px;
+    }
+
+    .page-header {
+      padding-top: 30px;
+      margin-top: 0px;
+    }
+
+    .navbar {
+      font-size: x-large;
+      font-family: 'Crimson Text', serif;
+      background-color: black;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 0px;
+    }
+
+    .navbar-inverse {
+      background-image: linear-gradient(to bottom, black 0, black 100%);
+      border-color: black;
+      color: white;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: white;
+    }
+
+    .navbar-inverse .navbar-brand {
+      cursor: default;
+      margin: 0px;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      font-size: xx-large;
+    }
+
+    .navbar-nav>li>a {
+      line-height: 50px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    @media print {
+      body {
+        padding-top: 0px;
+        margin-bottom: 0px;
+      }
+      .page-header {
+        padding-top: 0px;
+      }
+    }
+
+    h1, .h1 {
+      color: white;
+      font-family: 'Crimson Text', serif;
+      font-size: 36px;
+    }
+
+    h3, .h3 {
+      color: white;
+      font-family: 'Crimson Text', serif;
+      font-size: x-large;
+    }
+
+    footer {
+      color: white;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+    }
+
+    /* Link Styles */
+    a:link, a:visited {
+      color: lightskyblue;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: cornflowerblue;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="10">
+  <!-- NAVBAR -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="height: 71px;">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- Toggle button for mobile menus -->
+        <button 
+          type="button" 
+          class="navbar-toggle" 
+          data-toggle="collapse" 
+          data-target=".navbar-collapse"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- Brand/logo -->
+        <p class="navbar-brand" style="cursor: default; margin: 0px;">
+          <img 
+            class="img-responsive" 
+            src="photos/DaytonSig.jpeg" 
+            alt="sig" 
+            style="height: 55px;"
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- END NAVBAR -->
+
+  <!-- PORTFOLIO OVERVIEW -->
+  <div class="page-header container" style="margin-top: 100px;">
+    <h1>Portfolio Overview</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- Headshot -->
+      <div class="col-md-5">
+        <!-- Update with your desired headshot image path -->
+        <img 
+          class="img-responsive" 
+          src="photos/dayton_headshot_2022_cropped.jpeg" 
+          alt="Headshot"
+        >
+      </div>
+      <!-- Bio and Overview Text -->
+      <div class="col-md-7" style="font-size: 18px;">
+        <p>
+          Here is a short bio highlighting who I am as a composer and writer, 
+          along with an introduction to my work. Below you’ll find three pieces 
+          that reflect my recent compositional approach, each with sound, video, 
+          and downloadable scores. I hope you enjoy exploring these selections!
+        </p>
+        <p>
+          You can also visit my <a href="https://www.example.com">main website / CV</a> 
+          to find additional information about my professional background, 
+          publications, and upcoming performances.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIECE 1 -->
+  <div class="page-header container">
+    <h1>Piece 1</h1>
+  </div>
+  <div class="container" style="font-size: 18px;">
+    <!-- Title / Duration / Year / Instrumentation -->
+    <p><strong>Title:</strong> Estuary (Example)<br>
+       <strong>Duration:</strong> 9 minutes<br>
+       <strong>Year:</strong> 2023<br>
+       <strong>Instrumentation:</strong> Orchestra
+    </p>
+    <!-- Program Note -->
+    <p>
+      <strong>Program Note:</strong>  
+      Estuary captures the convergence of freshwater and saltwater, reflecting 
+      the delicate balance of ecosystems. It explores musical currents that 
+      overlap and blend, symbolizing the merging of distinct environments 
+      into a vibrant, interwoven tapestry. 
+    </p>
+    <!-- SoundCloud Link/Embed -->
+    <p>
+      <strong>Listen on SoundCloud:</strong><br>
+      <iframe 
+        width="100%" 
+        height="100" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1697226831&color=%23090f14"
+      ></iframe>
+    </p>
+    <!-- Video (YouTube) -->
+    <p>
+      <strong>Performance Video:</strong><br>
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/R_cI44pHR68" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+      ></iframe>
+    </p>
+    <!-- Score Link -->
+    <p>
+      <strong>Score PDF:</strong> 
+      <a href="scores/Estuary.pdf" target="_blank">Download Score</a>
+    </p>
+  </div>
+
+  <!-- PIECE 2 -->
+  <div class="page-header container">
+    <h1>Piece 2</h1>
+  </div>
+  <div class="container" style="font-size: 18px;">
+    <!-- Title / Duration / Year / Instrumentation -->
+    <p><strong>Title:</strong> Pressure System (Example)<br>
+       <strong>Duration:</strong> 11 minutes<br>
+       <strong>Year:</strong> 2023<br>
+       <strong>Instrumentation:</strong> Sinfonietta
+    </p>
+    <!-- Program Note -->
+    <p>
+      <strong>Program Note:</strong>  
+      Pressure System is inspired by atmospheric changes, highlighting tension 
+      and release through dynamic interplay of textures. Shifting harmonies 
+      represent moving weather fronts that build and dissipate, alluding to 
+      the power and unpredictability of nature.
+    </p>
+    <!-- SoundCloud Link/Embed -->
+    <p>
+      <strong>Listen on SoundCloud:</strong><br>
+      <iframe 
+        width="100%" 
+        height="100" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1689927204%3Fsecret_token%3Ds-CmceU4IfCTo&color=%23090f14"
+      ></iframe>
+    </p>
+    <!-- Video (YouTube) -->
+    <p>
+      <strong>Performance Video:</strong><br>
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/w3pqUOCkLVE" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+      ></iframe>
+    </p>
+    <!-- Score Link -->
+    <p>
+      <strong>Score PDF:</strong> 
+      <a href="scores/PressureSystem.pdf" target="_blank">Download Score</a>
+    </p>
+  </div>
+
+  <!-- PIECE 3 -->
+  <div class="page-header container">
+    <h1>Piece 3</h1>
+  </div>
+  <div class="container" style="font-size: 18px;">
+    <!-- Title / Duration / Year / Instrumentation -->
+    <p><strong>Title:</strong> Vanishing Point (Example)<br>
+       <strong>Duration:</strong> 7 minutes<br>
+       <strong>Year:</strong> 2020<br>
+       <strong>Instrumentation:</strong> Orchestra
+    </p>
+    <!-- Program Note -->
+    <p>
+      <strong>Program Note:</strong>  
+      Vanishing Point contemplates spatial perspective and how distance warps 
+      our view. The music reflects receding lines of sound, gradually moving 
+      toward the horizon. Light and shadow interplay in the orchestration, 
+      suggesting shifting vantage points.
+    </p>
+    <!-- SoundCloud Link/Embed -->
+    <p>
+      <strong>Listen on SoundCloud:</strong><br>
+      <iframe 
+        width="100%" 
+        height="100" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/807706414&color=%23091014"
+      ></iframe>
+    </p>
+    <!-- Video (YouTube) -->
+    <p>
+      <strong>Performance Video:</strong><br>
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/Tq3k4x0mVmA" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+      ></iframe>
+    </p>
+    <!-- Score Link -->
+    <p>
+      <strong>Score PDF:</strong> 
+      <a href="scores/VanishingPoint.pdf" target="_blank">Download Score</a>
+    </p>
+  </div>
+
+  <!-- ADDITIONAL SCORE -->
+  <div class="page-header container">
+    <h1>Additional Score</h1>
+  </div>
+  <div class="container" style="font-size: 18px;">
+    <p>
+      <strong>Title:</strong> A blue heron alights on the riverbank near dawn (Example)<br>
+      <strong>Score PDF:</strong> 
+      <a href="scores/ABlueHeron.pdf" target="_blank">Download Score</a>
+    </p>
+    <p>
+      This is an additional piece you may find interesting. It's a brief chamber 
+      work exploring quietly shifting textures and subtle gestures that evoke 
+      the calm of early morning.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="text-center" style="color:lightgrey;">
+        dh | 
+        <img 
+          class="img-responsive" 
+          src="photos/DaytonSig.jpeg" 
+          alt="sig" 
+          style="height: 50px; display: inline-block;"
+        >
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script 
+    src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+  ></script>
+  <script 
+    src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+  ></script>
+</body>
+</html>
