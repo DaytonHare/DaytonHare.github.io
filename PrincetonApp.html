@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-Latf">
 <head>
-  <title>Dayton Hare :: Princeton Application</title>
+  <title>Dayton Hare :: Princeton Application Portfolio</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -160,15 +160,27 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <!-- Brand/logo -->
-        <p class="navbar-brand" style="cursor: default; margin: 0px;">
+        <!-- Brand (Icon + Text) -->
+        <a class="navbar-brand" href="#" style="white-space: nowrap;">
+          <!-- Signature icon -->
           <img 
-            class="img-responsive" 
             src="photos/DaytonSig.jpeg" 
             alt="sig" 
-            style="height: 55px;"
+            style="height: 55px; display: inline-block; vertical-align: middle;"
           >
-        </p>
+          <!-- Text to the right of the icon -->
+          <span 
+            style="
+              display: inline-block; 
+              vertical-align: middle; 
+              margin-left: 10px; 
+              color: white; 
+              font-size: large;
+            "
+          >
+            Dayton Hare: Princeton Application Portfolio
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -198,7 +210,8 @@
           and downloadable scores. I hope you enjoy exploring these selections!
         </p>
         <p>
-          You can also visit my <a href="https://www.example.com">main website / CV</a> 
+          You can also visit my 
+          <a href="https://www.example.com" target="_blank">main website / CV</a> 
           to find additional information about my professional background, 
           publications, and upcoming performances.
         </p>
@@ -212,48 +225,59 @@
   </div>
   <div class="container" style="font-size: 18px;">
     <!-- Title / Duration / Year / Instrumentation -->
-    <p><strong>Title:</strong> Estuary (Example)<br>
-       <strong>Duration:</strong> 9 minutes<br>
-       <strong>Year:</strong> 2023<br>
-       <strong>Instrumentation:</strong> Orchestra
+    <p>
+      <strong>Title:</strong> Estuary (Example)<br>
+      <strong>Duration:</strong> 9 minutes<br>
+      <strong>Year:</strong> 2023<br>
+      <strong>Instrumentation:</strong> Orchestra
     </p>
     <!-- Program Note -->
     <p>
-      <strong>Program Note:</strong>  
+      <strong>Program Note:</strong><br>
       Estuary captures the convergence of freshwater and saltwater, reflecting 
       the delicate balance of ecosystems. It explores musical currents that 
       overlap and blend, symbolizing the merging of distinct environments 
-      into a vibrant, interwoven tapestry. 
+      into a vibrant, interwoven tapestry.
     </p>
-    <!-- SoundCloud Link/Embed -->
-    <p>
-      <strong>Listen on SoundCloud:</strong><br>
-      <iframe 
-        width="100%" 
-        height="100" 
-        scrolling="no" 
-        frameborder="no" 
-        allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1697226831&color=%23090f14"
-      ></iframe>
-    </p>
-    <!-- Video (YouTube) -->
-    <p>
-      <strong>Performance Video:</strong><br>
-      <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/R_cI44pHR68" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-      ></iframe>
-    </p>
-    <!-- Score Link -->
-    <p>
-      <strong>Score PDF:</strong> 
-      <a href="scores/Estuary.pdf" target="_blank">Download Score</a>
-    </p>
+    <!-- Row containing SoundCloud, YouTube, Score -->
+    <div class="row">
+      <!-- SoundCloud Embed -->
+      <div class="col-md-4">
+        <p><strong>SoundCloud:</strong></p>
+        <iframe 
+          width="100%" 
+          height="120" 
+          scrolling="no" 
+          frameborder="no" 
+          allow="autoplay" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1697226831&color=%23090f14"
+        ></iframe>
+      </div>
+      <!-- YouTube Embed -->
+      <div class="col-md-4">
+        <p><strong>YouTube:</strong></p>
+        <iframe 
+          width="100%" 
+          height="120" 
+          src="https://www.youtube.com/embed/R_cI44pHR68" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </div>
+      <!-- Score Link (Clickable Image) -->
+      <div class="col-md-4">
+        <p><strong>Score:</strong></p>
+        <a href="scores/Estuary.pdf" target="_blank">
+          <img 
+            src="scores/Estuary_firstPage.png" 
+            alt="Estuary Score" 
+            class="img-responsive" 
+            style="max-height: 250px;"
+          >
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- PIECE 2 -->
@@ -262,48 +286,59 @@
   </div>
   <div class="container" style="font-size: 18px;">
     <!-- Title / Duration / Year / Instrumentation -->
-    <p><strong>Title:</strong> Pressure System (Example)<br>
-       <strong>Duration:</strong> 11 minutes<br>
-       <strong>Year:</strong> 2023<br>
-       <strong>Instrumentation:</strong> Sinfonietta
+    <p>
+      <strong>Title:</strong> Pressure System (Example)<br>
+      <strong>Duration:</strong> 11 minutes<br>
+      <strong>Year:</strong> 2023<br>
+      <strong>Instrumentation:</strong> Sinfonietta
     </p>
     <!-- Program Note -->
     <p>
-      <strong>Program Note:</strong>  
+      <strong>Program Note:</strong><br>
       Pressure System is inspired by atmospheric changes, highlighting tension 
       and release through dynamic interplay of textures. Shifting harmonies 
-      represent moving weather fronts that build and dissipate, alluding to 
-      the power and unpredictability of nature.
+      represent moving weather fronts that build and dissipate, alluding to the 
+      power and unpredictability of nature.
     </p>
-    <!-- SoundCloud Link/Embed -->
-    <p>
-      <strong>Listen on SoundCloud:</strong><br>
-      <iframe 
-        width="100%" 
-        height="100" 
-        scrolling="no" 
-        frameborder="no" 
-        allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1689927204%3Fsecret_token%3Ds-CmceU4IfCTo&color=%23090f14"
-      ></iframe>
-    </p>
-    <!-- Video (YouTube) -->
-    <p>
-      <strong>Performance Video:</strong><br>
-      <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/w3pqUOCkLVE" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-      ></iframe>
-    </p>
-    <!-- Score Link -->
-    <p>
-      <strong>Score PDF:</strong> 
-      <a href="scores/PressureSystem.pdf" target="_blank">Download Score</a>
-    </p>
+    <!-- Row containing SoundCloud, YouTube, Score -->
+    <div class="row">
+      <!-- SoundCloud Embed -->
+      <div class="col-md-4">
+        <p><strong>SoundCloud:</strong></p>
+        <iframe 
+          width="100%" 
+          height="120" 
+          scrolling="no" 
+          frameborder="no" 
+          allow="autoplay" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1689927204%3Fsecret_token%3Ds-CmceU4IfCTo&color=%23090f14"
+        ></iframe>
+      </div>
+      <!-- YouTube Embed -->
+      <div class="col-md-4">
+        <p><strong>YouTube:</strong></p>
+        <iframe 
+          width="100%" 
+          height="120" 
+          src="https://www.youtube.com/embed/w3pqUOCkLVE" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </div>
+      <!-- Score Link (Clickable Image) -->
+      <div class="col-md-4">
+        <p><strong>Score:</strong></p>
+        <a href="scores/PressureSystem.pdf" target="_blank">
+          <img 
+            src="scores/PressureSystem_firstPage.png" 
+            alt="Pressure System Score" 
+            class="img-responsive"
+            style="max-height: 250px;"
+          >
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- PIECE 3 -->
@@ -312,65 +347,84 @@
   </div>
   <div class="container" style="font-size: 18px;">
     <!-- Title / Duration / Year / Instrumentation -->
-    <p><strong>Title:</strong> Vanishing Point (Example)<br>
-       <strong>Duration:</strong> 7 minutes<br>
-       <strong>Year:</strong> 2020<br>
-       <strong>Instrumentation:</strong> Orchestra
+    <p>
+      <strong>Title:</strong> Vanishing Point (Example)<br>
+      <strong>Duration:</strong> 7 minutes<br>
+      <strong>Year:</strong> 2020<br>
+      <strong>Instrumentation:</strong> Orchestra
     </p>
     <!-- Program Note -->
     <p>
-      <strong>Program Note:</strong>  
+      <strong>Program Note:</strong><br>
       Vanishing Point contemplates spatial perspective and how distance warps 
       our view. The music reflects receding lines of sound, gradually moving 
       toward the horizon. Light and shadow interplay in the orchestration, 
       suggesting shifting vantage points.
     </p>
-    <!-- SoundCloud Link/Embed -->
-    <p>
-      <strong>Listen on SoundCloud:</strong><br>
-      <iframe 
-        width="100%" 
-        height="100" 
-        scrolling="no" 
-        frameborder="no" 
-        allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/807706414&color=%23091014"
-      ></iframe>
-    </p>
-    <!-- Video (YouTube) -->
-    <p>
-      <strong>Performance Video:</strong><br>
-      <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/Tq3k4x0mVmA" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-      ></iframe>
-    </p>
-    <!-- Score Link -->
-    <p>
-      <strong>Score PDF:</strong> 
-      <a href="scores/VanishingPoint.pdf" target="_blank">Download Score</a>
-    </p>
+    <!-- Row containing SoundCloud, YouTube, Score -->
+    <div class="row">
+      <!-- SoundCloud Embed -->
+      <div class="col-md-4">
+        <p><strong>SoundCloud:</strong></p>
+        <iframe 
+          width="100%" 
+          height="120" 
+          scrolling="no" 
+          frameborder="no" 
+          allow="autoplay" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/807706414&color=%23091014"
+        ></iframe>
+      </div>
+      <!-- YouTube Embed -->
+      <div class="col-md-4">
+        <p><strong>YouTube:</strong></p>
+        <iframe 
+          width="100%" 
+          height="120" 
+          src="https://www.youtube.com/embed/Tq3k4x0mVmA" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </div>
+      <!-- Score Link (Clickable Image) -->
+      <div class="col-md-4">
+        <p><strong>Score:</strong></p>
+        <a href="scores/VanishingPoint.pdf" target="_blank">
+          <img 
+            src="scores/VanishingPoint_firstPage.png" 
+            alt="Vanishing Point Score" 
+            class="img-responsive"
+            style="max-height: 250px;"
+          >
+        </a>
+      </div>
+    </div>
   </div>
 
-  <!-- ADDITIONAL SCORE -->
+  <!-- OPTIONAL SCORE ONLY -->
   <div class="page-header container">
-    <h1>Additional Score</h1>
+    <h1>Optional Score</h1>
   </div>
   <div class="container" style="font-size: 18px;">
     <p>
       <strong>Title:</strong> A blue heron alights on the riverbank near dawn (Example)<br>
-      <strong>Score PDF:</strong> 
-      <a href="scores/ABlueHeron.pdf" target="_blank">Download Score</a>
+      <em>No recordings currently available</em>
     </p>
     <p>
-      This is an additional piece you may find interesting. It's a brief chamber 
-      work exploring quietly shifting textures and subtle gestures that evoke 
-      the calm of early morning.
+      <strong>Description:</strong><br>
+      This short piece for cello and piano explores quietly shifting textures 
+      and subtle gestures that evoke the calm of early morning.   
     </p>
+    <p><strong>Score:</strong></p>
+    <a href="scores/ABlueHeron.pdf" target="_blank">
+      <img 
+        src="scores/ABlueHeron_firstPage.png" 
+        alt="Optional Score" 
+        class="img-responsive"
+        style="max-height: 400px;"
+      >
+    </a>
   </div>
 
   <!-- FOOTER -->
