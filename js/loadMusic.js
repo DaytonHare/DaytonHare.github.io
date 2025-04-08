@@ -56,38 +56,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         var item = data.find(i => i.id == id);
 
         // Populate modal with data
-        $("#modalTitle").text(`${item.title} (${item.year})`);
-        $("#modalInstrumentation").text(item.instrumentation);
-        $("#modalDuration").text(item.duration);
-
-        if (item.scoreImageLoc) {
-            $("#modalImage").attr("src", item.scoreImageLoc).show();
-        } else {
-            $("#modalImage").hide();
-        }
-
-        if (item.programNote) {
-            $("#programNote").text(item.programNote).show();
-        } else {
-            $("#programNote").hide();
-        }
-
-        // Check for SoundCloud link and include it in the modal
-        if (item.soundCloudLink) {
-            $("#modalSoundCloud").html(`
-                <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true" style="background:black;"></iframe>
-            `).show();
-        } else {
-            $("#modalSoundCloud").hide();
-        }
-
-        if (item.youtubeLink) {
-            $("#modalYouTube").html(`<iframe width="420" height="315" src="https://www.youtube.com/embed/${item.youtubeLink}" frameborder="0" allowfullscreen></iframe>`).show();
-        } else {
-            $("#modalYouTube").hide();
-        }
-
-        $("#modalBuyLink").attr("href", `mailto:dayton.hare@yale.edu?subject=Inquiry about ${item.title}`);
+        populateModal(item);
 
         $('#exampleModal1').foundation('open');
 
@@ -122,4 +91,57 @@ function adjustContentPadding() {
         console.log('Calculated height is too small, retrying...');
         setTimeout(adjustContentPadding, 300); // Retry after a short delay
     }
+}
+
+function populateModal(item) {
+    // Set title, instrumentation, and duration
+    $("#modalTitle").text(`${item.title} (${item.year})`);
+    $("#modalInstrumentation").text(item.instrumentation);
+    $("#modalDuration").text(item.duration);
+
+    // Commission info – only show if commission is true
+    if (item.commission) {
+        $("#modalCommissioner").text(`Commissioned by: ${item.commissioner}`).show();
+    } else {
+        $("#modalCommissioner").hide();
+    }
+
+    // Premier info – show if both premier date and premier ensemble exist
+    if (item.premierDate && item.premierEnsemble) {
+        $("#modalPremier").text(`Premier: ${item.premierDate} with ${item.premierEnsemble}`).show();
+    } else {
+        $("#modalPremier").hide();
+    }
+
+    // Score image
+    if (item.scoreImageLoc) {
+        $("#modalImage").attr("src", item.scoreImageLoc).show();
+    } else {
+        $("#modalImage").hide();
+    }
+
+    // Program note
+    if (item.programNote) {
+        $("#programNote").text(item.programNote).show();
+    } else {
+        $("#programNote").hide();
+    }
+
+    // Check for SoundCloud link and include it in the modal
+    if (item.soundCloudLink) {
+        $("#modalSoundCloud").html(`
+            <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true" style="background:black;"></iframe>
+        `).show();
+    } else {
+        $("#modalSoundCloud").hide();
+    }
+
+    if (item.youtubeLink) {
+        $("#modalYouTube").html(`<iframe width="420" height="315" src="https://www.youtube.com/embed/${item.youtubeLink}" frameborder="0" allowfullscreen></iframe>`).show();
+    } else {
+        $("#modalYouTube").hide();
+    }
+
+    // Update inquiry link
+    $("#modalBuyLink").attr("href", `mailto:dayton.hare@yale.edu?subject=Inquiry about ${item.title}`);
 }
