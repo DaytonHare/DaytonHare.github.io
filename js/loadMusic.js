@@ -44,33 +44,48 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             </div>
         `;
 
-        $("#allContent").append(cardHtml); // Add to "All" tab
+        $("#allContent").append(cardHtml); // Add to "All" gtid tab
         $(contentId).append(cardHtml); // Add to specific category tab
     });
 
-    // Setup click handlers for buttons to populate and show the modal
-    $(".button[data-open='exampleModal1']").on("click", function(event) {
-        event.preventDefault(); // Prevent default action to avoid scrolling
+    // Build List View for "all - list" tab grouped by category
+    var categories = ["large ensemble", "small ensemble", "solo / duo", "vocal"];
+    categories.forEach(function(cat) {
+        var catItems = data.filter(item => item.type === cat);
+        if (catItems.length > 0) {
+            var categoryHtml = `<h3>${cat.charAt(0).toUpperCase() + cat.slice(1)}</h3><ul>`;
+            catItems.forEach(function(item) {
+                var listenButton = item.soundCloudLink
+                    ? `<button class="tiny-button open-modal" data-id="${item.id}">Listen</button>`
+                    : '';
+                categoryHtml += `<li>
+                    <a href="#" class="popup-link open-modal" data-id="${item.id}">${item.title}</a>
+                    (${item.instrumentation}, ${item.year}) ${listenButton}
+                </li>`;
+            });
+            categoryHtml += "</ul>";
+            $("#allListContent").append(categoryHtml);
+        }
+    });
 
+    // Attach click event to all elements that open the modal (grid buttons and list links)
+    $(".open-modal").on("click", function(event) {
+        event.preventDefault();
         var id = $(this).data("id");
         var item = data.find(i => i.id == id);
-
-        // Populate modal with data
+        if (!item) return;
+        
         populateModal(item);
-
+        
         $('#exampleModal1').foundation('open');
-
-        // Prevent body scroll when modal is open
-        $('body').addClass('no-scroll'); // Add a class to prevent scrolling
-
-        // Re-enable body scroll when modal is closed
+        $('body').addClass('no-scroll');
         $('#exampleModal1').on('closed.zf.reveal', function() {
-            $('body').removeClass('no-scroll'); // Remove the class when modal is closed
+            $('body').removeClass('no-scroll');
         });
     });
 
     $(document).foundation(); // Reinitialize Foundation after dynamic content is added
-    setTimeout(adjustContentPadding, 100); // Adjust padding after dynamic content is added
+    setTimeout(adjustContentPadding, 120); // Adjust padding after dynamic content is added
 });
 
 // Adjust content padding based on the active bar height
