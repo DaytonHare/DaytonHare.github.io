@@ -68,8 +68,8 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    // Attach click event to all elements that open the modal (grid buttons and list links)
-    $(".open-modal").on("click", function(event) {
+    // Attach model click handelers
+    $(".open-modal, button[data-open='exampleModal1']").on("click", function(event) {
         event.preventDefault();
         var id = $(this).data("id");
         var item = data.find(i => i.id == id);
@@ -83,6 +83,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             $('body').removeClass('no-scroll');
         });
     });
+
 
     $(document).foundation(); // Reinitialize Foundation after dynamic content is added
     setTimeout(adjustContentPadding, 120); // Adjust padding after dynamic content is added
