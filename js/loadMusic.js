@@ -56,7 +56,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             var categoryHtml = `<h3>${cat.charAt(0).toUpperCase() + cat.slice(1)}</h3><ul>`;
             catItems.forEach(function(item) {
                 var listenButton = item.soundCloudLink
-                    ? `<button class="tiny-button open-modal" data-id="${item.id}">Listen</button>`
+                    ? `<button class="tiny-button open-modal" style="color:MistyRose;" data-id="${item.id}">&#xf35d;</button>`
                     : '';
                 categoryHtml += `<li>
                     <a href="#" class="popup-link open-modal" data-id="${item.id}">${item.title}</a>
