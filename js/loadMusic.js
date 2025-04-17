@@ -55,9 +55,10 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         if (catItems.length > 0) {
             var categoryHtml = `<h3>${cat.charAt(0).toUpperCase() + cat.slice(1)}</h3><ul>`;
             catItems.forEach(function(item) {
-                var listenButton = item.soundCloudLink
-                    ? `<button class="tiny-button open-modal" style="color:MistyRose;" data-id="${item.id}"><i class="fas fa-external-link-alt"></i> <i class="fas fa-music"></i></button>`
-                    : '';
+            var listenButton = item.soundCloudLink
+                  ? `<button class="tiny-button open-modal" style="color:MistyRose;" data-id="${item.id}"><i class='fas fa-external-link-alt'></i> <i class='fas fa-music'></i></button>`
+                  : '';
+
                 <button class="tiny-button open-modal" style="color:MistyRose;" data-id="${item.id}">
   
                 categoryHtml += `<li>
