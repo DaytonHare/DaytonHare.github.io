@@ -160,5 +160,5 @@ function populateModal(item) {
     }
 
     // Update inquiry link
-    $("#modalBuyLink").attr("href", `mailto:dayton.hare@yale.edu?subject=Inquiry about ${item.title}`);
+    $("#modalBuyLink").attr("href", `mailto:daytonhare.music@gmail.com?subject=Inquiry about ${item.title}`);
 }
