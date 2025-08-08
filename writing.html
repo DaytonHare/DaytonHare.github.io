@@ -1,120 +1,84 @@
-import requests
-from bs4 import BeautifulSoup
-from collections import deque
-from urllib.parse import urljoin, urlparse
-import re
-import time
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J81ZR834K1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-USER_AGENT = "DaytonLinkCollector/1.0 (+https://example.com)"
-HEADERS = {"User-Agent": USER_AGENT}
-SLEEP_BETWEEN_REQUESTS = 0.5
+      gtag('config', 'G-J81ZR834K1');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dayton Hare&mdash;Writer</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+      /* Simple gallery styling */
+      #articles-gallery {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-family: 'Crimson Text', serif;
+      }
+      #articles-gallery h2 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      #articles-gallery ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      #articles-gallery li {
+        margin-bottom: 0.5rem;
+      }
+      #articles-gallery a {
+        color: #003366;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      #articles-gallery a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
 
-SITES = [
-    {"name": "The Michigan Daily", "base_url": "https://www.michigandaily.com"},
-    {"name": "PULP Arts Around Ann Arbor", "base_url": "https://pulp.a2gov.org"},
-]
+    <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->random text
 
-AUTHOR_NAME = "Dayton Hare"
-MAX_PAGES_PER_SITE = 1000
-MAX_ARTICLES_PER_SITE = 1000
+    <!-- Articles Link Gallery -->
+    <section id="articles-gallery">
+      <h2>Articles by Dayton Hare</h2>
 
-def is_same_domain(url, base_netloc):
-    try:
-        return urlparse(url).netloc.endswith(base_netloc)
-    except Exception:
-        return False
+      <h3>The Michigan Daily</h3>
+      <ul>
+        <li><a href="https://www.michigandaily.com/arts/music/wolfe-tones/?utm_source=chatgpt.com" target="_blank" rel="noopener">Wolfe tones</a></li>
+        <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-shostakovich-stalin-terror-and-truth/?utm_source=chatgpt.com" target="_blank" rel="noopener">Shostakovich, Stalin, Terror and Truth</a></li>
+        <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-reflections-philip-glass/?utm_source=chatgpt.com" target="_blank" rel="noopener">Reflections on Philip Glass</a></li>
+        <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-musician-militant/?utm_source=chatgpt.com" target="_blank" rel="noopener">The musician, militant</a></li>
+        <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-strange-beautiful-music-and-mosaic-detroits-avant-garde/?utm_source=chatgpt.com" target="_blank" rel="noopener">Strange Beautiful Music and the mosaic of Detroit's avant‑garde</a></li>
+        <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-monoliths-and-microtones/?utm_source=chatgpt.com" target="_blank" rel="noopener">Monoliths and microtones</a></li>
+        <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-freude-fear-joy-and-art-in-a-political-world/?utm_source=chatgpt.com" target="_blank" rel="noopener">'Freude!' — Fear, joy and art in a political world</a></li>
+        <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-composed-of-love-and-will-alone-a-new-work-on-robert-mapplethorpe-receives-its-premiere/?utm_source=chatgpt.com" target="_blank" rel="noopener">'Composed of love and will alone'</a></li>
+      </ul>
 
-def normalize_url(url):
-    p = urlparse(url)
-    return p._replace(fragment="").geturl().strip()
+      <h3>PULP | Arts Around Ann Arbor</h3>
+      <ul>
+        <li><a href="https://pulp.aadl.org/taxonomy/term/115366?utm_source=chatgpt.com" target="_blank" rel="noopener">Dance piece review by Dayton Hare</a></li>
+      </ul>
+    </section>
 
-def page_has_author(soup, author_name):
-    name_re = re.compile(re.escape(author_name), re.IGNORECASE)
-
-    for meta_name in ("author", "dc.creator", "article:author"):
-        tag = soup.find("meta", attrs={"name": meta_name}) or soup.find("meta", attrs={"property": meta_name})
-        if tag and tag.get("content") and name_re.search(tag.get("content")):
-            return True
-
-    for script in soup.find_all("script", type="application/ld+json"):
-        if script.string and name_re.search(script.string):
-            return True
-
-    selectors = ["[class*=byline]", "[class*=author]", "[id*=byline]", "[id*=author]", "[class*=staff]", "[class*=credit]"]
-    for sel in selectors:
-        for tag in soup.select(sel):
-            if name_re.search(tag.get_text(strip=True)):
-                return True
-
-    body_text = soup.get_text(separator=" ", strip=True)
-    if re.search(r"\bBy\s+" + re.escape(author_name) + r"\b", body_text, re.IGNORECASE):
-        return True
-    return False
-
-def extract_title(soup):
-    if soup.title and soup.title.string:
-        return soup.title.string.strip()
-    og = soup.find("meta", property="og:title")
-    if og and og.get("content"):
-        return og.get("content").strip()
-    h1 = soup.find("h1")
-    if h1:
-        return h1.get_text(strip=True)
-    return "(no title)"
-
-def crawl_for_author(base_url, author_name):
-    parsed_base = urlparse(base_url)
-    base_netloc = parsed_base.netloc
-
-    seen = set()
-    q = deque([base_url])
-    pages_visited = 0
-    articles = []
-
-    while q and pages_visited < MAX_PAGES_PER_SITE and len(articles) < MAX_ARTICLES_PER_SITE:
-        url = normalize_url(q.popleft())
-        if url in seen:
-            continue
-        seen.add(url)
-
-        try:
-            resp = requests.get(url, headers=HEADERS, timeout=10)
-            time.sleep(SLEEP_BETWEEN_REQUESTS)
-        except Exception:
-            continue
-
-        if not (200 <= resp.status_code < 400):
-            continue
-        if "text/html" not in resp.headers.get("Content-Type", ""):
-            continue
-
-        pages_visited += 1
-        soup = BeautifulSoup(resp.text, "html.parser")
-
-        if page_has_author(soup, author_name):
-            articles.append({"title": extract_title(soup), "url": url})
-
-        for a in soup.find_all("a", href=True):
-            joined = urljoin(url, a["href"])
-            joined = normalize_url(joined)
-            if is_same_domain(joined, base_netloc) and joined not in seen:
-                q.append(joined)
-
-    return articles
-
-def generate_html_snippet(site_name, articles):
-    if not articles:
-        return f"<section class=\"dayton-articles\"><h2>{site_name}</h2><p>No articles found.</p></section>"
-    items = [f"<li><a href=\"{a['url']}\" target=\"_blank\">{a['title']}</a></li>" for a in articles]
-    return f"<section class=\"dayton-articles\"><h2>{site_name} — Articles by {AUTHOR_NAME}</h2><ul>{''.join(items)}</ul></section>"
-
-if __name__ == "__main__":
-    fragments = []
-    for site in SITES:
-        print(f"Crawling {site['name']}...")
-        articles = crawl_for_author(site["base_url"], AUTHOR_NAME)
-        fragments.append(generate_html_snippet(site["name"], articles))
-
-    with open("dayton_hare_articles.html", "w", encoding="utf-8") as f:
-        f.write("\n".join(fragments))
-    print("Generated dayton_hare_articles.html with article lists.")
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script src="js/allpageLoads.js"></script> <!-- Ensure this path is correct -->
+  </body>
+</html>
