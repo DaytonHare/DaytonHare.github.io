@@ -5,109 +5,281 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J81ZR834K1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){dataLayer.push(arguments);} 
       gtag('js', new Date());
-
       gtag('config', 'G-J81ZR834K1');
     </script>
+
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dayton Hare&mdash;Writer</title>
+    <meta name="description" content="Writing portfolio and CV for Dayton Hare — writer & composer." />
+
+    <title>Dayton Hare — Writer</title>
+
+    <!-- Fonts (use explicit https + preconnect for perf) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet" />
+
+    <!-- Foundation + site CSS -->
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+
     <style>
-      /* Simple gallery styling */
-      #articles-gallery {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 1rem;
-        font-family: 'Crimson Text', serif;
-      }
-      #articles-gallery h2 {
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-      #articles-gallery ul {
-        list-style: none;
-        padding-left: 0;
-      }
-      #articles-gallery li {
-        margin-bottom: 0.5rem;
-      }
-      #articles-gallery a {
-        color: #7B3FBF; /* Bright purple matching footer */
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem; /* Slightly larger font size */
-      }
-      #articles-gallery a:hover {
-        text-decoration: underline;
-        color: #532E8C; /* Darker purple on hover */
-      }
+      :root{ --brand-purple:#7B3FBF; --brand-purple-darker:#532E8C; }
+      body{ background:#000; color:#fff; font-family:'Crimson Text', serif; }
+
+      /* Layout helpers */
+      .page-wrap{ padding-top: var(--nav-h, 0px); }
+      .eyebrow{ font-family:'Reenie Beanie', cursive; font-size:1.35rem; letter-spacing:.02em; color:#cfc7ff; }
+      h1, h2, h3{ font-family:'Playfair Display', serif; }
+      a{ color:var(--brand-purple); text-decoration:underline; text-underline-offset:2px; }
+      a:hover{ color:var(--brand-purple-darker); }
+
+      /* Hero */
+      .hero{ padding:2.5rem 0 1.5rem; }
+      .hero img{ border-radius:18px; box-shadow:0 6px 24px rgba(0,0,0,.35); width:100%; height:auto; }
+      .hero .name{ margin:0 0 .25rem; font-size:2.25rem; line-height:1.1; }
+      .hero .roles{ color:#d8d8d8; margin-bottom:1rem; }
+      .hero .bio{ color:#eaeaea; max-width:70ch; }
+
+      /* Buttons */
+      .btn-row{ display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem; }
+      .btn{ display:inline-block; padding:.55rem .9rem; border-radius:14px; border:1px solid #6a5acd66; background:#140c22; color:#fff; text-decoration:none; }
+      .btn:hover{ background:#221538; border-color:#6a5acd99; }
+
+      /* Section blocks */
+      .section{ padding:1.25rem 0; }
+      .section h2{ font-size:1.5rem; margin:0 0 .75rem; }
+
+      /* Article lists (simple + readable on black) */
+      .article-list{ list-style:none; margin:0; padding:0; }
+      .article-list li{ padding:.5rem .25rem; border-bottom:1px solid rgba(255,255,255,.08); }
+      .article-list a{ font-weight:600; font-size:1.075rem; text-decoration:none; }
+      .article-list a:hover{ text-decoration:underline; }
+      .article-meta{ color:#cfcfcf; font-size:.95rem; display:block; margin-top:.15rem; }
+
+      /* Cards option */
+      .card-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
+      .card{ background:#0c0c0f; border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+      .card a{ display:block; padding:0; color:inherit; text-decoration:none; }
+      .card .thumb{ aspect-ratio:16/9; width:100%; object-fit:cover; background:#1a1a1f; }
+      .card .body{ padding:.8rem .9rem 1rem; }
+      .card h3{ font-size:1.05rem; margin:0 0 .35rem; }
+      .card .meta{ color:#cfcfcf; font-size:.92rem; }
+
+      /* Footer spacing */
+      .footer-spacer{ height:2rem; }
+          /* Toggle button active state */
+      .btn.is-active{ outline:2px solid var(--brand-purple); box-shadow:0 0 0 4px rgba(123,63,191,.25) inset; }
     </style>
   </head>
   <body>
+    <!-- If you mount a sticky navbar here, we'll auto add top padding -->
     <div id="navbar"></div>
 
-    <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->random text
+    <main class="page-wrap">
+      <div class="grid-container hero">
+        <div class="grid-x grid-margin-x align-middle">
+          <div class="cell small-12 medium-4 large-3">
+            <!-- Replace src with Dayton's headshot path -->
+            <img src="photos/dayton-headshot.jpg" alt="Headshot of Dayton Hare" loading="eager" fetchpriority="high" />
+          </div>
+          <div class="cell small-12 medium-8 large-9">
+            <div class="eyebrow">writer · composer</div>
+            <h1 class="name">Dayton Hare</h1>
+            <p class="roles">Concert & book reviews, profiles, newsletters, and academic writing.</p>
+            <p class="bio">
+              Dayton Hare writes about music, culture, and the arts. His work spans concert and book reviews, artist
+              profiles, and long-form pieces, with bylines across regional and national outlets. He also composes contemporary
+              classical music.
+            </p>
+            <div class="btn-row">
+              <!-- Swap hrefs to real targets -->
+              <a class="btn" href="docs/Dayton-Hare-Writing-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+              <a class="btn" href="mailto:dayton@example.com">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Articles Link Gallery -->
-    <section id="articles-gallery">
-      <h2>Articles by Dayton Hare</h2>
+      <!-- ===== Writing Samples ===== -->
+      <div class="grid-container section" id="writing">
+        <!-- Choose ONE presentation style: simple lists OR cards.  -->
+        <div id="writing-sections" class="">
+          <!-- JS will render categories here -->
+        </div>
+      </div>
 
-      <h3>The Michigan Daily</h3>
-      <ul>
-       <ul>
-  <li><a href="https://www.michigandaily.com/arts/john-luther-adams-global-warming-music-meaning/">https://www.michigandaily.com/arts/john-luther-adams-global-warming-music-meaning/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/nico-muhlys-viola-concerto-us-premiere-detroit-symphony/">https://www.michigandaily.com/arts/nico-muhlys-viola-concerto-us-premiere-detroit-symphony/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/danish-string-quartet-play-works-classic-and-contemporary/">https://www.michigandaily.com/arts/danish-string-quartet-play-works-classic-and-contemporary/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/smtd-two-part-how-deceive-your-family/">https://www.michigandaily.com/arts/smtd-two-part-how-deceive-your-family/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/tod-machover-spirit-of-detroit-symphony-in-d/">https://www.michigandaily.com/arts/tod-machover-spirit-of-detroit-symphony-in-d/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/quartet-perform-strong-language-rackham/">https://www.michigandaily.com/arts/quartet-perform-strong-language-rackham/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/pierre-boulez-in-memoriam/">https://www.michigandaily.com/arts/pierre-boulez-in-memoriam/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/uso-to-perform-zwilichs-emotional-concerto-elegia/">https://www.michigandaily.com/arts/uso-to-perform-zwilichs-emotional-concerto-elegia/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/remembering-leslie-bassett-notebook/">https://www.michigandaily.com/arts/remembering-leslie-bassett-notebook/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/music/love-for-lamour-de-loin/">https://www.michigandaily.com/arts/music/love-for-lamour-de-loin/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/b-side/absurdity-societal-breakdown-post‑modernity/">https://www.michigandaily.com/arts/b-side/absurdity-societal-breakdown-post‑modernity/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-live-die-for-you/">https://www.michigandaily.com/arts/music/dayton-hare-live-die-for-you/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/campus-culture/laura-kasischke-zell-writers-series/">https://www.michigandaily.com/arts/campus-culture/laura-kasischke-zell-writers-series/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/campus-culture/love-affair-berlin-philharmonic/">https://www.michigandaily.com/arts/campus-culture/love-affair-berlin-philharmonic/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/music/symnphony-band-presents-steven-mackeys-ohm/">https://www.michigandaily.com/arts/music/symnphony-band-presents-steven-mackeys-ohm/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-november-9-2016/">https://www.michigandaily.com/arts/music/dayton-hare-november-9-2016/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/campus-culture/rautavaara-retrospective/">https://www.michigandaily.com/arts/campus-culture/rautavaara-retrospective/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/campus-culture/steve-rush-edgefest/">https://www.michigandaily.com/arts/campus-culture/steve-rush-edgefest/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/statement/american-in-dublin/">https://www.michigandaily.com/arts/statement/american-in-dublin/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/effects-extreme-acoustical-environments-avian-species/">https://www.michigandaily.com/arts/effects-extreme-acoustical-environments-avian-species/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/artist-profile-composer-david-t-little-addresses-joy-fear-mortality-through-music/">https://www.michigandaily.com/arts/artist-profile-composer-david-t-little-addresses-joy-fear-mortality-through-music/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/sleepless-ann-arbor-inside-basement-arts-and-their-annual-24-hour-theatre/">https://www.michigandaily.com/arts/sleepless-ann-arbor-inside-basement-arts-and-their-annual-24-hour-theatre/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/kerwin-honorary-guest-lecture-series-debut-smtd/">https://www.michigandaily.com/arts/kerwin-honorary-guest-lecture-series-debut-smtd/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/mass-murder-music-and-morality-in-art/">https://www.michigandaily.com/arts/mass-murder-music-and-morality-in-art/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/uso-to-premiere-years-inaugural-performance-with-compositions-of-john-adams/">https://www.michigandaily.com/arts/uso-to-premiere-years-inaugural-performance-with-compositions-of-john-adams/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-shostakovich-stalin-terror-and-truth/">https://www.michigandaily.com/arts/music/dayton-hare-shostakovich-stalin-terror-and-truth/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/sarah-kirkland-snider-blends-genres-detroit-symphony-orchestra/">https://www.michigandaily.com/arts/sarah-kirkland-snider-blends-genres-detroit-symphony-orchestra/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/smtd-students-present-nilo-cruzs-impossible-love-story/">https://www.michigandaily.com/arts/smtd-students-present-nilo-cruzs-impossible-love-story/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/student-of-the-year-hafsa-ghias/">https://www.michigandaily.com/arts/student-of-the-year-hafsa-ghias/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/b-side/life-outside-the-golden-cage-composer-gabriela-lena-frank-in-profile/">https://www.michigandaily.com/arts/b-side/life-outside-the-golden-cage-composer-gabriela-lena-frank-in-profile/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-music-as-a-members-only-club/">https://www.michigandaily.com/arts/music/dayton-hare-music-as-a-members-only-club/</a></li>
-  <li><a href="https://www.michigandaily.com/arts/music/dayton-hare-springtime-breeze-and-bach-on-the-lawn/">https://www.michigandaily.com/arts/music/dayton-hare-springtime-breeze-and-bach-on-the-lawn/</a></li>
-  <li><a href="https://www.michig
+      <div class="footer-spacer"></div>
+    </main>
 
-      </ul>
+    <!-- Scripts: load at end; use defer to avoid blocking -->
+    <script src="js/vendor/jquery.js" defer></script>
+    <script src="js/vendor/what-input.js" defer></script>
+    <script src="js/vendor/foundation.js" defer></script>
+    <script>
+      // Initialize Foundation when ready
+      window.addEventListener('DOMContentLoaded', function(){ $(document).foundation?.(); });
 
-      <h3>PULP | Arts Around Ann Arbor</h3>
-      <ul>
-        <li><a href="https://pulp.aadl.org/taxonomy/term/115366?utm_source=chatgpt.com" target="_blank" rel="noopener">Dance piece review by Dayton Hare</a></li>
-      </ul>
+      // Maintain top padding equal to navbar height (if you inject a sticky nav)
+      function setNavPadding(){
+        const nav = document.getElementById('navbar');
+        const h = nav ? nav.offsetHeight : 0;
+        document.documentElement.style.setProperty('--nav-h', h + 'px');
+      }
+      window.addEventListener('load', setNavPadding);
+      window.addEventListener('resize', setNavPadding);
 
-      </ul>
-    </section>
+      // ===== Load data from JSON & render with selectable view =====
+      // Place a JSON file at /data/writing.json with the shape:
+      // [ { "category": "Concert Reviews", "items": [ {"title":"…","outlet":"…","year":2024,"url":"https://…","thumb":"optional.jpg"} ] }, … ]
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
+      const DATA_URL = '/jsonFiles/writing.json'; // same-origin file for best performance
+
+      // ---- RENDERERS ----
+      function renderList(container, data){
+        data.forEach(section => {
+          if (!section.items || section.items.length === 0) return;
+          const wrap = document.createElement('section');
+          wrap.className = 'section';
+
+          const h2 = document.createElement('h2');
+          h2.textContent = section.category;
+          wrap.appendChild(h2);
+
+          const ul = document.createElement('ul');
+          ul.className = 'article-list';
+
+          section.items.forEach(it => {
+            const li = document.createElement('li');
+
+            const a = document.createElement('a');
+            a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+            a.textContent = it.title;
+
+            const meta = document.createElement('span');
+            meta.className = 'article-meta';
+            meta.textContent = `${it.outlet} · ${it.year}`;
+
+            li.appendChild(a);
+            li.appendChild(meta);
+            ul.appendChild(li);
+          });
+
+          wrap.appendChild(ul);
+          container.appendChild(wrap);
+        });
+      }
+
+      function renderCards(container, data){
+        data.forEach(section => {
+          if (!section.items || section.items.length === 0) return;
+          const wrap = document.createElement('section');
+          wrap.className = 'section';
+
+          const h2 = document.createElement('h2');
+          h2.textContent = section.category;
+          wrap.appendChild(h2);
+
+          const grid = document.createElement('div');
+          grid.className = 'card-grid';
+
+          section.items.forEach(it => {
+            const card = document.createElement('article');
+            card.className = 'card';
+
+            const link = document.createElement('a');
+            link.href = it.url; link.target = '_blank'; link.rel = 'noopener';
+
+            const img = document.createElement('img');
+            img.className = 'thumb';
+            img.loading = 'lazy';
+            img.alt = '';
+            img.src = (it.thumb && it.thumb.trim()) ? it.thumb : `https://www.google.com/s2/favicons?domain=${new URL(it.url).hostname}&sz=128`;
+
+            const body = document.createElement('div');
+            body.className = 'body';
+
+            const h3 = document.createElement('h3');
+            h3.textContent = it.title;
+
+            const meta = document.createElement('div');
+            meta.className = 'meta';
+            meta.textContent = `${it.outlet} · ${it.year}`;
+
+            body.appendChild(h3);
+            body.appendChild(meta);
+            link.appendChild(img);
+            link.appendChild(body);
+            card.appendChild(link);
+            grid.appendChild(card);
+          });
+
+          wrap.appendChild(grid);
+          container.appendChild(wrap);
+        });
+      }
+
+      // ---- VIEW TOGGLE (list/cards with localStorage) ----
+      function makeToggle(toolbar, onChange){
+        const btnList = document.createElement('button');
+        const btnCards = document.createElement('button');
+        btnList.type = btnCards.type = 'button';
+        btnList.className = btnCards.className = 'btn';
+        btnList.textContent = 'List';
+        btnCards.textContent = 'Cards';
+
+        function setActive(mode){
+          btnList.classList.toggle('is-active', mode==='list');
+          btnCards.classList.toggle('is-active', mode==='cards');
+        }
+
+        btnList.addEventListener('click', ()=>{ localStorage.setItem('writingView','list'); setActive('list'); onChange('list'); });
+        btnCards.addEventListener('click', ()=>{ localStorage.setItem('writingView','cards'); setActive('cards'); onChange('cards'); });
+
+        toolbar.appendChild(btnList);
+        toolbar.appendChild(btnCards);
+        setActive(localStorage.getItem('writingView')||'list');
+      }
+
+      // ---- FETCH + MOUNT ----
+      async function bootstrap(){
+        const mount = document.getElementById('writing-sections');
+
+        // Insert toolbar at top
+        const toolbar = document.createElement('div');
+        toolbar.className = 'btn-row';
+        const toolbarLabel = document.createElement('span');
+        toolbarLabel.textContent = 'View:'; toolbarLabel.style.marginRight = '.25rem';
+        toolbar.prepend(toolbarLabel);
+        mount.before(toolbar);
+
+        // Load JSON
+        let data = [];
+        try{
+          const res = await fetch(DATA_URL, {cache:'no-store'});
+          data = await res.json();
+        }catch(e){
+          console.warn('Failed to load writing.json; falling back to empty list.', e);
+        }
+
+        function render(mode){
+          mount.innerHTML = '';
+          if(mode==='cards') renderCards(mount, data);
+          else renderList(mount, data);
+        }
+
+        const initial = localStorage.getItem('writingView') || 'list';
+        makeToggle(toolbar, render);
+        render(initial);
+      }
+
+      bootstrap();
+    </script>
+
+    <!-- Your app bootstrap (if needed) -->
+    <script src="js/app.js" defer></script>
   </body>
 </html>
