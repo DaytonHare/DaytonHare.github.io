@@ -3,16 +3,90 @@
     "category": "Concert Reviews",
     "items": [
       {
-        "title": "From Marsalis to Schubert: The Philadelphia Orchestra at Hill Auditorium",
+        "title": "From Marsalis to Schubert: The Philadelphia Orchestra spent two evenings serenading Hill Auditorium with contrasting programs and conductors",
         "outlet": "PULP: Arts Around Ann Arbor",
-        "year": 2024,
         "url": "https://pulp.aadl.org/node/583798",
-        "thumb": ""  
+        "thumb": ""
+      },
+      {
+        "title": "(Not Quite) A MoodSwing Reunion: Jazz all-stars electrify Hill Auditorium despite missing a key member",
+        "outlet": "PULP: Arts Around Ann Arbor",
+        "url": "https://pulp.aadl.org/node/584460",
+        "thumb": ""
+      },
+      {
+        "title": "Dayton Hare: The Detroit Symphony Orchestra takes on ‘Become Ocean’",
+        "outlet": "The Michigan Daily",
+        "url": "https://www.michigandaily.com/arts/music/dayton-hare-the-detroit-symphony-orchestra-takes-on-become-ocean/",
+        "thumb": ""
       }
     ]
   },
-  { "category": "Book Reviews", "items": [] },
-  { "category": "Profiles", "items": [] },
-  { "category": "Newsletters", "items": [] },
-  { "category": "Academic Writing", "items": [] }
+  {
+    "category": "Book Reviews",
+    "items": [
+      {
+        "title": "The Evil That Men Do: Alice Bolin’s \"Dead Girls: Essays on Surviving an American Obsession\"",
+        "outlet": "PULP: Arts Around Ann Arbor",
+        "url": "https://pulp.aadl.org/node/380709",
+        "thumb": ""
+      },
+      {
+        "title": "‘After Dead Souls’: Poetry, noir and the American city in Robin Robertson’s ‘The Long Take’",
+        "outlet": "The Michigan Daily",
+        "url": "https://www.michigandaily.com/arts/man-booker-long-take/",
+        "thumb": ""
+      }
+    ]
+  },
+  {
+    "category": "Dance Reviews",
+    "items": [
+      {
+        "title": "The atmospheric dance troupe Sankai Juku transfixed the Power Center with haunting movement",
+        "outlet": "PULP: Arts Around Ann Arbor",
+        "url": "https://pulp.aadl.org/node/399332",
+        "thumb": ""
+      }
+    ]
+  },
+  {
+    "category": "Profiles",
+    "items": [
+      {
+        "title": "Life outside the golden cage: Composer Gabriela Lena Frank in profile",
+        "outlet": "The Michigan Daily",
+        "url": "https://www.michigandaily.com/arts/life-outside-golden-cage-composer-gabriela-lena-frank-profile/",
+        "thumb": ""
+      }
+    ]
+  },
+  {
+    "category": "Newsletters",
+    "items": [
+      {
+        "title": "January 19, 2023",
+        "outlet": "Ann Arbor Observer",
+        "url": "https://annarborobserver.com/a2view-archive/a2view-january-19-2023/",
+        "thumb": ""
+      },
+      {
+        "title": "November 10, 2022",
+        "outlet": "Ann Arbor Observer",
+        "url": "https://annarborobserver.com/a2view-archive/november-10-2022/",
+        "thumb": ""
+      }
+    ]
+  },
+  {
+    "category": "Academic Writing",
+    "items": [
+      {
+        "title": "Samuel Beckett and the Politics of the Body: Voice, Violence, and the Algerian War in Comment c’est",
+        "outlet": "Honors English Thesis for the University of Michigan’s College of Literature, Science & the Arts",
+        "url": "https://lsa.umich.edu/content/dam/english-assets/english-docs/undergrad/capstone/theses-2020/Hare,%20Dayton_Thesis.pdf",
+        "thumb": ""
+      }
+    ]
+  }
 ]
