@@ -264,6 +264,46 @@ a:active {
   text-shadow: 0 0 8px rgba(83, 46, 140, 0.7);
 }
 
+/*headers*/
+table, th, td {
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 50px;
+    color: #a1a1a1;
+}
+
+.h1, h1 {
+    color: white;
+    font-family: 'Crimson Text', serif;
+    font-size: 36px;
+}
+
+.h2, h2 {
+    color: white;
+    font-family: 'Crimson Text', serif;
+}
+
+.h3, h3 {
+    color: white;
+    font-family: 'Crimson Text', serif;
+    font-size: x-large;
+}
+
+.h4, h4 {
+    color: white;
+    display: inline;
+    font-family: 'Crimson Text', serif;
+    font-size: larger;
+}
+
+.h5, h5 {
+  color: white;
+  display: inline;
+  font-family: 'Crimson Text', serif;
+  font-size: larger;
+}
+
 footer {
 color: white;
 font-family: 'Crimson Text', serif;
