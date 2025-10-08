@@ -75,8 +75,8 @@
     </style>
   </head>
   <body>
-    <!-- If you mount a sticky navbar here, we'll auto add top padding -->
     <div id="navbar"></div>
+  <div id="navbar-padding"></div>
 
     <main class="page-wrap">
       <div class="grid-container hero">
@@ -113,10 +113,12 @@
       <div class="footer-spacer"></div>
     </main>
 
+    <!-- Footer -->
+    <div id="footer"></div>
     <!-- Scripts: load at end; use defer to avoid blocking -->
     <script src="js/vendor/jquery.js" defer></script>
     <script src="js/vendor/what-input.js" defer></script>
-    <script src="js/vendor/foundation.js" defer></script>
+    <script src="js/vendor/foundation.min.js" defer></script>
     <script>
       // Initialize Foundation when ready
       window.addEventListener('DOMContentLoaded', function(){ if (window.$ && $.fn.foundation) { $(document).foundation(); } });
@@ -297,5 +299,14 @@
 
     <!-- Your app bootstrap (if needed) -->
     <script src="js/app.js" defer></script>
+      <script src="js/orbitBar.js" defer></script>
+    <script src="js/allpageLoads.js" defer></script>
+    <script defer>
+      // Highlight current page in the shared navbar once it's injected
+      window.addEventListener('load', () => {
+        const link = document.querySelector('#example-menu a[href$="writing.html"]');
+        if (link) link.classList.add('is-active');
+      });
+    </script>
   </body>
 </html>
