@@ -107,9 +107,36 @@ body {
     padding-bottom: 5px;
 }
 
-/* Active nav styles */
-.top-bar a.is-active { border-bottom: 2px solid currentColor; }
-.top-bar .active > a { color: #fff; }
+/* --- NAV ACTIVE LINK: SOFT PURPLE GLOW STYLE --- */
+.top-bar a.is-active,
+.top-bar .active > a {
+  position: relative;
+  color: var(--brand-purple) !important;
+  background: transparent !important;
+  text-shadow: 0 0 6px rgba(123, 63, 191, 0.55);  /* gentle purple glow */
+}
+
+/* thin glowing underline */
+.top-bar a.is-active::after,
+.top-bar .active > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--brand-purple);
+  box-shadow: 0 0 6px rgba(123, 63, 191, 0.7);
+  border-radius: 2px;
+}
+
+/* optional subtle hover accent */
+.top-bar a.is-active:hover,
+.top-bar .active > a:hover {
+  color: var(--brand-purple-darker) !important;
+  text-shadow: 0 0 8px rgba(83, 46, 140, 0.7);
+}
+
 
 /* unvisited link */
 a:link {    
