@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Concert Reviews",
+    "items": [
+      {
+        "title": "From Marsalis to Schubert: The Philadelphia Orchestra at Hill Auditorium",
+        "outlet": "PULP: Arts Around Ann Arbor",
+        "year": 2024,
+        "url": "https://pulp.aadl.org/node/583798",
+        "thumb": ""  // optional
+      }
+    ]
+  },
+  { "category": "Book Reviews", "items": [] },
+  { "category": "Profiles", "items": [] },
+  { "category": "Newsletters", "items": [] },
+  { "category": "Academic Writing", "items": [] }
+]
