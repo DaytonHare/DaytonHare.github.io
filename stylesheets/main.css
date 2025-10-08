@@ -107,6 +107,9 @@ body {
     padding-bottom: 5px;
 }
 
+/* Active nav styles */
+.top-bar a.is-active { border-bottom: 2px solid currentColor; }
+.top-bar .active > a { color: #fff; }
 
 /* unvisited link */
 a:link {    
