@@ -51,12 +51,23 @@
     ]
   },
   {
-    "category": "Profiles",
+    "category": "Artist Profiles",
     "items": [
       {
         "title": "Life outside the golden cage: Composer Gabriela Lena Frank in profile",
         "outlet": "The Michigan Daily",
         "url": "https://www.michigandaily.com/arts/life-outside-golden-cage-composer-gabriela-lena-frank-profile/",
+        "thumb": ""
+      }
+    ]
+  },
+  {
+    "category": "News",
+    "items": [
+      {
+        "title": "Ousted",
+        "outlet": "Ann Arbor Observer",
+        "url": "https://annarborobserver.com/ousted/",
         "thumb": ""
       }
     ]
