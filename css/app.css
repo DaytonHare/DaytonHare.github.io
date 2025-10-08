@@ -277,17 +277,28 @@ a:active {
   content: none !important;
 }
 
-/* For dropdown (submenu) links, keep underline inside the box */
-.top-bar .submenu a.is-active::after {
-  bottom: 4px;               /* lift underline slightly inside menu box */
-  height: 1px;               /* thinner line for submenu */
-  box-shadow: 0 0 3px rgba(123,63,191,0.6);
+/* --- Submenu (dropdown) active state: pill tint, no underline --- */
+.top-bar .submenu a.is-active,
+.top-bar .submenu .active > a {
+  position: relative;
+  color: var(--brand-purple, #7B3FBF) !important;
+  background: rgba(123, 63, 191, 0.16) !important; /* soft purple tint */
+  border-radius: 6px;
+  text-shadow: 0 0 5px rgba(123, 63, 191, 0.45);
 }
 
-/* Ensure submenu hover color matches glow tone but no underline overflow */
+/* Kill the underline/glow inside dropdowns */
+.top-bar .submenu a.is-active::after,
+.top-bar .submenu .active > a::after,
+.top-bar .submenu a:hover::after {
+  content: none !important;
+}
+
+/* Hover in submenu: slightly deeper tint, no underline */
 .top-bar .submenu a:hover {
-  color: var(--brand-purple, #7B3FBF);
-  text-shadow: 0 0 4px rgba(123,63,191,0.5);
+  color: var(--brand-purple-darker, #532E8C);
+  background: rgba(83, 46, 140, 0.18);
+  text-shadow: 0 0 6px rgba(83, 46, 140, 0.55);
 }
 
 
