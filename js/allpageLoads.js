@@ -13,6 +13,7 @@ $(function() {
             setTimeout(function() {
                 adjustContentPadding();
                 forceReflow();
+                applyActiveNavHighlight();  // <- highlight after navbar is in DOM
             }, 200);
         }
     });
@@ -25,6 +26,69 @@ $(function() {
             $(document).foundation();
         }
     });
+
+    // ---------- NAV HIGHLIGHT HELPERS ----------
+    // Normalize pathname: treat / and /index.html as same, drop trailing slash
+    function canonPath(u) {
+        var p = u.pathname;
+        if (/\/index\.html$/i.test(p)) p = p.replace(/\/index\.html$/i, "");
+        if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
+        return p || "";
+    }
+
+    // Apply active classes to current page link (+ submenu parent)
+    function applyActiveNavHighlight() {
+        var $nav = $("#example-menu");
+        if (!$nav.length) return;
+
+        var here = new URL(location.href);
+        var herePath = canonPath(here);
+        var hereHash = here.hash;
+
+        // Clear previous active states
+        $nav.find(".is-active, .active").removeClass("is-active active");
+
+        $nav.find("a[href]").each(function() {
+            var href = $(this).attr("href");
+            try {
+                var u = new URL(href, location.href);
+
+                // Skip external / mailto / tel
+                if (u.origin !== location.origin) return;
+
+                var linkPath = canonPath(u);
+                var hasHash = !!u.hash;
+
+                var pageMatches = (linkPath === herePath);
+                var hashMatches = hasHash ? (u.hash === hereHash) : true;
+
+                // If link includes a hash, require both page + exact hash to match.
+                // If no hash on link, page match is enough.
+                var isActive = pageMatches && hashMatches;
+
+                if (isActive) {
+                    $(this).addClass("is-active");
+                    $(this).closest("li").addClass("active");
+
+                    // If it's a submenu item, also mark its parent menu item
+                    var $parentMenu = $(this).closest("ul.submenu").closest("li.has-submenu");
+                    if ($parentMenu.length) {
+                        $parentMenu.addClass("active");
+                        $parentMenu.children("a").first().addClass("is-active");
+                    }
+                }
+
+                // Special case: on music page (any hash), mark top-level "music" link as active too
+                if (!u.hash && linkPath.endsWith("/music") && herePath.endsWith("/music")) {
+                    $(this).addClass("is-active");
+                    $(this).closest("li").addClass("active");
+                }
+            } catch (e) {
+                // Ignore invalid/relative-only hrefs that new URL can't parse
+            }
+        });
+    }
+    // ---------- END NAV HIGHLIGHT HELPERS ----------
 
     function adjustContentPadding() {
         console.log("adjustContentPadding called...");
@@ -75,6 +139,7 @@ $(function() {
         setTimeout(function() {
             adjustContentPadding();
             forceReflow();
+            applyActiveNavHighlight();  // also run on initial ready (covers inline nav cases)
         }, 300);
     });
 
@@ -97,14 +162,13 @@ $(function() {
 
         $(window).on('hashchange', function() {
             activateTabFromHash();
+            applyActiveNavHighlight(); // keep highlight synced when hash changes
         });
     });
 
-    $(document).on('click', '.tabs-title a', function() {
-        setTimeout(function() {
-            adjustContentPadding();
-            forceReflow();
-        }, 300);
+    // Re-highlight when user clicks a nav link (useful for same-page hash links)
+    $(document).on('click', '#example-menu a', function() {
+        setTimeout(applyActiveNavHighlight, 0);
     });
 
     // Prevent scrolling issues on body when the modal is open
