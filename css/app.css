@@ -264,6 +264,33 @@ a:active {
   text-shadow: 0 0 8px rgba(83, 46, 140, 0.7);
 }
 
+/* --- NAV ACTIVE LINK REFINEMENTS --- */
+
+/* Remove underline & glow from the logo and parent dropdowns */
+.top-bar .menu-text a,
+.top-bar .has-submenu > a {
+  text-shadow: none !important;
+}
+
+.top-bar .menu-text a::after,
+.top-bar .has-submenu > a::after {
+  content: none !important;
+}
+
+/* For dropdown (submenu) links, keep underline inside the box */
+.top-bar .submenu a.is-active::after {
+  bottom: 4px;               /* lift underline slightly inside menu box */
+  height: 1px;               /* thinner line for submenu */
+  box-shadow: 0 0 3px rgba(123,63,191,0.6);
+}
+
+/* Ensure submenu hover color matches glow tone but no underline overflow */
+.top-bar .submenu a:hover {
+  color: var(--brand-purple, #7B3FBF);
+  text-shadow: 0 0 4px rgba(123,63,191,0.5);
+}
+
+
 /*headers*/
 table, th, td {
     border: 1px solid black;
