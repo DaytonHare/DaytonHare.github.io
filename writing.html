@@ -48,6 +48,7 @@
       .btn-row{ display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem; }
       .btn{ display:inline-block; padding:.55rem .9rem; border-radius:14px; border:1px solid #6a5acd66; background:#140c22; color:#fff; text-decoration:none; }
       .btn:hover{ background:#221538; border-color:#6a5acd99; }
+      .btn.is-active{ outline:2px solid var(--brand-purple); box-shadow:0 0 0 4px rgba(123,63,191,.25) inset; }
 
       /* Section blocks */
       .section{ padding:1.25rem 0; }
@@ -71,8 +72,6 @@
 
       /* Footer spacing */
       .footer-spacer{ height:2rem; }
-          /* Toggle button active state */
-      .btn.is-active{ outline:2px solid var(--brand-purple); box-shadow:0 0 0 4px rgba(123,63,191,.25) inset; }
     </style>
   </head>
   <body>
@@ -106,7 +105,6 @@
 
       <!-- ===== Writing Samples ===== -->
       <div class="grid-container section" id="writing">
-        <!-- Choose ONE presentation style: simple lists OR cards.  -->
         <div id="writing-sections" class="">
           <!-- JS will render categories here -->
         </div>
@@ -121,7 +119,7 @@
     <script src="js/vendor/foundation.js" defer></script>
     <script>
       // Initialize Foundation when ready
-      window.addEventListener('DOMContentLoaded', function(){ $(document).foundation?.(); });
+      window.addEventListener('DOMContentLoaded', function(){ if (window.$ && $.fn.foundation) { $(document).foundation(); } });
 
       // Maintain top padding equal to navbar height (if you inject a sticky nav)
       function setNavPadding(){
@@ -132,11 +130,24 @@
       window.addEventListener('load', setNavPadding);
       window.addEventListener('resize', setNavPadding);
 
+      // ===== Helpers =====
+      // Safe favicon URL builder that accepts relative or absolute article URLs.
+      function safeFaviconURL(maybeUrl){
+        try{
+          const u = new URL(maybeUrl, location.href); // supports relative or absolute
+          return `https://www.google.com/s2/favicons?domain=${u.hostname}&sz=128`;
+        }catch{
+          // 1x1 transparent gif as a safe fallback
+          return 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+        }
+      }
+
       // ===== Load data from JSON & render with selectable view =====
-      // Place a JSON file at /data/writing.json with the shape:
+      // JSON shape:
       // [ { "category": "Concert Reviews", "items": [ {"title":"…","outlet":"…","year":2024,"url":"https://…","thumb":"optional.jpg"} ] }, … ]
 
-      const DATA_URL = '/jsonFiles/writing.json'; // same-origin file for best performance
+      // Use RELATIVE path because writing.html is in the root and jsonFiles is a subfolder.
+      const DATA_URL = 'jsonFiles/writing.json';
 
       // ---- RENDERERS ----
       function renderList(container, data){
@@ -146,7 +157,7 @@
           wrap.className = 'section';
 
           const h2 = document.createElement('h2');
-          h2.textContent = section.category;
+          h2.textContent = section.category || 'Untitled';
           wrap.appendChild(h2);
 
           const ul = document.createElement('ul');
@@ -156,12 +167,12 @@
             const li = document.createElement('li');
 
             const a = document.createElement('a');
-            a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
-            a.textContent = it.title;
+            a.textContent = it.title || '(Untitled)';
+            if (it.url) { a.href = it.url; a.target = '_blank'; a.rel = 'noopener'; }
 
             const meta = document.createElement('span');
             meta.className = 'article-meta';
-            meta.textContent = `${it.outlet} · ${it.year}`;
+            meta.textContent = [it.outlet, it.year].filter(Boolean).join(' · ');
 
             li.appendChild(a);
             li.appendChild(meta);
@@ -180,7 +191,7 @@
           wrap.className = 'section';
 
           const h2 = document.createElement('h2');
-          h2.textContent = section.category;
+          h2.textContent = section.category || 'Untitled';
           wrap.appendChild(h2);
 
           const grid = document.createElement('div');
@@ -191,23 +202,25 @@
             card.className = 'card';
 
             const link = document.createElement('a');
-            link.href = it.url; link.target = '_blank'; link.rel = 'noopener';
+            if (it.url) { link.href = it.url; link.target = '_blank'; link.rel = 'noopener'; }
 
             const img = document.createElement('img');
             img.className = 'thumb';
             img.loading = 'lazy';
             img.alt = '';
-            img.src = (it.thumb && it.thumb.trim()) ? it.thumb : `https://www.google.com/s2/favicons?domain=${new URL(it.url).hostname}&sz=128`;
+            img.src = (it.thumb && typeof it.thumb === 'string' && it.thumb.trim())
+              ? it.thumb
+              : safeFaviconURL(it.url);
 
             const body = document.createElement('div');
             body.className = 'body';
 
             const h3 = document.createElement('h3');
-            h3.textContent = it.title;
+            h3.textContent = it.title || '(Untitled)';
 
             const meta = document.createElement('div');
             meta.className = 'meta';
-            meta.textContent = `${it.outlet} · ${it.year}`;
+            meta.textContent = [it.outlet, it.year].filter(Boolean).join(' · ');
 
             body.appendChild(h3);
             body.appendChild(meta);
@@ -259,10 +272,13 @@
         // Load JSON
         let data = [];
         try{
-          const res = await fetch(DATA_URL, {cache:'no-store'});
+          const res = await fetch(DATA_URL, { cache:'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status} for ${DATA_URL}`);
           data = await res.json();
+          if (!Array.isArray(data)) throw new Error('Expected top-level array in writing.json');
         }catch(e){
           console.warn('Failed to load writing.json; falling back to empty list.', e);
+          data = [];
         }
 
         function render(mode){
