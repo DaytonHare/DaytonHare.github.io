@@ -130,7 +130,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    /* --- MODAL HANDLERS (WITH SCROLL FIX) --- */
+    /* --- MODAL HANDLERS (WITH SIMPLE SCROLL LOCK) --- */
     $(document).on("click", ".open-modal", function(event) {
         event.preventDefault();
 
@@ -140,25 +140,21 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
 
         populateModal(item);
 
-        // Save scroll position
+        // Remember where we were (optional, harmless)
         modalScrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
 
-        // Lock scroll while keeping screen visually still
-        $('body')
-            .addClass('no-scroll')
-            .css('top', -modalScrollPosition + 'px');
+        // Just prevent background scrolling
+        $('body').addClass('no-scroll');
 
         $('#exampleModal1').foundation('open');
     });
 
     // Restore scroll on close AND stop any playing media
     $('#exampleModal1').on('closed.zf.reveal', function() {
-        // Unlock scroll and put the body back
-        $('body')
-            .removeClass('no-scroll')
-            .css('top', '');
+        // Unlock scroll
+        $('body').removeClass('no-scroll');
 
-        // Restore scroll position
+        // Put us back where we were (usually no-op now, but safe)
         window.scrollTo(0, modalScrollPosition || 0);
 
         // Stop any SoundCloud / YouTube that was playing in the modal
