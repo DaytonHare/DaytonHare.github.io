@@ -251,7 +251,8 @@
         "programNote": "",
         "scoreImageLoc": null,
         "soundCloudLink": null,
-        "youtubeLink": null
+        "youtubeLink": null,
+        "thumbnail": "photos/thumbnails/isolationSky.jpg"
     },
     {
         "id": 13,
@@ -364,7 +365,8 @@
         "programNote": "I loved snow as a child. I loved the way it would blanket the landscape, masking shape and color beneath a white sheet of powder. I loved its sound, its crunch under my shoes, and I loved how it could mute the world and swallow ambient noise, could invite me to pay attention to the quietest of sounds, to listen to things verging on the inaudible.\n\nThis winter is the first in my adult life to have come and gone without any real snow to speak of. In the city where I live, we had merely a light, ephemeral dusting that melted away within a day. This atypical weather inspired me to reflect on the things I loved and missed about snow, and on the precious, private experiences we are collectively losing in our warming world. And so I've written a piece that attempts to capture the sonic elements of snow that fascinate me, a piece that invites you to listen closely and appreciate the weight of silences. Hopefully it might inspire you, in turn, to listen with new ears to the world of winter.",
         "scoreImageLoc": "photos/covers/lightSnow.png",
         "soundCloudLink": null,
-        "youtubeLink": null
+        "youtubeLink": null,
+        "thumbnail": "photos/thumbnails/snow.jpg"
     },
     {
         "id": 6,
