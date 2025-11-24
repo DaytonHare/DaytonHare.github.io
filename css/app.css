@@ -313,11 +313,6 @@ a:active {
   text-shadow: none !important;
 }
 
-.top-bar a:hover,
-.dropdown.menu .has-submenu > a:hover {
-    color: var(--brand-purple) !important;
-}
-
 
 .top-bar .menu-text a::after,
 .top-bar .has-submenu > a::after {
@@ -341,18 +336,24 @@ a:active {
   content: none !important;
 }
 
-.top-bar .is-dropdown-submenu-parent > a,
-.top-bar .is-dropdown-submenu-parent > a:focus,
-.top-bar .is-dropdown-submenu-parent > a:hover {
-    color: var(--brand-purple) !important;
-}
-
 /* Hover in submenu */
 .top-bar .submenu a:hover {
   color: var(--brand-purple-darker, #532E8C);
   background: rgba(83, 46, 140, 0.18);
   text-shadow: 0 0 6px rgba(83, 46, 140, 0.55);
 }
+
+/* Hover color for all top-bar links (including 'music') */
+.top-bar a:hover {
+  color: var(--brand-purple, #7B3FBF);
+}
+
+/* Submenu parent ('music') should only be purple on hover/focus, not always */
+.top-bar .is-dropdown-submenu-parent > a:hover,
+.top-bar .is-dropdown-submenu-parent > a:focus {
+  color: var(--brand-purple, #7B3FBF) !important;
+}
+
 
 /* ---------------- ORBIT ---------------- */
 
