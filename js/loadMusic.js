@@ -93,7 +93,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    /* --- MODAL CLICK HANDLER (NO SCROLL LOGIC HERE) --- */
+    // MODAL CLICK HANDLER — no scroll logic here
     $(document).on("click", ".open-modal", function(event) {
         event.preventDefault();
 
@@ -103,34 +103,22 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
 
         populateModal(item);
 
-        // Just open the modal; scroll locking is handled in allpageLoads.js
         $('#exampleModal1').foundation('open');
     });
 
-    /* --- REINIT FOUNDATION --- */
+    // Reinit Foundation for equalizer and reveal
     $(document).foundation();
     if (typeof Foundation !== "undefined" && Foundation.reInit) {
         Foundation.reInit(['equalizer', 'reveal']);
     }
 
-    setTimeout(adjustContentPadding, 120);
+    // Let allpageLoads.js handle padding, but nudge it after content is ready
+    if (typeof adjustContentPadding === "function") {
+        setTimeout(adjustContentPadding, 120);
+    }
 });
 
-/* --- NAVBAR PADDING LOGIC (UNCHANGED) --- */
-function adjustContentPadding() {
-    console.log("adjustContentPadding called...");
-    var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
-    var topBarHeight   = $('.top-bar').is(':visible')   ? $('.top-bar').outerHeight()   : 0;
-    var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20;
-
-    if (activeBarHeight > 20) {
-        $('#navbar-padding').height(activeBarHeight);
-    } else {
-        setTimeout(adjustContentPadding, 300);
-    }
-}
-
-/* --- MODAL CONTENT POPULATION (UNCHANGED) --- */
+/* MODAL CONTENT POPULATION */
 function populateModal(item) {
 
     $("#modalTitle").text(`${item.title} (${item.year})`);

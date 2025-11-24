@@ -10,10 +10,12 @@
       gtag('js', new Date());
       gtag('config', 'G-J81ZR834K1');
     </script>
+
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dayton Hare&mdash;Composer :: Music</title>
+
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
@@ -21,7 +23,7 @@
 </head>
 <body>
     <div id="navbar"></div>
-    <div id="navbar-padding"></div> <!-- This div will have dynamic padding -->
+    <div id="navbar-padding"></div> <!-- Dynamic padding for fixed nav -->
 
     <div class="centered-tabs-container">
         <ul class="tabs" data-tabs id="example-tabs" style="font-size: large;">
@@ -37,35 +39,35 @@
             <!-- WORKS LIST TAB -->
             <div class="tabs-panel" id="all-list">
                 <div class="grid-x grid-margin-x">
-                    
-                    <!-- LEFT: works list (JS appends into #allListContent) -->
-                    <div class="cell small-12 medium-6 large-6">
-                    <div id="allListContent">
-                        <!-- Dynamic list content is appended here by JS -->
-                    </div>
+                    <!-- LEFT: works list, populated by JS -->
+                    <div class="cell small-12 medium-8 large-8">
+                        <div id="allListContent">
+                            <!-- Dynamic list content injected here -->
+                        </div>
                     </div>
 
                     <!-- RIGHT: selected recordings -->
-                    <div class="cell small-12 medium-6 large-6">
-                    <section class="workslist-videos">
-                        <h3>Selected recordings</h3>
-                        <div class="responsive-embed widescreen" style="margin-bottom: 1rem;">
-                        <iframe
-                            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1"
-                            frameborder="0"
-                            allowfullscreen>
-                        </iframe>
-                        </div>
-                        <div class="responsive-embed widescreen">
-                        <iframe
-                            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2"
-                            frameborder="0"
-                            allowfullscreen>
-                        </iframe>
-                        </div>
-                    </section>
-                    </div>
+                    <div class="cell small-12 medium-4 large-4">
+                        <section class="workslist-videos">
+                            <h3>Selected recordings</h3>
 
+                            <div class="responsive-embed widescreen" style="margin-bottom: 1rem;">
+                                <iframe
+                                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1"
+                                  frameborder="0"
+                                  allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <div class="responsive-embed widescreen">
+                                <iframe
+                                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2"
+                                  frameborder="0"
+                                  allowfullscreen>
+                                </iframe>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
 
@@ -123,35 +125,33 @@
       <div class="grid-x grid-margin-x align-middle">
           <!-- Right column for text -->
           <div class="cell small-12 medium-8 large-8">
-              <h1 id="modalTitle" style="color: black;">Title (year)</h1> 
+              <h1 id="modalTitle" style="color: black;">Title (year)</h1>
               <p id="modalInstrumentation">Instrumentation</p>
               <p id="modalDuration">Duration</p>
               <p id="modalCommissioner" style="display:none;"></p>
               <p id="modalPremier" style="display:none;"></p>
           </div>
-  
+
           <!-- Left column for the score image -->
           <div class="cell small-12 medium-4 large-4">
               <img src="" alt="Score Image" id="modalImage" class="thumbnail" style="display: none;">
           </div>
       </div>
-      
+
       <p id="programNote" style="padding-top: 20px;">Program Note</p>
-      
+
       <div class="responsive-soundcloud" id="modalSoundCloud" style="display: none; padding-top: 20px;"></div>
-      
+
       <div class="responsive-embed" id="modalYouTube" style="display: none; padding-top: 20px;"></div>
-      
+
       <a href="" id="modalBuyLink" class="button" style="margin-top: 20px;">Purchase Inquiry</a>
-      
+
       <button class="close-button" data-close aria-label="Close modal" type="button">
           <span aria-hidden="true">&times;</span>
       </button>
     </div>
-  
 
     <div class="orbit-padding"></div>
-    <script src="https://kit.fontawesome.com/a31e390e20.js" crossorigin="anonymous"></script>
 
     <!-- Footer -->
     <div id="footer"></div>
@@ -159,7 +159,7 @@
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.min.js"></script>
-    <script src="js/allpageLoads.js"></script> 
+    <script src="js/allpageLoads.js"></script>
     <script src="js/loadMusic.js"></script>
 
     <script>

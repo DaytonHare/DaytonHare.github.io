@@ -144,12 +144,12 @@ $(function() {
         setTimeout(function() {
             adjustContentPadding();
             forceReflow();
-            applyActiveNavHighlight();  // also run on initial ready (covers inline nav cases)
+            applyActiveNavHighlight();  // also run on initial ready
         }, 300);
     });
     // ---------- END PADDING / LAYOUT HELPERS ----------
 
-    // ---------- HASH → TAB ACTIVATION (for music page) ----------
+    // ---------- HASH → TAB ACTIVATION ----------
     function activateTabFromHash() {
         var hash = window.location.hash;
         if (hash) {
@@ -179,36 +179,5 @@ $(function() {
         setTimeout(applyActiveNavHighlight, 0);
     });
 
-    // ---------- MODAL SCROLL LOCK FOR #exampleModal1 ----------
-    // This will be a no-op on pages without #exampleModal1
-    var scrollPosition = 0;
-
-    $('#exampleModal1')
-      .on('open.zf.reveal', function () {
-          // remember where we were
-          scrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
-
-          // lock the body in place without visually jumping
-          $('body')
-            .addClass('no-scroll')
-            .css({
-                position: 'fixed',
-                top: -scrollPosition + 'px',
-                width: '100%'
-            });
-      })
-      .on('closed.zf.reveal', function () {
-          // unlock body
-          $('body')
-            .removeClass('no-scroll')
-            .css({
-                position: '',
-                top: '',
-                width: ''
-            });
-
-          // restore scroll position
-          window.scrollTo(0, scrollPosition);
-      });
-    // ---------- END MODAL SCROLL LOCK ----------
+    // NOTE: no scroll-lock logic for #exampleModal1 here anymore
 });

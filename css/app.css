@@ -342,7 +342,7 @@ a:active {
   text-shadow: 0 0 6px rgba(83, 46, 140, 0.55);
 }
 
-/* ---------------- ORBIT (IF USED) ---------------- */
+/* ---------------- ORBIT ---------------- */
 
 .orbit-container {
   font-family: 'Crimson Text', serif;
@@ -789,20 +789,7 @@ iframe {
   max-width: 100%;
 }
 
-/* ---------------- MODAL + SCROLL CONTROL ---------------- */
-
-/* Foundation adds these; keep them simple */
-html.is-reveal-open,
-body.is-reveal-open {
-  overflow: hidden;
-}
-
-/* Our scroll lock class; JS handles position/top */
-body.no-scroll {
-  overflow: hidden;
-}
-
-/* Overlay & reveal z-index tuning */
+/* Reveal overlay & modal styling (no scroll hacks) */
 .reveal-overlay {
   z-index: 9999;
   overflow: hidden;
