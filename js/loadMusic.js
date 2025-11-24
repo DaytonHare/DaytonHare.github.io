@@ -1,8 +1,5 @@
 $(document).foundation();
 
-/* --- GLOBAL: store scroll position for modal fix --- */
-var modalScrollPosition = 0;
-
 // Load JSON data and populate tabs
 $.getJSON("../jsonFiles/compositions.json", function(data) {
 
@@ -34,7 +31,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             </iframe>
         ` : '';
 
-        /* CARD HTML — equalizer watch moved to .card */
+        // CARD HTML — data-equalizer-watch on .card
         var cardHtml = `
             <div class="cell">
                 <div class="card" data-equalizer-watch>
@@ -64,7 +61,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    /* --- BUILD LIST VIEW --- */
+    // Build List View for "all - list" tab grouped by category
     var categories = ["large ensemble", "small ensemble", "solo / duo", "vocal"];
 
     categories.forEach(function(cat) {
@@ -96,7 +93,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    /* --- MODAL HANDLERS (WITH SCROLL FIX) --- */
+    /* --- MODAL CLICK HANDLER (NO SCROLL LOGIC HERE) --- */
     $(document).on("click", ".open-modal", function(event) {
         event.preventDefault();
 
@@ -106,24 +103,8 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
 
         populateModal(item);
 
-        // Save scroll position
-        modalScrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
-
-        // Lock scroll while keeping screen visually still
-        $('body')
-            .addClass('no-scroll')
-            .css('top', -modalScrollPosition + 'px');
-
+        // Just open the modal; scroll locking is handled in allpageLoads.js
         $('#exampleModal1').foundation('open');
-    });
-
-    // Restore scroll on close (bound once)
-    $('#exampleModal1').on('closed.zf.reveal', function() {
-        $('body')
-            .removeClass('no-scroll')
-            .css('top', '');
-
-        window.scrollTo(0, modalScrollPosition);
     });
 
     /* --- REINIT FOUNDATION --- */
@@ -203,6 +184,8 @@ function populateModal(item) {
         $("#modalYouTube").hide();
     }
 
-    $("#modalBuyLink").attr("href",
-        `mailto:daytonhare.music@gmail.com?subject=Inquiry about ${item.title}`);
+    $("#modalBuyLink").attr(
+        "href",
+        `mailto:daytonhare.music@gmail.com?subject=Inquiry about ${item.title}`
+    );
 }

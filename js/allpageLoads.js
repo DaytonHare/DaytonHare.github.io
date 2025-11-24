@@ -4,6 +4,7 @@ $(document).foundation();
 $(function() {
     console.log("Starting script...");
 
+    // ---------- LOAD NAVBAR ----------
     $("#navbar").load("navbar.html", function(response, status, xhr) {
         if (status == "error") {
             console.error("Error loading navbar: ", xhr.status, xhr.statusText);
@@ -13,11 +14,12 @@ $(function() {
             setTimeout(function() {
                 adjustContentPadding();
                 forceReflow();
-                applyActiveNavHighlight();  // <- highlight after navbar is in DOM
+                applyActiveNavHighlight();  // highlight after navbar is in DOM
             }, 200);
         }
     });
 
+    // ---------- LOAD FOOTER ----------
     $("#footer").load("footer.html", function(response, status, xhr) {
         if (status == "error") {
             console.error("Error loading footer: ", xhr.status, xhr.statusText);
@@ -28,6 +30,7 @@ $(function() {
     });
 
     // ---------- NAV HIGHLIGHT HELPERS ----------
+
     // Normalize pathname: treat / and /index.html as same, drop trailing slash
     function canonPath(u) {
         var p = u.pathname;
@@ -90,11 +93,12 @@ $(function() {
     }
     // ---------- END NAV HIGHLIGHT HELPERS ----------
 
+    // ---------- PADDING / LAYOUT HELPERS ----------
     function adjustContentPadding() {
         console.log("adjustContentPadding called...");
         var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
-        var topBarHeight = $('.top-bar').is(':visible') ? $('.top-bar').outerHeight() : 0;
-        var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20;
+        var topBarHeight   = $('.top-bar').is(':visible')   ? $('.top-bar').outerHeight()   : 0;
+        var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20; // extra padding
 
         console.log('Title bar height:', titleBarHeight);
         console.log('Top bar height:', topBarHeight);
@@ -111,6 +115,7 @@ $(function() {
 
     function forceReflow() {
         console.log("Forcing reflow to recalculate layout...");
+        // Trigger reflow
         document.body.offsetHeight;
         setTimeout(function() {
             adjustContentPadding();
@@ -142,7 +147,9 @@ $(function() {
             applyActiveNavHighlight();  // also run on initial ready (covers inline nav cases)
         }, 300);
     });
+    // ---------- END PADDING / LAYOUT HELPERS ----------
 
+    // ---------- HASH → TAB ACTIVATION (for music page) ----------
     function activateTabFromHash() {
         var hash = window.location.hash;
         if (hash) {
@@ -165,16 +172,43 @@ $(function() {
             applyActiveNavHighlight(); // keep highlight synced when hash changes
         });
     });
+    // ---------- END HASH → TAB ACTIVATION ----------
 
     // Re-highlight when user clicks a nav link (useful for same-page hash links)
     $(document).on('click', '#example-menu a', function() {
         setTimeout(applyActiveNavHighlight, 0);
     });
 
-    // Prevent scrolling issues on body when the modal is open
-    $('#exampleModal1').on('open.zf.reveal', function() {
-        $('body').addClass('no-scroll');
-    }).on('closed.zf.reveal', function() {
-        $('body').removeClass('no-scroll');
-    });
+    // ---------- MODAL SCROLL LOCK FOR #exampleModal1 ----------
+    // This will be a no-op on pages without #exampleModal1
+    var scrollPosition = 0;
+
+    $('#exampleModal1')
+      .on('open.zf.reveal', function () {
+          // remember where we were
+          scrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+          // lock the body in place without visually jumping
+          $('body')
+            .addClass('no-scroll')
+            .css({
+                position: 'fixed',
+                top: -scrollPosition + 'px',
+                width: '100%'
+            });
+      })
+      .on('closed.zf.reveal', function () {
+          // unlock body
+          $('body')
+            .removeClass('no-scroll')
+            .css({
+                position: '',
+                top: '',
+                width: ''
+            });
+
+          // restore scroll position
+          window.scrollTo(0, scrollPosition);
+      });
+    // ---------- END MODAL SCROLL LOCK ----------
 });

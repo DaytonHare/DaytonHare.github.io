@@ -1,13 +1,14 @@
-:root{
+:root {
   --brand-purple: #7B3FBF;
   --brand-purple-darker: #532E8C;
 }
 
+/* LOGO */
 .responsive-logo {
-    height: 100%;
-    max-height: 55px;
-    width: auto;
-    vertical-align: middle;
+  height: 100%;
+  max-height: 55px;
+  width: auto;
+  vertical-align: middle;
 }
 
 /* Font info:
@@ -18,86 +19,90 @@ font-family: 'Crimson Text', serif; (normal)
 
 */
 
+/* ICON / CONTACT LABELS */
 .mail:before {
-    content: "\2709";
-    font-family: 'Glyphicons Halflings';
-    float: left;
-    margin-right: 2em;
-  }
-  
-  .web:before {
-    content: "\e135";
-    font-family: 'Glyphicons Halflings';
-    float: left;
-    margin-right: 2em;
-  }
-  
-  .linkedin:before {
-    content: "\e008";
-    font-family: 'Glyphicons Halflings';
-    float: left;
-    margin-right: 2em;
-  }
-    
-    .pubs:before {
-    content: "\e043";
-    font-family: 'Glyphicons Halflings';
-    float: left;
-    margin-right: 2em;
-  }
-  
-  .location:before {
-    content: "\e062";
-    font-family: 'Glyphicons Halflings';
-    float: left;
-    margin-right: 2em;
-  }
-  
-  .mail, .web, .linkedin, .location, .pubs {
-    display: block;
-    margin-bottom: 1em;
-  }
-    
+  content: "\2709";
+  font-family: 'Glyphicons Halflings';
+  float: left;
+  margin-right: 2em;
+}
 
+.web:before {
+  content: "\e135";
+  font-family: 'Glyphicons Halflings';
+  float: left;
+  margin-right: 2em;
+}
+
+.linkedin:before {
+  content: "\e008";
+  font-family: 'Glyphicons Halflings';
+  float: left;
+  margin-right: 2em;
+}
+
+.pubs:before {
+  content: "\e043";
+  font-family: 'Glyphicons Halflings';
+  float: left;
+  margin-right: 2em;
+}
+
+.location:before {
+  content: "\e062";
+  font-family: 'Glyphicons Halflings';
+  float: left;
+  margin-right: 2em;
+}
+
+.mail, .web, .linkedin, .location, .pubs {
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* GLOBAL BODY + TYPOGRAPHY */
 body {
-    padding-top: 0px;
-    margin-bottom: 0px;
-    font-size: 15px;
-    background-color: black;
-    color: white;
-    font-family: 'Crimson Text', serif;
-    font-weight: 400;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
 }
 
 .menu-text {
-    padding: 0;
+  padding: 0;
 }
 
-/* Footer related css */
+/* ---------------- FOOTER ---------------- */
 
 footer {
   position: relative;
   width: 100%;
-  min-height: 250px; /* Ensure minimum height to fit content */
-  background-color: #24277a; /* Dark sky blue background that matches the image tones */
+  min-height: 250px;
+  background-color: #24277a;
+  color: white;
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
 }
 
 .footer-image-container {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center; /* Center child elements horizontally */
-  overflow: hidden; /* Ensures no overflow if the image is larger */
+  text-align: center;
+  overflow: hidden;
 }
 
 .footer-image {
   display: inline-block;
   vertical-align: middle;
-  width: auto; /* Maintain aspect ratio by adjusting width */
-  max-height: 300px; /* Limit the maximum height */
-  max-width: max-content; /* Ensure the image doesn't overflow the container width */
-  object-fit: cover; /* Ensures the image covers the area without stretching */
-  object-position: center center; /* Center the image both horizontally and vertically */
+  width: auto;
+  max-height: 300px;
+  max-width: max-content;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .footer-overlay {
@@ -148,35 +153,34 @@ footer {
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
-
+/* Responsive footer tweaks */
 @media screen and (max-width: 768px) {
   .footer-overlay {
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8); /* Make overlay a bit darker for smaller screens */
-    max-width: 90%; /* Expand to fill more space on smaller screens */
+    background: rgba(0, 0, 0, 0.8);
+    max-width: 90%;
   }
 
   .footer-overlay h2 {
-    font-size: 1.0em; /* Reduce the size of the heading on smaller screens */
+    font-size: 1.0em;
   }
 
   .footer-overlay a.button {
-    padding: 8px 15px; /* Smaller padding for buttons */
+    padding: 8px 15px;
     font-size: 0.9em;
   }
 }
 
 @media screen and (max-width: 480px) {
   .footer-overlay {
-    flex-direction: column; /* Stack content vertically on very small screens */
+    flex-direction: column;
     padding: 5px;
-    max-width: 90%; /* Use most of the available space */
-    max-height: 80%; /* Allow some space for image visibility */
+    max-width: 90%;
+    max-height: 80%;
   }
 
   .footer-overlay h2 {
-    font-size: 1em; /* Further reduce heading size */
+    font-size: 1em;
   }
 
   .footer-credit {
@@ -184,40 +188,79 @@ footer {
   }
 
   footer {
-    min-height: 200px; /* Further reduce min height for very small screens */
+    min-height: 200px;
   }
 }
 
+/* ---------------- HEADERS / TABLES ---------------- */
+
+table, th, td {
+  border: 1px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 50px;
+  color: #a1a1a1;
+}
+
+.h1, h1 {
+  color: white;
+  font-family: 'Crimson Text', serif;
+  font-size: 36px;
+}
+
+.h2, h2 {
+  color: white;
+  font-family: 'Crimson Text', serif;
+}
+
+.h3, h3 {
+  color: white;
+  font-family: 'Crimson Text', serif;
+  font-size: x-large;
+}
+
+.h4, h4 {
+  color: white;
+  display: inline;
+  font-family: 'Crimson Text', serif;
+  font-size: larger;
+}
+
+.h5, h5 {
+  color: white;
+  display: inline;
+  font-family: 'Crimson Text', serif;
+  font-size: larger;
+}
+
 .page-header {
-padding-top: 30px;
-margin-top: 0px;
+  padding-top: 30px;
+  margin-top: 0px;
 }
 
 .list-group-item:hover {
-text-decoration: none;
-background-color: #ffcdcd;
+  text-decoration: none;
+  background-color: #ffcdcd;
 }
 
-/* Link coloring */
-/* unvisited link */
-a:link {    
-    color: white;
+/* ---------------- LINKS ---------------- */
+
+/* Global links */
+a:link {
+  color: white;
 }
 
-/* visited link */
 a:visited {
-    color: white;
+  color: white;
 }
 
-/* mouse over link */
 a:hover {
-    color: lightskyblue;
+  color: lightskyblue;
 }
 
-/* selected link */
 a:active {
-    color: lightskyblue;
-    text-decoration: underline;
+  color: lightskyblue;
+  text-decoration: underline;
 }
 
 /* Top bar base link colors */
@@ -240,7 +283,7 @@ a:active {
   position: relative;
   color: var(--brand-purple, #7B3FBF) !important;
   background: transparent !important;
-  text-shadow: 0 0 6px rgba(123, 63, 191, 0.55);  /* gentle purple glow */
+  text-shadow: 0 0 6px rgba(123, 63, 191, 0.55);
 }
 
 /* thin glowing underline */
@@ -264,8 +307,6 @@ a:active {
   text-shadow: 0 0 8px rgba(83, 46, 140, 0.7);
 }
 
-/* --- NAV ACTIVE LINK REFINEMENTS --- */
-
 /* Remove underline & glow from the logo and parent dropdowns */
 .top-bar .menu-text a,
 .top-bar .has-submenu > a {
@@ -277,87 +318,42 @@ a:active {
   content: none !important;
 }
 
-/* --- Submenu (dropdown) active state: pill tint, no underline --- */
+/* Submenu active state */
 .top-bar .submenu a.is-active,
 .top-bar .submenu .active > a {
   position: relative;
   color: var(--brand-purple, #7B3FBF) !important;
-  background: rgba(123, 63, 191, 0.16) !important; /* soft purple tint */
+  background: rgba(123, 63, 191, 0.16) !important;
   border-radius: 6px;
   text-shadow: 0 0 5px rgba(123, 63, 191, 0.45);
 }
 
-/* Kill the underline/glow inside dropdowns */
+/* Kill underline/glow inside dropdowns */
 .top-bar .submenu a.is-active::after,
 .top-bar .submenu .active > a::after,
 .top-bar .submenu a:hover::after {
   content: none !important;
 }
 
-/* Hover in submenu: slightly deeper tint, no underline */
+/* Hover in submenu */
 .top-bar .submenu a:hover {
   color: var(--brand-purple-darker, #532E8C);
   background: rgba(83, 46, 140, 0.18);
   text-shadow: 0 0 6px rgba(83, 46, 140, 0.55);
 }
 
-
-/*headers*/
-table, th, td {
-    border: 1px solid black;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 50px;
-    color: #a1a1a1;
-}
-
-.h1, h1 {
-    color: white;
-    font-family: 'Crimson Text', serif;
-    font-size: 36px;
-}
-
-.h2, h2 {
-    color: white;
-    font-family: 'Crimson Text', serif;
-}
-
-.h3, h3 {
-    color: white;
-    font-family: 'Crimson Text', serif;
-    font-size: x-large;
-}
-
-.h4, h4 {
-    color: white;
-    display: inline;
-    font-family: 'Crimson Text', serif;
-    font-size: larger;
-}
-
-.h5, h5 {
-  color: white;
-  display: inline;
-  font-family: 'Crimson Text', serif;
-  font-size: larger;
-}
-
-footer {
-color: white;
-font-family: 'Crimson Text', serif;
-font-weight: 400;
-}
+/* ---------------- ORBIT (IF USED) ---------------- */
 
 .orbit-container {
   font-family: 'Crimson Text', serif;
   position: relative;
   min-width: 100%;
-  min-height: 10%; /* Adjust this as needed */
-  transition: height 0.5s ease-in-out; /* Smooth height adjustment */
+  min-height: 10%;
+  transition: height 0.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensure content doesn't overflow */
+  overflow: hidden;
 }
 
 .orbit-slide {
@@ -369,25 +365,23 @@ font-weight: 400;
 
 .docs-example-orbit-slide {
   padding: 20px;
-  background-color: #2e1a47; /* Adjust the background color as needed */
+  background-color: #2e1a47;
   border: 1px solid #2e1a47;
   border-radius: 5px;
   width: 100%;
-  max-width: 20000px; /* Adjust the max width as needed */
+  max-width: 20000px;
   box-sizing: border-box;
   text-align: center;
-  margin: 0 auto; /* Center the content horizontally */
+  margin: 0 auto;
   font-family: 'Crimson Text', serif;
-
 }
 
-.responsive-score  {
+.responsive-score {
   max-height: 300px;
   height: auto;
   width: auto;
   max-width: 100%;
 }
-
 
 .orbit-previous, .orbit-next {
   position: absolute;
@@ -428,104 +422,81 @@ font-weight: 400;
 .orbit-bullets button.is-active {
   background-color: white;
 }
+
 .blank-placeholder {
   width: 100%;
-  height: 315px; /* Match the height of YouTube embed */
-  background-color: #f0f0f0; /* Light grey or any other background color */
+  height: 315px;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #888; /* A subtle text color */
+  color: #888;
   font-size: 16px;
   text-align: center;
 }
 
+.orbit-padding {
+  padding-top: 30px;
+}
 
-/* Ensure the headshot is responsive */
+/* ---------------- IMAGE + OVERLAY COMPONENTS ---------------- */
+
 .responsive-headshot {
-    width: 100%;
-    height: auto;
-    border-radius: 5px; /* Optional: add rounded corners */
-  }
-  
-  /* Ensure the background image is responsive */
-  .relative-cell {
-    position: relative;
-  }
-  
-  .responsive-background {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-/* Overlay with transparent background and text */
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.relative-cell {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.responsive-background {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Dark overlay */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(50, 50, 50, 0.466); /* Dark grey transparent overlay */
+  background: rgba(50, 50, 50, 0.466);
   color: white;
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid rgba(83, 83, 83, 0.308);
   font-family: 'Crimson Text', serif;
-  overflow-y: auto; /* Allows scrolling if content overflows */
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space between heading and tagline */
+  justify-content: space-between;
 }
 
 .overlay-heading {
-  margin-top: 10px; /* Ensure space from the top */
+  margin-top: 10px;
 }
 
 .overlay-tagline {
-  margin-bottom: 10px; /* Ensure space from the bottom */
+  margin-bottom: 10px;
 }
 
-/* Responsive Font Sizes */
+/* Overlay font sizes */
 .overlay h2 {
-  font-size: 2em; /* Base font size */
+  font-size: 2em;
   margin: 0;
 }
 
 .overlay h5 {
-  font-size: 1.2em; /* Base font size */
+  font-size: 1.2em;
   font-style: italic;
-}
-
-@media screen and (max-width: 768px) {
-  .overlay h2 {
-      font-size: 1.5em; /* Smaller font size for medium screens */
-  }
-
-  .overlay h5 {
-      font-size: 1em; /* Smaller font size for medium screens */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .overlay h2 {
-      font-size: 1.2em; /* Even smaller font size for small screens */
-  }
-
-  .overlay h5 {
-      font-size: 0.9em; /* Even smaller font size for small screens */
-  }
-}
-
-/* Additional styles to manage positioning and spacing */
-.relative-cell {
-  position: relative;
-}
-
-.responsive-background {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Ensure image covers the area */
 }
 
 .overlay h2, .overlay p {
@@ -534,94 +505,61 @@ font-weight: 400;
   font-family: 'Crimson Text', serif;
 }
 
-
-  .orbit-padding {
-    padding-top: 30px;
+@media screen and (max-width: 768px) {
+  .overlay h2 {
+    font-size: 1.5em;
   }
 
-/* Ensure the top bar sticks to the top of the screen */
-/* Ensure the top bar sticks to the top of the screen */
-[data-sticky-container] {
-    margin-top: 0;
+  .overlay h5 {
+    font-size: 1em;
   }
-  
-  .title-bar,
-  .top-bar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    font-size: large;
-  }
-  
-  /* Ensure the top bar content is centered */
-  .top-bar {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .top-bar-left {
-    flex: 1;
-  }
-  
-  .top-bar-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+  .overlay h2 {
+    font-size: 1.2em;
   }
 
-  /* Display the title bar on smaller screens */
-  @media screen and (max-width: 640px) {
-    .title-bar {
-      display: flex;
-    }
-    .top-bar {
-      display: none;
-    }
+  .overlay h5 {
+    font-size: 0.9em;
   }
+}
 
-/* Container for image and overlay */
+/* Large image overlay-left variant */
 .image-container {
   position: relative;
-  background-color: #f4f4f4; /* Light background to prevent overlap issues */
+  background-color: #f4f4f4;
   overflow: hidden;
 }
 
-/* Ensure the large image is responsive */
 .responsive-large-image {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ensures the image covers the area */
-  object-position: center; /* Centers the image within its container */
-  display: block; /* Make sure image behaves as a block element */
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.relative-cell {
-  position: relative;
-}
-
-/* Responsive overlay on the left third of the large image */
 .overlay-left {
   position: absolute;
   top: 0;
   left: 0;
   width: 38.33%;
   height: 100%;
-  background: rgba(211, 211, 211, 0.7); /* Light grey transparent overlay */
+  background: rgba(211, 211, 211, 0.7);
   color: black;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align content to the top */
-  overflow-y: auto; /* Always allow scrolling if content overflows */
-  transition: all 0.5s ease; /* Smooth transition for all changes */
-  min-height: 250px; /* Minimum height to prevent collapsing */
-  max-height: 100vh; /* Limit to viewport height */
-  backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a more polished look */
+  justify-content: flex-start;
+  overflow-y: auto;
+  transition: all 0.5s ease;
+  min-height: 250px;
+  max-height: 100vh;
+  backdrop-filter: blur(5px);
 }
 
-/* Adjust font size and layout dynamically */
 .bio-text p {
   margin: 0;
   padding-bottom: 10px;
@@ -631,57 +569,56 @@ font-weight: 400;
 
 @media screen and (max-width: 1024px) {
   .overlay-left {
-      width: 50%; /* Expand overlay to cover half the image on smaller screens */
-      height: 100%; /* Maintain full height */
-      overflow-y: auto; /* Ensure scrolling */
-      max-height: 100vh; /* Limit to viewport height */
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 100vh;
   }
 
   .bio-text p {
-      font-size: 1em; /* Adjust font size for smaller screens */
+    font-size: 1em;
   }
 }
 
 @media screen and (max-width: 768px) {
   .overlay-left {
-      width: 65%; /* Further expand overlay on smaller screens */
-      height: 100%; /* Maintain full height */
-      overflow-y: auto; /* Ensure scrolling */
-      max-height: 100vh; /* Limit to viewport height */
+    width: 65%;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 100vh;
   }
 
   .bio-text p {
-      font-size: 0.9em; /* Smaller font size for medium screens */
+    font-size: 0.9em;
   }
 }
 
 @media screen and (max-width: 480px) {
   .overlay-left {
-      width: 100%; /* Full width on very small screens */
-      height: 100%; /* Allow height to adjust to content */
-      padding: 10px; /* Reduce padding */
-      overflow-y: auto; /* Ensure scrolling if content overflows */
-      max-height: 100vh; /* Limit to viewport height */
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 100vh;
   }
 
   .bio-text p {
-      font-size: 0.8em; /* Even smaller font size for small screens */
+    font-size: 0.8em;
   }
 }
 
-/* Ensure the left image is responsive */
+/* Left image + purple box */
 .responsive-left-image {
   width: 100%;
   height: auto;
-  margin-right: 20px; /* Adjust padding between left image and purple box */
-  object-fit: cover; /* Ensure the image covers the area */
-  object-position: center; /* Centers the image within its container */
+  margin-right: 20px;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* Purple box with white text */
 .purple-box {
-  background-color: #2e1a47; /* Adjust the background color as needed */
-  border: 1px solid #2e1a47;    
+  background-color: #2e1a47;
+  border: 1px solid #2e1a47;
   color: white;
   padding: 20px;
   display: flex;
@@ -690,29 +627,122 @@ font-weight: 400;
   box-sizing: border-box;
 }
 
+/* Hobbies text */
+.hobbies-text {
+  text-align: left;
+}
 
+.hobbies-text h2 {
+  margin-top: 0;
+}
 
+.hobbies-text p {
+  margin: 0;
+}
 
-  
-  /* Hobbies text styling */
-  .hobbies-text {
-    text-align: left;
+/* ---------------- STICKY NAV / TOP BAR ---------------- */
+
+[data-sticky-container] {
+  margin-top: 0;
+}
+
+.title-bar,
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-size: large;
+}
+
+/* Ensure the top bar content is centered */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-bar-left {
+  flex: 1;
+}
+
+.top-bar-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Display the title bar on smaller screens */
+@media screen and (max-width: 640px) {
+  .title-bar {
+    display: flex;
   }
-  
-  .hobbies-text h2 {
-    margin-top: 0;
+  .top-bar {
+    display: none;
   }
-  
-  .hobbies-text p {
-    margin: 0;
+}
+
+/* ---------------- CONTACT PAGE OVERLAY ---------------- */
+
+.contact-container {
+  width: 100%;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.overlayContact {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 33.33%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  background: rgba(66, 3, 86, 0.679);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+  font-size: larger;
+}
+
+.form-container form {
+  width: 100%;
+}
+
+.form-container label {
+  font-size: large;
+  color: white;
+}
+
+/* Stack on small screens */
+@media (max-width: 800px), (max-height: 400px) {
+  .relative-cell {
+    flex-direction: column;
   }
-  
+  .overlayContact {
+    position: relative;
+    width: 100%;
+    height: auto;
+    order: 1;
+  }
+  .contact-image {
+    order: 0;
+  }
+}
 
-/* Music Page*/
+/* ---------------- MUSIC PAGE ---------------- */
 
-/* Card Styles */
-
-/* === Equal Heights for Music Cards === */
+/* Equal heights for music cards */
 .grid-x[data-equalizer] .cell {
   display: flex;
 }
@@ -748,42 +778,93 @@ font-weight: 400;
 }
 
 .card {
-  background-color: #2e1a47; /* Dark purple blue */
+  background-color: #2e1a47;
   color: white;
-  min-height: 300px; /* Set a consistent minimum height */
+  min-height: 300px;
   width: 100%;
 }
-
 
 /* Ensure SoundCloud iframe fits within card */
 iframe {
   max-width: 100%;
 }
 
-/* Body scroll control for modals */
-body.modal-open {
-  overflow: hidden; /* Prevent background scroll when modal is open */
+/* ---------------- MODAL + SCROLL CONTROL ---------------- */
+
+/* Foundation adds these; keep them simple */
+html.is-reveal-open,
+body.is-reveal-open {
+  overflow: hidden;
 }
 
+/* Our scroll lock class; JS handles position/top */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Overlay & reveal z-index tuning */
 .reveal-overlay {
-  z-index: 9999; /* Ensure the overlay is above other content */
+  z-index: 9999;
   overflow: hidden;
 }
 
 .reveal {
-  z-index: 10000; /* Ensure the modal is above the overlay */
-  /*top: 0 !important;  Prevent manual top adjustments */
+  z-index: 10000;
+  background: #f6e7fb;
+  padding: 20px;
+  color: #000;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-html.is-reveal-open, body.is-reveal-open {
-  overflow: hidden;
-  /*position: fixed; Def not workable*/
-  width: 100%;
+.reveal img {
+  max-height: 200px;
+  width: auto;
 }
 
+#exampleModal1 .grid-x {
+  align-items: flex-start;
+}
 
-/* SoundCloud iframe responsiveness */
-/* Tabs and Tab Content Styles */
+#exampleModal1 h1 {
+  margin-bottom: 10px;
+}
+
+#modalInstrumentation,
+#modalDuration {
+  margin-bottom: 10px;
+}
+
+#modalImage {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+#programNote,
+#modalSoundCloud,
+#modalYouTube {
+  padding-top: 20px;
+}
+
+#modalBuyLink {
+  margin-top: 20px;
+}
+
+#exampleModal1 .cell.small-12.medium-4.large-4 {
+  padding-right: 20px;
+}
+
+.close-button {
+  right: 10px;
+  top: 10px;
+}
+
+/* ---------------- TABS (MUSIC PAGE) ---------------- */
+
 .tabs {
   background-color: black;
   font-size: large;
@@ -812,143 +893,13 @@ html.is-reveal-open, body.is-reveal-open {
 }
 
 .centered-tabs-container {
-  max-width: 1500px; /* Adjust this value as needed */
-  margin: 0 auto; /* Centers the container */
-  padding: 0 15px; /* Adds some padding */
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-/* Prevent body scroll when the modal is open */
-/*.no-scroll {
-  overflow: hidden;
-}*/
-
-body.no-scroll {
-  position: fixed;
-  overflow-y: scroll; /* keeps scrollbar width consistent */
-  width: 100%;
-}
-
-/* Modal Styles */
-.reveal {
-  background: #f6e7fb;
-  padding: 20px;
-  color: #000;
-  max-height: 80vh; /* Limit modal height to 80% of viewport height */
-  overflow-y: auto; /* Enable vertical scrolling within the modal */
-  width: 90%; /* Adjust width for better responsiveness */
-  max-width: 800px; /* Set a maximum width for larger screens */
-  margin: 0 auto; /* Center the modal horizontally */
-}
-
-.reveal img {
-  max-height: 200px;
-  width: auto;
-}
+/* ---------------- MISC GLOBAL ---------------- */
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
-#exampleModal1 .grid-x {
-  align-items: flex-start; /* Align items to the top to allow scrolling */
-}
-
-#exampleModal1 h1 {
-  margin-bottom: 10px;
-}
-
-#modalInstrumentation, #modalDuration {
-  margin-bottom: 10px;
-}
-
-#modalImage {
-  max-width: 100%; /* Ensure the image does not overflow its container */
-  height: auto; /* Maintain aspect ratio */
-  border: none;
-}
-
-#programNote, #modalSoundCloud, #modalYouTube {
-  padding-top: 20px; /* Consistent padding above each element */
-}
-
-#modalBuyLink {
-  margin-top: 20px;
-}
-
-#exampleModal1 .cell.small-12.medium-4.large-4 {
-  padding-right: 20px; /* Additional space to the right of the image */
-}
-
-.close-button {
-  right: 10px; /* Ensure the close button stays at the corner */
-  top: 10px;
-}
-
-/* Contact Form */
-
-.contact-container {
-  width: 100%;
-}
-
-.relative-cell {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.contact-image {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-}
-
-.overlayContact {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  width: 33.33%; /* Take up the right third of the image */
-  height: 100%;
-  background: rgba(0, 0, 0, 0); /* Dark transparent overlay */
-  display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally within the right third */
-}
-
-.form-container {
-  background: rgba(66, 3, 86, 0.679); /* Slightly transparent white background */
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  color: white;
-  font-size: larger;
-}
-
-.form-container form {
-  width: 100%;
-}
-
-
-
-.form-container  label {
-  font-size: large;
-  color: white;
-}
-/* Media query to stack the form below the image if necessary */
-@media (max-width: 800px), (max-height: 400px) {
-  .relative-cell {
-    flex-direction: column;
-  }
-  .overlayContact {
-    position: relative;
-    width: 100%;
-    height: auto;
-    order: 1; /* Place below the image */
-  }
-  .contact-image {
-    order: 0;
-  }
-}
-
-
