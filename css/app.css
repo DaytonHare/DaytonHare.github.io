@@ -313,6 +313,12 @@ a:active {
   text-shadow: none !important;
 }
 
+.top-bar a:hover,
+.dropdown.menu .has-submenu > a:hover {
+    color: var(--brand-purple) !important;
+}
+
+
 .top-bar .menu-text a::after,
 .top-bar .has-submenu > a::after {
   content: none !important;
