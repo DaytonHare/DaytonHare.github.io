@@ -245,7 +245,7 @@ table, th, td {
 
 /* ---------------- LINKS ---------------- */
 
-/* Global links */
+/* Global links (non-navbar) */
 a:link {
   color: white;
 }
@@ -254,6 +254,7 @@ a:visited {
   color: white;
 }
 
+/* Keep your global blue hover for normal text links */
 a:hover {
   color: lightskyblue;
 }
@@ -263,21 +264,25 @@ a:active {
   text-decoration: underline;
 }
 
-/* Top bar base link colors */
+/* ===== TOP BAR NAVBAR LINKS ===== */
+
+/* Base top-bar link colors: white by default */
+.top-bar a,
 .top-bar a:link,
 .top-bar a:visited {
   color: #ffffff;
+  background: transparent;
+  text-decoration: none;
 }
 
-.top-bar a:hover {
-  color: var(--brand-purple, #7B3FBF);
+/* Hover/focus: purple text, no blue background */
+.top-bar a:hover,
+.top-bar a:focus {
+  color: var(--brand-purple, #7B3FBF) !important;
+  background: transparent !important;
 }
 
-.top-bar a:active {
-  color: var(--brand-purple-darker, #532E8C);
-}
-
-/* --- NAV ACTIVE LINK: SOFT PURPLE GLOW STYLE --- */
+/* Active nav item: purple + glow underline (your existing style) */
 .top-bar a.is-active,
 .top-bar .active > a {
   position: relative;
@@ -300,23 +305,53 @@ a:active {
   border-radius: 2px;
 }
 
-/* optional subtle hover accent */
+/* optional subtle hover accent on the active item */
 .top-bar a.is-active:hover,
 .top-bar .active > a:hover {
   color: var(--brand-purple-darker, #532E8C) !important;
   text-shadow: 0 0 8px rgba(83, 46, 140, 0.7);
 }
 
-/* Remove underline & glow from the logo and parent dropdowns */
+/* Remove glow/underline from logo and parent dropdowns */
 .top-bar .menu-text a,
 .top-bar .has-submenu > a {
   text-shadow: none !important;
+  background: transparent !important;
 }
-
 
 .top-bar .menu-text a::after,
 .top-bar .has-submenu > a::after {
   content: none !important;
+}
+
+/* Make sure the top-level 'music' link (submenu parent) behaves like others */
+.top-bar .has-submenu > a,
+.top-bar .is-dropdown-submenu-parent > a {
+  color: #ffffff;
+}
+
+/* On hover/focus, 'music' is purple (no Foundation blue flash) */
+.top-bar .has-submenu > a:hover,
+.top-bar .has-submenu > a:focus,
+.top-bar .is-dropdown-submenu-parent > a:hover,
+.top-bar .is-dropdown-submenu-parent > a:focus {
+  color: var(--brand-purple, #7B3FBF) !important;
+  background: transparent !important;
+}
+
+/* Submenu links (dropdown under music) */
+.top-bar .submenu a,
+.top-bar .submenu a:link,
+.top-bar .submenu a:visited {
+  color: #ffffff;
+  background: black;
+}
+
+/* Hover in submenu: darker purple, soft background */
+.top-bar .submenu a:hover {
+  color: var(--brand-purple-darker, #532E8C);
+  background: rgba(83, 46, 140, 0.18);
+  text-shadow: 0 0 6px rgba(83, 46, 140, 0.55);
 }
 
 /* Submenu active state */
@@ -336,23 +371,6 @@ a:active {
   content: none !important;
 }
 
-/* Hover in submenu */
-.top-bar .submenu a:hover {
-  color: var(--brand-purple-darker, #532E8C);
-  background: rgba(83, 46, 140, 0.18);
-  text-shadow: 0 0 6px rgba(83, 46, 140, 0.55);
-}
-
-/* Hover color for all top-bar links (including 'music') */
-.top-bar a:hover {
-  color: var(--brand-purple, #7B3FBF);
-}
-
-/* Submenu parent ('music') should only be purple on hover/focus, not always */
-.top-bar .is-dropdown-submenu-parent > a:hover,
-.top-bar .is-dropdown-submenu-parent > a:focus {
-  color: var(--brand-purple, #7B3FBF) !important;
-}
 
 
 /* ---------------- ORBIT ---------------- */
