@@ -850,6 +850,28 @@ iframe {
   top: 10px;
 }
 
+/* Constrain media (image or SoundCloud) to SoundCloud height and center it */
+.card-media-wrapper {
+    width: 100%;
+    height: 166px;               /* match SoundCloud player height */
+    display: flex;
+    justify-content: center;     /* center horizontally */
+    align-items: center;         /* center vertically */
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+/* Images inside the media wrapper */
+.card-media-image {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;         /* scale without cropping */
+    display: block;
+}
+
+
 /* ---------------- TABS (MUSIC PAGE) ---------------- */
 
 .tabs {

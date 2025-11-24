@@ -28,40 +28,45 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
                 break;
         }
 
-        /* --- MEDIA PRIORITY LOGIC ---  
-           1. SoundCloud  
-           2. Thumbnail  
-           3. Score image  
-           4. Nothing  
+        /* --- MEDIA PRIORITY + LAYOUT ---
+           Priority:
+           1. SoundCloud
+           2. Thumbnail
+           3. Score image
+           4. Nothing
         ----------------------------------------------------------- */
 
         let mediaHtml = "";
 
-        // (1) SoundCloud gets absolute priority
         if (item.soundCloudLink) {
+            // SoundCloud (keeps original player, but wrapped to constrain height)
             mediaHtml = `
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%232e1a47&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-                </iframe>
+                <div class="card-media-wrapper">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%232e1a47&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+                    </iframe>
+                </div>
+            `;
+        } else if (item.thumbnail) {
+            // Thumbnail image
+            mediaHtml = `
+                <div class="card-media-wrapper">
+                    <img src="${item.thumbnail}"
+                         alt="${item.title} thumbnail"
+                         class="card-media-image">
+                </div>
+            `;
+        } else if (item.scoreImageLoc) {
+            // Score image fallback
+            mediaHtml = `
+                <div class="card-media-wrapper">
+                    <img src="${item.scoreImageLoc}"
+                         alt="${item.title} score image"
+                         class="card-media-image">
+                </div>
             `;
         }
-        // (2) Thumbnail is next priority
-        else if (item.thumbnail) {
-            mediaHtml = `
-                <img src="${item.thumbnail}"
-                     alt="${item.title} thumbnail"
-                     class="card-media-image">
-            `;
-        }
-        // (3) Score image fallback
-        else if (item.scoreImageLoc) {
-            mediaHtml = `
-                <img src="${item.scoreImageLoc}"
-                     alt="${item.title} score image"
-                     class="card-media-image">
-            `;
-        }
-        // (4) else: nothing
+        // else leave mediaHtml = "" (no media)
 
         /* --- CARD HTML --- */
         var cardHtml = `
@@ -93,7 +98,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    /* --- BUILD LIST VIEW (unchanged) --- */
+    /* --- BUILD LIST VIEW --- */
     var categories = ["large ensemble", "small ensemble", "solo / duo", "vocal"];
 
     categories.forEach(function(cat) {
@@ -125,7 +130,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    /* --- MODAL HANDLERS (scroll fix stays) --- */
+    /* --- MODAL HANDLERS (WITH SCROLL FIX) --- */
     $(document).on("click", ".open-modal", function(event) {
         event.preventDefault();
 
@@ -135,8 +140,10 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
 
         populateModal(item);
 
+        // Save scroll position
         modalScrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
 
+        // Lock scroll while keeping screen visually still
         $('body')
             .addClass('no-scroll')
             .css('top', -modalScrollPosition + 'px');
@@ -144,6 +151,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         $('#exampleModal1').foundation('open');
     });
 
+    // Restore scroll on close (bound once)
     $('#exampleModal1').on('closed.zf.reveal', function() {
         $('body')
             .removeClass('no-scroll')
@@ -161,8 +169,9 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
     setTimeout(adjustContentPadding, 120);
 });
 
-/* --- NAVBAR PADDING (unchanged) --- */
+/* --- NAVBAR PADDING LOGIC --- */
 function adjustContentPadding() {
+    console.log("adjustContentPadding called...");
     var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
     var topBarHeight   = $('.top-bar').is(':visible')   ? $('.top-bar').outerHeight()   : 0;
     var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20;
@@ -174,7 +183,7 @@ function adjustContentPadding() {
     }
 }
 
-/* --- MODAL POPULATION (unchanged) --- */
+/* --- MODAL CONTENT POPULATION --- */
 function populateModal(item) {
 
     $("#modalTitle").text(`${item.title} (${item.year})`);
