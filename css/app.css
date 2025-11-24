@@ -818,8 +818,14 @@ html.is-reveal-open, body.is-reveal-open {
 }
 
 /* Prevent body scroll when the modal is open */
-.no-scroll {
+/*.no-scroll {
   overflow: hidden;
+}*/
+
+body.no-scroll {
+  position: fixed;
+  overflow-y: scroll; /* keeps scrollbar width consistent */
+  width: 100%;
 }
 
 /* Modal Styles */

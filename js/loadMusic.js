@@ -1,8 +1,12 @@
 $(document).foundation();
 
+/* --- GLOBAL: store scroll position for modal fix --- */
+var modalScrollPosition = 0;
+
 // Load JSON data and populate tabs
 $.getJSON("../jsonFiles/compositions.json", function(data) {
-    // Sort data by year in descending order
+
+    // Sort by year DESC
     data.sort(function(a, b) {
         return b.year - a.year;
     });
@@ -30,7 +34,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             </iframe>
         ` : '';
 
-        // NOTE: data-equalizer-watch is now on .card, and button has .open-modal
+        /* CARD HTML — equalizer watch moved to .card */
         var cardHtml = `
             <div class="cell">
                 <div class="card" data-equalizer-watch>
@@ -49,129 +53,138 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             </div>
         `;
 
-        // build once, then clone for the category grid
         var $card = $(cardHtml);
 
-        // Add to "All" grid tab
+        // Add to ALL tab
         $("#allContent").append($card);
 
-        // Add to specific category tab (if applicable)
+        // Add to specific category
         if (contentId) {
             $(contentId).append($card.clone());
         }
     });
 
-    // Build List View for "all - list" tab grouped by category
+    /* --- BUILD LIST VIEW --- */
     var categories = ["large ensemble", "small ensemble", "solo / duo", "vocal"];
+
     categories.forEach(function(cat) {
         var catItems = data.filter(item => item.type === cat);
+
         if (catItems.length > 0) {
             var categoryHtml = `<h3>${cat.charAt(0).toUpperCase() + cat.slice(1)}</h3><ul>`;
+
             catItems.forEach(function(item) {
                 var listenButton = item.soundCloudLink
-                    ? `<button class="tiny-button open-modal"
-                               style="color:MistyRose;"
-                               data-id="${item.id}">
-                           <i class="fas fa-external-link-alt"></i>
+                    ? `<button class="tiny-button open-modal" style="color:MistyRose;" data-id="${item.id}">
+                           <i class="fas fa-external-link-alt"></i> 
                            <i class="fas fa-music"></i>
                        </button>`
                     : '';
-  
-                categoryHtml += `<li>
-                    <a href="#" class="popup-link open-modal" data-id="${item.id}">${item.title}</a>
-                    (${item.instrumentation}, ${item.year}) ${listenButton}
-                </li>`;
+
+                categoryHtml += `
+                    <li>
+                        <a href="#" class="popup-link open-modal" data-id="${item.id}">
+                            ${item.title}
+                        </a>
+                        (${item.instrumentation}, ${item.year}) ${listenButton}
+                    </li>
+                `;
             });
+
             categoryHtml += "</ul>";
             $("#allListContent").append(categoryHtml);
         }
     });
 
-    // Attach modal click handlers
-    $(".open-modal, button[data-open='exampleModal1']").on("click", function(event) {
+    /* --- MODAL HANDLERS (WITH SCROLL FIX) --- */
+    $(document).on("click", ".open-modal", function(event) {
         event.preventDefault();
+
         var id = $(this).data("id");
         var item = data.find(i => i.id == id);
         if (!item) return;
-        
+
         populateModal(item);
-        
+
+        // Save scroll position
+        modalScrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        // Lock scroll while keeping screen visually still
+        $('body')
+            .addClass('no-scroll')
+            .css('top', -modalScrollPosition + 'px');
+
         $('#exampleModal1').foundation('open');
-        $('body').addClass('no-scroll');
-        $('#exampleModal1').on('closed.zf.reveal', function() {
-            $('body').removeClass('no-scroll');
-        });
     });
 
-    // Reinitialize Foundation after dynamic content is added
+    // Restore scroll on close (bound once)
+    $('#exampleModal1').on('closed.zf.reveal', function() {
+        $('body')
+            .removeClass('no-scroll')
+            .css('top', '');
+
+        window.scrollTo(0, modalScrollPosition);
+    });
+
+    /* --- REINIT FOUNDATION --- */
     $(document).foundation();
     if (typeof Foundation !== "undefined" && Foundation.reInit) {
         Foundation.reInit(['equalizer', 'reveal']);
     }
 
-    setTimeout(adjustContentPadding, 120); // Adjust padding after dynamic content is added
+    setTimeout(adjustContentPadding, 120);
 });
 
-// Adjust content padding based on the active bar height
+/* --- NAVBAR PADDING LOGIC (UNCHANGED) --- */
 function adjustContentPadding() {
     console.log("adjustContentPadding called...");
     var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
     var topBarHeight   = $('.top-bar').is(':visible')   ? $('.top-bar').outerHeight()   : 0;
-    var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20; // Add 20px for extra padding
+    var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20;
 
-    console.log('Title bar height:', titleBarHeight); // Debug log
-    console.log('Top bar height:', topBarHeight);     // Debug log
-    console.log('Active bar height:', activeBarHeight); // Debug log
-
-    if (activeBarHeight > 20) { // Ensure at least 20px padding
+    if (activeBarHeight > 20) {
         $('#navbar-padding').height(activeBarHeight);
-        console.log('Padding set to:', activeBarHeight); // Debug log
     } else {
-        console.log('Calculated height is too small, retrying...');
-        setTimeout(adjustContentPadding, 300); // Retry after a short delay
+        setTimeout(adjustContentPadding, 300);
     }
 }
 
+/* --- MODAL CONTENT POPULATION (UNCHANGED) --- */
 function populateModal(item) {
-    // Set title, instrumentation, and duration
+
     $("#modalTitle").text(`${item.title} (${item.year})`);
     $("#modalInstrumentation").text(item.instrumentation);
     $("#modalDuration").text(item.duration);
 
-    // Commission info – only show if commission is true
     if (item.commission) {
         $("#modalCommissioner").text(`Commissioned by: ${item.commissioner}`).show();
     } else {
         $("#modalCommissioner").hide();
     }
 
-    // Premier info – show if both premier date and premier ensemble exist
     if (item.premierDate && item.premierEnsemble) {
         $("#modalPremier").text(`Premier: ${item.premierDate} with ${item.premierEnsemble}`).show();
     } else {
         $("#modalPremier").hide();
     }
 
-    // Score image
     if (item.scoreImageLoc) {
         $("#modalImage").attr("src", item.scoreImageLoc).show();
     } else {
         $("#modalImage").hide();
     }
 
-    // Program note
     if (item.programNote) {
         $("#programNote").text(item.programNote).show();
     } else {
         $("#programNote").hide();
     }
 
-    // Check for SoundCloud link and include it in the modal
     if (item.soundCloudLink) {
         $("#modalSoundCloud").html(`
             <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true"
-                    style="background:black;">
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${item.soundCloudLink}&color=%236c3a9f&inverse=true&auto_play=false&show_user=true"
+                style="background:black;">
             </iframe>
         `).show();
     } else {
@@ -190,6 +203,6 @@ function populateModal(item) {
         $("#modalYouTube").hide();
     }
 
-    // Update inquiry link
-    $("#modalBuyLink").attr("href", `mailto:daytonhare.music@gmail.com?subject=Inquiry about ${item.title}`);
+    $("#modalBuyLink").attr("href",
+        `mailto:daytonhare.music@gmail.com?subject=Inquiry about ${item.title}`);
 }
