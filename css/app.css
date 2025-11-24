@@ -708,9 +708,36 @@ font-weight: 400;
   }
   
 
-  /* Music Page*/
+/* Music Page*/
 
-  /* Card Styles */
+/* Card Styles */
+
+/* === Equal Heights for Music Cards === */
+.grid-x[data-equalizer] .cell {
+  display: flex;
+}
+
+.grid-x[data-equalizer] .cell .card {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.grid-x[data-equalizer] .cell .card .card-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep "More Information" at the bottom of each card */
+.grid-x[data-equalizer] .cell .card .button {
+  margin-top: auto;
+}
+
+/* Works list YouTube section spacing */
+.workslist-videos {
+  margin-top: 0.5rem;
+}
+
 .card img {
   width: 100%;
   height: auto;
