@@ -1,5 +1,8 @@
 $(document).foundation();
 
+/* --- GLOBAL: store scroll position for modal fix --- */
+var modalScrollPosition = 0;
+
 // Load JSON data and populate tabs
 $.getJSON("../jsonFiles/compositions.json", function(data) {
 
@@ -31,7 +34,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
             </iframe>
         ` : '';
 
-        // CARD HTML — data-equalizer-watch on .card
+        /* CARD HTML — equalizer watch moved to .card */
         var cardHtml = `
             <div class="cell">
                 <div class="card" data-equalizer-watch>
@@ -61,7 +64,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    // Build List View for "all - list" tab grouped by category
+    /* --- BUILD LIST VIEW --- */
     var categories = ["large ensemble", "small ensemble", "solo / duo", "vocal"];
 
     categories.forEach(function(cat) {
@@ -93,7 +96,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         }
     });
 
-    // MODAL CLICK HANDLER — no scroll logic here
+    /* --- MODAL HANDLERS (WITH SCROLL FIX) --- */
     $(document).on("click", ".open-modal", function(event) {
         event.preventDefault();
 
@@ -103,22 +106,50 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
 
         populateModal(item);
 
+        // Save scroll position
+        modalScrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        // Lock scroll while keeping screen visually still
+        $('body')
+            .addClass('no-scroll')
+            .css('top', -modalScrollPosition + 'px');
+
         $('#exampleModal1').foundation('open');
     });
 
-    // Reinit Foundation for equalizer and reveal
+    // Restore scroll on close (bound once)
+    $('#exampleModal1').on('closed.zf.reveal', function() {
+        $('body')
+            .removeClass('no-scroll')
+            .css('top', '');
+
+        window.scrollTo(0, modalScrollPosition);
+    });
+
+    /* --- REINIT FOUNDATION --- */
     $(document).foundation();
     if (typeof Foundation !== "undefined" && Foundation.reInit) {
         Foundation.reInit(['equalizer', 'reveal']);
     }
 
-    // Let allpageLoads.js handle padding, but nudge it after content is ready
-    if (typeof adjustContentPadding === "function") {
-        setTimeout(adjustContentPadding, 120);
-    }
+    setTimeout(adjustContentPadding, 120);
 });
 
-/* MODAL CONTENT POPULATION */
+/* --- NAVBAR PADDING LOGIC (UNCHANGED) --- */
+function adjustContentPadding() {
+    console.log("adjustContentPadding called...");
+    var titleBarHeight = $('.title-bar').is(':visible') ? $('.title-bar').outerHeight() : 0;
+    var topBarHeight   = $('.top-bar').is(':visible')   ? $('.top-bar').outerHeight()   : 0;
+    var activeBarHeight = Math.max(titleBarHeight, topBarHeight) + 20;
+
+    if (activeBarHeight > 20) {
+        $('#navbar-padding').height(activeBarHeight);
+    } else {
+        setTimeout(adjustContentPadding, 300);
+    }
+}
+
+/* --- MODAL CONTENT POPULATION (UNCHANGED) --- */
 function populateModal(item) {
 
     $("#modalTitle").text(`${item.title} (${item.year})`);
@@ -172,8 +203,6 @@ function populateModal(item) {
         $("#modalYouTube").hide();
     }
 
-    $("#modalBuyLink").attr(
-        "href",
-        `mailto:daytonhare.music@gmail.com?subject=Inquiry about ${item.title}`
-    );
+    $("#modalBuyLink").attr("href",
+        `mailto:daytonhare.music@gmail.com?subject=Inquiry about ${item.title}`);
 }
