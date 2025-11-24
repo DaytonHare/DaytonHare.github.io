@@ -341,6 +341,12 @@ a:active {
   content: none !important;
 }
 
+.top-bar .is-dropdown-submenu-parent > a,
+.top-bar .is-dropdown-submenu-parent > a:focus,
+.top-bar .is-dropdown-submenu-parent > a:hover {
+    color: var(--brand-purple) !important;
+}
+
 /* Hover in submenu */
 .top-bar .submenu a:hover {
   color: var(--brand-purple-darker, #532E8C);
