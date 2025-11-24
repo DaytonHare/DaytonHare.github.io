@@ -900,6 +900,10 @@ iframe {
   color: white;
   padding: 20px;
   font-size: large;
+
+  /* Make hash links (#all, #all-list, etc.) leave room for the fixed nav */
+  scroll-margin-top: 140px; /* tweak this value if needed */
+
 }
 
 .centered-tabs-container {
