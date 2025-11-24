@@ -917,3 +917,9 @@ iframe {
 body.modal-open {
   overflow: hidden;
 }
+
+body.no-scroll {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}

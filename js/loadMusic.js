@@ -78,7 +78,7 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
                         <p>${item.duration}</p>
                         ${mediaHtml}
                         <button class="button open-modal"
-                                data-open="exampleModal1"
+                                type="button"
                                 data-id="${item.id}">
                             More Information
                         </button>
@@ -151,14 +151,21 @@ $.getJSON("../jsonFiles/compositions.json", function(data) {
         $('#exampleModal1').foundation('open');
     });
 
-    // Restore scroll on close (bound once)
+    // Restore scroll on close AND stop any playing media
     $('#exampleModal1').on('closed.zf.reveal', function() {
+        // Unlock scroll and put the body back
         $('body')
             .removeClass('no-scroll')
             .css('top', '');
 
-        window.scrollTo(0, modalScrollPosition);
+        // Restore scroll position
+        window.scrollTo(0, modalScrollPosition || 0);
+
+        // Stop any SoundCloud / YouTube that was playing in the modal
+        $('#modalSoundCloud').empty().hide();
+        $('#modalYouTube').empty().hide();
     });
+
 
     /* --- REINIT FOUNDATION --- */
     $(document).foundation();
