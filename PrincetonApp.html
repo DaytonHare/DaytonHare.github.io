@@ -168,11 +168,10 @@
     /* Score PDF embed box (PDF.js viewer embedded) */
     .pdf-embed {
       width: 100%;
-      height: 820px;          /* better for score reading */
+      height: 820px;
       border: 1px solid #222;
       background: #0a0a0a;
     }
-
     @media (max-width: 991px) {
       .pdf-embed { height: 650px; }
     }
@@ -312,6 +311,7 @@
 
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
+        <!-- Replace about:blank with your excerpts embed when ready -->
         <iframe
           width="100%"
           height="150"
@@ -319,7 +319,8 @@
           scrolling="no"
           frameborder="no"
           allow="autoplay"
-          src="PASTE_SOUNDCLOUD_EXCERPTS_EMBED_URL_HERE"
+          src="about:blank"
+          title="whereof excerpts (placeholder)"
         ></iframe>
       </div>
     </div>
@@ -339,11 +340,13 @@
 
       <div class="col-md-4 media-card">
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
+        <!-- Replace about:blank with your score-follower embed when ready -->
         <div class="embed-responsive embed-16by9">
           <iframe
-            src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
+            src="about:blank"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            title="whereof score follower (placeholder)"
           ></iframe>
         </div>
       </div>
@@ -351,12 +354,12 @@
       <div class="col-md-4 media-card">
         <p class="media-label">
           <strong>Score:</strong>
-          <a href="Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank">download/open</a>
+          <a href="/Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank">download/open</a>
         </p>
 
         <iframe
           class="pdf-embed pdfjs-embed"
-          data-pdf="Files/Scores/Hare-whereof-one-cannot-speak.pdf"
+          data-pdf="/Files/Scores/Hare-whereof-one-cannot-speak.pdf"
           title="whereof one cannot speak score PDF"
         ></iframe>
       </div>
@@ -365,7 +368,7 @@
     <!-- Optional cover image -->
     <div class="row">
       <div class="col-md-4 col-md-offset-8">
-        <a href="Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank">
+        <a href="/Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank">
           <img
             src="photos/covers/whereofOneCannotSpeak.jpg"
             alt="link to whereof one cannot speak score"
@@ -442,7 +445,8 @@
           scrolling="no"
           frameborder="no"
           allow="autoplay"
-          src="PASTE_SOUNDCLOUD_EXCERPTS_EMBED_URL_HERE"
+          src="about:blank"
+          title="Estuary excerpts (placeholder)"
         ></iframe>
       </div>
     </div>
@@ -464,9 +468,10 @@
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
         <div class="embed-responsive embed-16by9">
           <iframe
-            src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
+            src="about:blank"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            title="Estuary score follower (placeholder)"
           ></iframe>
         </div>
       </div>
@@ -474,12 +479,12 @@
       <div class="col-md-4 media-card">
         <p class="media-label">
           <strong>Score:</strong>
-          <a href="Files/Scores/Hare-Estuary.pdf" target="_blank">download/open</a>
+          <a href="/Files/Scores/Hare-Estuary.pdf" target="_blank">download/open</a>
         </p>
 
         <iframe
           class="pdf-embed pdfjs-embed"
-          data-pdf="Files/Scores/Hare-Estuary.pdf"
+          data-pdf="/Files/Scores/Hare-Estuary.pdf"
           title="Estuary score PDF"
         ></iframe>
       </div>
@@ -488,7 +493,7 @@
     <!-- Optional cover image -->
     <div class="row">
       <div class="col-md-4 col-md-offset-8">
-        <a href="Files/Scores/Hare-Estuary.pdf" target="_blank">
+        <a href="/Files/Scores/Hare-Estuary.pdf" target="_blank">
           <img
             src="photos/covers/Estuary.png"
             alt="Estuary Score"
@@ -564,7 +569,8 @@
           scrolling="no"
           frameborder="no"
           allow="autoplay"
-          src="PASTE_SOUNDCLOUD_EXCERPTS_EMBED_URL_HERE"
+          src="about:blank"
+          title="Object excerpts (placeholder)"
         ></iframe>
       </div>
     </div>
@@ -586,9 +592,10 @@
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
         <div class="embed-responsive embed-16by9">
           <iframe
-            src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
+            src="about:blank"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            title="Object score follower (placeholder)"
           ></iframe>
         </div>
       </div>
@@ -596,12 +603,12 @@
       <div class="col-md-4 media-card">
         <p class="media-label">
           <strong>Score:</strong>
-          <a href="Files/Scores/Hare-Object.pdf" target="_blank">download/open</a>
+          <a href="/Files/Scores/Hare-Object.pdf" target="_blank">download/open</a>
         </p>
 
         <iframe
           class="pdf-embed pdfjs-embed"
-          data-pdf="Files/Scores/Hare-Object.pdf"
+          data-pdf="/Files/Scores/Hare-Object.pdf"
           title="An object of some concern score PDF"
         ></iframe>
       </div>
@@ -610,7 +617,7 @@
     <!-- Optional cover image -->
     <div class="row">
       <div class="col-md-4 col-md-offset-8">
-        <a href="Files/Scores/Hare-Object.pdf" target="_blank">
+        <a href="/Files/Scores/Hare-Object.pdf" target="_blank">
           <img
             src="photos/covers/AnObject.png"
             alt="An object of some concern score"
@@ -622,7 +629,7 @@
     </div>
   </div>
 
-  <!-- ========================= PIECE 4 (Score Only + Excerpts Audio) ========================= -->
+  <!-- ========================= PIECE 4 (Score Only) ========================= -->
   <div class="page-header container">
     <h2>spiral bound</h2>
   </div>
@@ -631,10 +638,11 @@
       <strong>Title:</strong> spiral bound<br>
       <strong>Instrumentation:</strong> Orchestra<br>
       <strong>Duration:</strong> 10&#8242;<br>
-      <em>No full recordings currently available; to be premiered by the New York Youth Symphony in March, 2025.</em>
+      <em>No recordings currently available; to be premiered by the New York Youth Symphony in March, 2025</em>
     </p>
 
-    <p><strong>Description:</strong><br>
+    <p>
+      <strong>Description:</strong><br>
       Over the last year or so, I’ve been returning again and again
       to the idea of spirals as a structure. A form built out of
       continuous recursion in ever tightening circles, the natural world
@@ -674,7 +682,7 @@
       has no choice but to spiral out of existence.
     </p>
 
-    <!-- Optional: excerpts audio for spiral bound (if you have mockups / MIDI) -->
+    <!-- Optional: excerpts audio for spiral bound -->
     <div class="row piece-row">
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
@@ -685,49 +693,43 @@
           scrolling="no"
           frameborder="no"
           allow="autoplay"
-          src="PASTE_SOUNDCLOUD_EXCERPTS_EMBED_URL_HERE"
+          src="about:blank"
+          title="spiral bound excerpts (placeholder)"
         ></iframe>
       </div>
+
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
         <div class="embed-responsive embed-16by9">
           <iframe
-            src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
+            src="about:blank"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            title="spiral bound score follower (placeholder)"
           ></iframe>
         </div>
       </div>
     </div>
 
-    <div class="row piece-row">
-      <div class="col-md-12 media-card">
-        <p class="media-label">
-          <strong>Score:</strong>
-          <a href="Files/Scores/Hare-spiral-bound.pdf" target="_blank">download/open</a>
-        </p>
+    <p class="section-spacer">
+      <strong>Score:</strong>
+      <a href="/Files/Scores/Hare-spiral-bound.pdf" target="_blank">download/open</a>
+    </p>
 
-        <iframe
-          class="pdf-embed pdfjs-embed"
-          data-pdf="Files/Scores/Hare-spiral-bound.pdf"
-          title="spiral bound score PDF"
-        ></iframe>
-      </div>
-    </div>
+    <iframe
+      class="pdf-embed pdfjs-embed"
+      data-pdf="/Files/Scores/Hare-spiral-bound.pdf"
+      title="spiral bound score PDF"
+    ></iframe>
 
-    <!-- Optional cover image -->
-    <div class="row">
-      <div class="col-md-4">
-        <a href="Files/Scores/Hare-spiral-bound.pdf" target="_blank">
-          <img
-            src="photos/covers/IMG_1296.jpeg"
-            alt="Spiral bound score"
-            class="img-responsive"
-            style="max-height: 250px; margin-top: 10px;"
-          >
-        </a>
-      </div>
-    </div>
+    <a href="/Files/Scores/Hare-spiral-bound.pdf" target="_blank">
+      <img
+        src="photos/covers/IMG_1296.jpeg"
+        alt="Spiral bound score"
+        class="img-responsive"
+        style="max-height: 250px; margin-top: 10px;"
+      >
+    </a>
   </div>
 
   <!-- ========================= ADDITIONAL LISTENING ========================= -->
@@ -741,7 +743,6 @@
       <a href="https://daytonhare.github.io" target="_blank">full website</a>.)
     </p>
 
-    <!-- TODO: Replace these with your actual picks -->
     <div class="row piece-row">
       <div class="col-md-4 media-card">
         <p class="media-label"><strong>Selection 1:</strong> <em>Title (instrumentation, year)</em></p>
@@ -752,7 +753,8 @@
           scrolling="no"
           frameborder="no"
           allow="autoplay"
-          src="PASTE_SOUNDCLOUD_OR_PLAYLIST_EMBED_URL_HERE"
+          src="about:blank"
+          title="Additional listening selection 1 (placeholder)"
         ></iframe>
       </div>
 
@@ -760,9 +762,10 @@
         <p class="media-label"><strong>Selection 2:</strong> <em>Title (instrumentation, year)</em></p>
         <div class="embed-responsive embed-16by9">
           <iframe
-            src="PASTE_YOUTUBE_EMBED_URL_HERE"
+            src="about:blank"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            title="Additional listening selection 2 (placeholder)"
           ></iframe>
         </div>
       </div>
@@ -770,7 +773,7 @@
       <div class="col-md-4 media-card">
         <p class="media-label"><strong>Selection 3:</strong> <em>Title (instrumentation, year)</em></p>
         <p style="margin-top: 10px;">
-          <a href="PASTE_LINK_HERE" target="_blank">Open recording / score</a>
+          <a href="about:blank" onclick="return false;" style="color: lightgrey; text-decoration: underline;">(Add link here)</a>
         </p>
         <p style="color: lightgrey; font-size: 15px;">
           (Optional short one-sentence blurb about why this piece is a good complement.)
@@ -782,7 +785,7 @@
       <div class="col-md-12">
         <p style="color: lightgrey; font-size: 15px;">
           Prefer one click? Here&rsquo;s a single playlist link:
-          <a href="PASTE_PLAYLIST_LINK_HERE" target="_blank">Additional Listening Playlist</a>
+          <a href="about:blank" onclick="return false;" style="color: lightgrey; text-decoration: underline;">(Add playlist link here)</a>
         </p>
       </div>
     </div>
@@ -819,13 +822,10 @@
       }
 
       function buildPdfJsUrl(pdfPath) {
-        // If your HTML file is in the site root and pdfjs/ is also in the root:
-        var viewer = 'pdfjs/web/viewer.html';
+        // Root-absolute viewer path so it works no matter where this HTML file lives.
+        var viewer = '/pdfjs/web/viewer.html';
 
-        // If you ever move this page into a subfolder, switch to:
-        // var viewer = '/pdfjs/web/viewer.html';
-        // and use data-pdf="/Files/Scores/....pdf"
-
+        // Root-absolute pdfPath (starts with /) so PDF.js does NOT treat it as relative to /pdfjs/web/
         var spread = isWide() ? 1 : 0;
 
         // Use thumbnails by default; change pagemode=thumbs to pagemode=none if you want it hidden.
