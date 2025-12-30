@@ -165,12 +165,16 @@
     .embed-responsive.embed-16by9 { padding-bottom: 56.25%; }
     .embed-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-    /* Score PDF embed box */
+    /* Score PDF embed box (PDF.js viewer embedded) */
     .pdf-embed {
       width: 100%;
-      height: 520px;        /* tweak per taste */
+      height: 820px;          /* better for score reading */
       border: 1px solid #222;
       background: #0a0a0a;
+    }
+
+    @media (max-width: 991px) {
+      .pdf-embed { height: 650px; }
     }
 
     /* Slightly nicer spacing between sections */
@@ -308,7 +312,6 @@
 
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <!-- TODO: replace with your excerpts track or playlist embed -->
         <iframe
           width="100%"
           height="150"
@@ -336,7 +339,6 @@
 
       <div class="col-md-4 media-card">
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <!-- TODO: replace with your score-follower video -->
         <div class="embed-responsive embed-16by9">
           <iframe
             src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
@@ -349,21 +351,21 @@
       <div class="col-md-4 media-card">
         <p class="media-label">
           <strong>Score:</strong>
-          <a href="Files/HareWhereof.pdf" target="_blank">download/open</a>
+          <a href="Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank">download/open</a>
         </p>
-        <!-- Recommended: host PDF in your Files/ folder and embed directly -->
-        <iframe class="pdf-embed" src="Files/HareWhereof.pdf" title="whereof one cannot speak score PDF"></iframe>
 
-        <!-- If you prefer Google Drive, use instead:
-        <iframe class="pdf-embed" src="https://drive.google.com/file/d/FILE_ID/preview"></iframe>
-        -->
+        <iframe
+          class="pdf-embed pdfjs-embed"
+          data-pdf="Files/Scores/Hare-whereof-one-cannot-speak.pdf"
+          title="whereof one cannot speak score PDF"
+        ></iframe>
       </div>
     </div>
 
     <!-- Optional cover image -->
     <div class="row">
       <div class="col-md-4 col-md-offset-8">
-        <a href="Files/HareWhereof.pdf" target="_blank">
+        <a href="Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank">
           <img
             src="photos/covers/whereofOneCannotSpeak.jpg"
             alt="link to whereof one cannot speak score"
@@ -433,7 +435,6 @@
 
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <!-- TODO: replace with your excerpts track or playlist embed -->
         <iframe
           width="100%"
           height="150"
@@ -461,7 +462,6 @@
 
       <div class="col-md-4 media-card">
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <!-- TODO: replace with your score-follower video -->
         <div class="embed-responsive embed-16by9">
           <iframe
             src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
@@ -474,16 +474,21 @@
       <div class="col-md-4 media-card">
         <p class="media-label">
           <strong>Score:</strong>
-          <a href="Files/HareEstuary.pdf" target="_blank">download/open</a>
+          <a href="Files/Scores/Hare-Estuary.pdf" target="_blank">download/open</a>
         </p>
-        <iframe class="pdf-embed" src="Files/HareEstuary.pdf" title="Estuary score PDF"></iframe>
+
+        <iframe
+          class="pdf-embed pdfjs-embed"
+          data-pdf="Files/Scores/Hare-Estuary.pdf"
+          title="Estuary score PDF"
+        ></iframe>
       </div>
     </div>
 
     <!-- Optional cover image -->
     <div class="row">
       <div class="col-md-4 col-md-offset-8">
-        <a href="Files/HareEstuary.pdf" target="_blank">
+        <a href="Files/Scores/Hare-Estuary.pdf" target="_blank">
           <img
             src="photos/covers/Estuary.png"
             alt="Estuary Score"
@@ -552,7 +557,6 @@
 
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <!-- TODO: replace with your excerpts track or playlist embed -->
         <iframe
           width="100%"
           height="150"
@@ -580,7 +584,6 @@
 
       <div class="col-md-4 media-card">
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <!-- TODO: replace with your score-follower video -->
         <div class="embed-responsive embed-16by9">
           <iframe
             src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
@@ -593,16 +596,21 @@
       <div class="col-md-4 media-card">
         <p class="media-label">
           <strong>Score:</strong>
-          <a href="Files/HareObject.pdf" target="_blank">download/open</a>
+          <a href="Files/Scores/Hare-Object.pdf" target="_blank">download/open</a>
         </p>
-        <iframe class="pdf-embed" src="Files/HareObject.pdf" title="An object of some concern score PDF"></iframe>
+
+        <iframe
+          class="pdf-embed pdfjs-embed"
+          data-pdf="Files/Scores/Hare-Object.pdf"
+          title="An object of some concern score PDF"
+        ></iframe>
       </div>
     </div>
 
     <!-- Optional cover image -->
     <div class="row">
       <div class="col-md-4 col-md-offset-8">
-        <a href="Files/HareObject.pdf" target="_blank">
+        <a href="Files/Scores/Hare-Object.pdf" target="_blank">
           <img
             src="photos/covers/AnObject.png"
             alt="An object of some concern score"
@@ -670,7 +678,6 @@
     <div class="row piece-row">
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <!-- TODO: replace with excerpts if/when available -->
         <iframe
           width="100%"
           height="150"
@@ -683,7 +690,6 @@
       </div>
       <div class="col-md-6 media-card">
         <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <!-- TODO: optional score-follow “scroll” video, even without audio -->
         <div class="embed-responsive embed-16by9">
           <iframe
             src="PASTE_YOUTUBE_SCORE_FOLLOWER_EMBED_URL_HERE"
@@ -698,16 +704,21 @@
       <div class="col-md-12 media-card">
         <p class="media-label">
           <strong>Score:</strong>
-          <a href="Files/hareSpiralBoundScore.pdf" target="_blank">download/open</a>
+          <a href="Files/Scores/Hare-spiral-bound.pdf" target="_blank">download/open</a>
         </p>
-        <iframe class="pdf-embed" src="Files/hareSpiralBoundScore.pdf" title="spiral bound score PDF"></iframe>
+
+        <iframe
+          class="pdf-embed pdfjs-embed"
+          data-pdf="Files/Scores/Hare-spiral-bound.pdf"
+          title="spiral bound score PDF"
+        ></iframe>
       </div>
     </div>
 
     <!-- Optional cover image -->
     <div class="row">
       <div class="col-md-4">
-        <a href="Files/hareSpiralBoundScore.pdf" target="_blank">
+        <a href="Files/Scores/Hare-spiral-bound.pdf" target="_blank">
           <img
             src="photos/covers/IMG_1296.jpeg"
             alt="Spiral bound score"
@@ -799,5 +810,50 @@
   <script
     src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
   ></script>
+
+  <!-- PDF.js embed helper: 2-page spread on wide screens -->
+  <script>
+    (function () {
+      function isWide() {
+        return window.matchMedia && window.matchMedia('(min-width: 992px)').matches;
+      }
+
+      function buildPdfJsUrl(pdfPath) {
+        // If your HTML file is in the site root and pdfjs/ is also in the root:
+        var viewer = 'pdfjs/web/viewer.html';
+
+        // If you ever move this page into a subfolder, switch to:
+        // var viewer = '/pdfjs/web/viewer.html';
+        // and use data-pdf="/Files/Scores/....pdf"
+
+        var spread = isWide() ? 1 : 0;
+
+        // Use thumbnails by default; change pagemode=thumbs to pagemode=none if you want it hidden.
+        return viewer
+          + '?file=' + encodeURIComponent(pdfPath)
+          + '#zoom=page-width&pagemode=thumbs&spreadMode=' + spread;
+      }
+
+      function applyPdfViewers() {
+        var frames = document.querySelectorAll('iframe.pdfjs-embed[data-pdf]');
+        for (var i = 0; i < frames.length; i++) {
+          var f = frames[i];
+          var pdfPath = f.getAttribute('data-pdf');
+          var src = buildPdfJsUrl(pdfPath);
+          if (f.getAttribute('src') !== src) {
+            f.setAttribute('src', src);
+          }
+        }
+      }
+
+      window.addEventListener('load', applyPdfViewers);
+
+      var t = null;
+      window.addEventListener('resize', function () {
+        clearTimeout(t);
+        t = setTimeout(applyPdfViewers, 150);
+      });
+    })();
+  </script>
 </body>
 </html>
