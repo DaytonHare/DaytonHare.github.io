@@ -1,0 +1,43 @@
+/* Force PDF.js viewer UI to render in a visible (light) scheme even when embedded on dark sites */
+:root {
+  color-scheme: light !important;
+}
+
+/* Make sure the app uses light variables instead of dark branches */
+html, body {
+  background: #f6f6f6 !important;
+}
+
+/* Toolbar + fields: explicit colors so icons don't disappear */
+.toolbar,
+#toolbarContainer {
+  background: #f2f2f2 !important;
+  border-bottom: 1px solid #d0d0d0 !important;
+}
+
+.toolbarButton,
+.toolbarButton * {
+  color: #1a1a1a !important;
+}
+
+/* Many PDF.js icons are masks; ensure the paint color is dark enough */
+.toolbarButton::before,
+.toolbarButton::after,
+.messageBar > div::before,
+.messageBar .closeButton::before {
+  background-color: #1a1a1a !important;
+  opacity: 1 !important;
+}
+
+/* Inputs/selects */
+.toolbarField,
+#scaleSelect {
+  color: #1a1a1a !important;
+  background: #ffffff !important;
+  border: 1px solid #bdbdbd !important;
+}
+
+/* Viewer area still looks fine on your site */
+#viewerContainer {
+  background: #e9e9e9 !important;
+}

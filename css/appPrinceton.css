@@ -189,7 +189,7 @@ a:active {
 /* If you use the PDF.js viewer.html iframe */
 .pdfjs-viewer {
   width: 100%;
-  height: 820px;
+  height: 700px;
   border: 1px solid #222;
   background: #0a0a0a;
   border-radius: 10px;
@@ -198,7 +198,7 @@ a:active {
 /* If you still have legacy .pdf-embed somewhere */
 .pdf-embed {
   width: 100%;
-  height: 820px;
+  height: 700px;
   border: 1px solid #222;
   background: #0a0a0a;
   border-radius: 10px;
