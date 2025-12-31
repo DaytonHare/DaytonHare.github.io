@@ -176,11 +176,11 @@ a:active {
   margin: 0 0 10px 0;
 }
 
-.excerpt-row > .col-sm-5 {
+.excerpt-row > .col-sm-4 {
   padding-right: 6px;
 }
 
-.excerpt-row > .col-sm-7 {
+.excerpt-row > .col-sm-8 {
   padding-left: 6px;
 }
 
