@@ -176,6 +176,12 @@ a:active {
   margin: 0 0 10px 0;
 }
 
+.excerpt-row > [class*="col-"] {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+
 /* =========================
    Responsive embeds (Bootstrap 3)
    ========================= */
