@@ -1,5 +1,6 @@
 /* =========================
-   Site Base Styles (from your <style> block)
+   Base site styles (from you)
+   + Piece layout styles
    ========================= */
 
 html {
@@ -67,6 +68,23 @@ body {
   padding-bottom: 5px;
 }
 
+/* Adjust print view */
+@media print {
+  body {
+    padding-top: 0px;
+    margin-bottom: 0px;
+  }
+  .page-header {
+    padding-top: 0px;
+  }
+  .navbar, .footer {
+    display: none !important;
+  }
+  .pdfjs-viewer {
+    height: 700px !important;
+  }
+}
+
 /* Heading styles */
 h1, .h1 {
   color: white;
@@ -104,116 +122,186 @@ a:active {
   text-decoration: underline;
 }
 
-/* Custom flex classes (Bootstrap 3 does not have .d-flex, etc.) */
+/* Custom flex helpers (Bootstrap 3 doesn’t ship these) */
 .d-flex { display: flex; }
 .flex-column { flex-direction: column; }
 .justify-content-center { justify-content: center; }
 .align-items-center { align-items: center; }
 
-/* Adjust print view */
-@media print {
-  body {
-    padding-top: 0px;
-    margin-bottom: 0px;
-  }
-  .page-header {
-    padding-top: 0px;
-  }
-  .navbar, .footer {
-    display: none !important;
-  }
-  .pdf-embed, .pdfjs-viewer {
-    height: 700px !important;
-  }
-}
+/* --- General spacing helpers --- */
+.section-spacer { margin-top: 8px; }
+.mb-0 { margin-bottom: 0; }
+.mb-2 { margin-bottom: 8px; }
 
 /* =========================
-   Piece Layout Styles (blended with your look)
+   Piece layout (cards)
    ========================= */
 
-/* Helper spacing */
-.section-spacer { margin-top: 8px; }
-
-/* Row spacing for sections */
-.piece-row {
-  margin-top: 16px;
+.piece-container {
   margin-bottom: 16px;
 }
 
-/* Media labels and cards */
-.media-label { margin: 0 0 6px 0; }
-.media-card { margin-bottom: 18px; }
-
-/* Responsive embeds (Bootstrap 3 friendly) */
-.embed-responsive { position: relative; display: block; height: 0; overflow: hidden; }
-.embed-responsive.embed-16by9,
-.embed-responsive.embed-responsive-16by9 { padding-bottom: 56.25%; }
-.embed-responsive iframe,
-.embed-responsive .embed-responsive-item {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+.piece-row {
+  margin-top: 18px;
 }
 
-/* A subtle "card" look that still fits your black theme */
 .piece-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 12px;
-  padding: 14px 16px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+  padding: 18px;
 }
 
-/* Text block readability */
-.piece-card p {
-  line-height: 1.55;
+.piece-text-card {
+  padding: 20px 20px 18px 20px;
 }
 
-/* Metadata paragraph spacing */
+.piece-media-card {
+  padding: 16px;
+}
+
 .piece-meta {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  line-height: 1.45;
 }
 
-/* Make columns feel evenly spaced on mobile stack */
-@media (max-width: 767px) {
-  .piece-row > [class*="col-"] {
-    margin-bottom: 14px;
-  }
+.media-label {
+  margin: 0 0 10px 0;
 }
 
 /* =========================
-   PDF.js Embed (two-page spread, no thumbnails by default)
+   Responsive embeds (Bootstrap 3)
    ========================= */
 
-/* If you use the PDF.js viewer.html iframe */
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.25);
+}
+
+.embed-responsive.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* =========================
+   PDF.js viewer iframe
+   ========================= */
+
 .pdfjs-viewer {
   width: 100%;
-  height: 700px;
-  border: 1px solid #222;
+  height: 640px;              /* shorter than before */
+  border: 1px solid rgba(255,255,255,0.12);
   background: #0a0a0a;
-  border-radius: 10px;
+  border-radius: 12px;
+  display: block;
 }
 
-/* If you still have legacy .pdf-embed somewhere */
-.pdf-embed {
-  width: 100%;
-  height: 700px;
-  border: 1px solid #222;
-  background: #0a0a0a;
-  border-radius: 10px;
-}
-
-/* Responsive PDF height */
 @media (max-width: 991px) {
-  .pdfjs-viewer,
-  .pdf-embed {
-    height: 650px;
+  .pdfjs-viewer { height: 520px; }
+}
+@media (max-width: 767px) {
+  .pdfjs-viewer { height: 440px; }
+}
+
+/* =========================
+   Score bottom bar (expand)
+   ========================= */
+
+.score-shell {
+  padding-bottom: 0; /* bottom bar handles bottom padding */
+}
+
+.score-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.35);
+  border-radius: 12px;
+}
+
+.score-bottom-hint {
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+/* Make small Bootstrap buttons fit your dark theme a bit better */
+.btn-default {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.18);
+  color: white;
+}
+.btn-default:hover,
+.btn-default:focus {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.24);
+  color: white;
+}
+
+/* =========================
+   Modal (expanded score)
+   ========================= */
+
+.modal-score .modal-content {
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+}
+
+.modal-score .modal-header {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.modal-score .modal-title {
+  font-family: 'Crimson Text', serif;
+  color: white;
+}
+
+.modal-score .close {
+  color: white;
+  opacity: 0.9;
+}
+.modal-score .close:hover {
+  opacity: 1;
+}
+
+.modal-score .modal-body {
+  padding: 0;
+}
+
+.modal-score-dialog {
+  width: 96vw;
+  max-width: 1400px;
+  margin: 18px auto;
+}
+
+@media (max-width: 767px) {
+  .modal-score-dialog {
+    width: 98vw;
+    margin: 10px auto;
   }
 }
-@media (max-width: 575px) {
-  .pdfjs-viewer,
-  .pdf-embed {
-    height: 520px;
-  }
+
+.pdfjs-viewer-modal {
+  width: 100%;
+  height: calc(100vh - 140px); /* header + margins */
+  border: 0;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 }

@@ -30,7 +30,6 @@
   >
 
   <link rel="stylesheet" href="/css/appPrinceton.css">
-
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="10">
@@ -38,7 +37,6 @@
   <div class="navbar navbar-inverse navbar-fixed-top" style="height: 71px;background: black;">
     <div class="container">
       <div class="navbar-header" style="background-color: black;">
-        <!-- Brand (Icon + Text) -->
         <a class="navbar-brand" style="white-space: nowrap;">
           <img
             src="photos/DaytonSig.jpeg"
@@ -70,7 +68,7 @@
   <div class="container">
     <div class="row">
       <!-- Headshot -->
-      <div class="col-md-3">
+      <div class="col-sm-12 col-md-3">
         <img
           class="img-responsive"
           src="photos/Headshot_Photo_Credit_Zuzanna_Winiarska-2-min.jpg"
@@ -79,7 +77,7 @@
         >
       </div>
       <!-- Bio and Overview Text -->
-      <div class="col-md-9" style="font-size: 18px;">
+      <div class="col-sm-12 col-md-9" style="font-size: 18px;">
         <p>Hello!</p>
         <p>
           My name is Dayton Hare. Generally in my work I try to explore the interplay between the
@@ -97,13 +95,13 @@
         </p>
         <p>
           I hope you enjoy these selections! If interested, you are also
-          welcome to visit my <a href="https://daytonhare.github.io" target="_blank">full website</a>
+          welcome to visit my <a href="https://daytonhare.github.io" target="_blank" rel="noopener">full website</a>
           which contains additional compositions and recordings.
         </p>
         <p>&mdash; Dayton</p>
         <p>
-          <a href="https://daytonhare.github.io" target="_blank">Website</a> &mdash;
-          <a href="Files/DaytonCVJan2025.pdf" target="_blank">CV</a> &mdash;
+          <a href="https://daytonhare.github.io" target="_blank" rel="noopener">Website</a> &mdash;
+          <a href="Files/DaytonCVJan2025.pdf" target="_blank" rel="noopener">CV</a> &mdash;
           <a href="mailto:haredayt@umich.edu">Contact</a>
         </p>
 
@@ -122,11 +120,9 @@
 
   <div class="container piece-container" style="font-size: 18px;">
 
-    <!-- ROW 1: Text (left) + Score PDF.js (right) -->
-    <div class="row piece-row align-items-start">
-
-      <!-- LEFT: Metadata + Program Note -->
-      <div class="col-12 col-lg-5">
+    <!-- ROW 1: Text (left) + Score (right) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-5">
         <div class="piece-card piece-text-card">
           <p class="piece-meta">
             <strong>Title:</strong> whereof one cannot speak<br>
@@ -157,30 +153,39 @@
         </div>
       </div>
 
-      <!-- RIGHT: Score -->
-      <div class="col-12 col-lg-7">
-        <div class="piece-card piece-media-card">
+      <div class="col-sm-12 col-md-7">
+        <div class="piece-card piece-media-card score-shell">
           <p class="media-label mb-2">
             <strong>Score:</strong>
-            <a href="/Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank" rel="noopener">
-              PDF download
-            </a>
+            <a href="/Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank" rel="noopener">PDF download</a>
           </p>
 
-          <!-- PDF.js viewer (no thumbnails/sidebar; two-page spread) -->
           <iframe
+            id="scoreInlineWhereof"
             class="pdfjs-viewer"
             title="whereof one cannot speak score"
             loading="lazy"
-            src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-whereof-one-cannot-speak.pdf#page=1&zoom=page-width&spreadMode=1&scrollMode=0&sidebarview=0"
+            src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-whereof-one-cannot-speak.pdf#page=1&zoom=page-width&spreadMode=1&scrollMode=0&sidebarview=0&pagemode=none"
           ></iframe>
+
+          <div class="score-bottom-bar">
+            <button
+              type="button"
+              class="btn btn-default btn-sm score-expand-btn"
+              data-inline="#scoreInlineWhereof"
+              data-title="whereof one cannot speak — Score"
+            >
+              ⤢ Expand score
+            </button>
+            <span class="score-bottom-hint hidden-xs">Two-page spread • Use viewer controls to zoom / navigate</span>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- ROW 2: SoundCloud (Excerpts left, Full right) -->
     <div class="row piece-row">
-      <div class="col-12 col-md-6">
+      <div class="col-sm-12 col-md-6">
         <div class="piece-card piece-media-card">
           <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
           <iframe
@@ -196,7 +201,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6">
+      <div class="col-sm-12 col-md-6">
         <div class="piece-card piece-media-card">
           <p class="media-label"><strong>SoundCloud (Full):</strong></p>
           <iframe
@@ -207,6 +212,7 @@
             frameborder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1902301800&color=%23090f14"
+            title="whereof full track"
           ></iframe>
         </div>
       </div>
@@ -214,7 +220,7 @@
 
     <!-- ROW 3: Videos (Performance left, Score follower right) -->
     <div class="row piece-row">
-      <div class="col-12 col-md-6">
+      <div class="col-sm-12 col-md-6">
         <div class="piece-card piece-media-card">
           <p class="media-label"><strong>YouTube (Performance):</strong></p>
           <div class="embed-responsive embed-responsive-16by9">
@@ -229,7 +235,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6">
+      <div class="col-sm-12 col-md-6">
         <div class="piece-card piece-media-card">
           <p class="media-label"><strong>YouTube (Score follower):</strong></p>
           <div class="embed-responsive embed-responsive-16by9">
@@ -250,123 +256,146 @@
   <div class="page-header container">
     <h2>Estuary</h2>
   </div>
-  <div class="container" style="font-size: 18px;">
-    <p>
-      <strong>Title:</strong> Estuary<br>
-      <strong>Instrumentation:</strong> Orchestra<br>
-      <strong>Duration:</strong> 9&#8242;<br>
-      <strong>Year:</strong> 2023<br>
-    </p>
 
-    <p><strong>Program Note:</strong></p>
-    <p>
-      The Colorado River is the lifeblood of the American Southwest. Starting
-      from its source in the Rockies, throughout an otherwise arid region
-      the river irrigates vast hectares of agricultural land and provides
-      millions of people with drinking water. As one of those millions
-      during my childhood, thoughts of where the water came from or where it
-      went rarely crossed my mind.
-    </p>
-    <p>
-      But today, as climate change places an
-      ever greater strain on the river system, I often think about its
-      imperiled future. A combination of drought, poor planning,
-      and bad policy nearly emptied the river's reservoirs last year,
-      but for decades before it had been drying up downstream, dammed and
-      diverted for human consumption. At the Colorado's mouth, where in
-      centuries past the river formed an estuary with the Gulf of California,
-      the desert has overtaken the riverbed and water rarely reaches
-      the ocean. Now, like so much of the natural world in the anthropocene,
-      the estuary exists only in the traces left behind in the memory of the
-      earth.
-    </p>
-    <p>
-      My piece follows the river's course, from the stillness of
-      snow-capped peaks to the stillness of the dry desert riverbed,
-      in my own small contribution to this memory.
-    </p>
-    <br>
+  <div class="container piece-container" style="font-size: 18px;">
 
-    <!-- Row 1: Full track + Excerpts SoundCloud -->
+    <!-- ROW 1: Text (left) + Score (right) -->
     <div class="row piece-row">
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>SoundCloud (Full):</strong></p>
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1697226831%3Fsecret_token%3Ds-CmceU4IfCTo&color=%23090f14"
-        ></iframe>
-      </div>
+      <div class="col-sm-12 col-md-5">
+        <div class="piece-card piece-text-card">
+          <p class="piece-meta">
+            <strong>Title:</strong> Estuary<br>
+            <strong>Instrumentation:</strong> Orchestra<br>
+            <strong>Duration:</strong> 9&#8242;<br>
+            <strong>Year:</strong> 2023<br>
+          </p>
 
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="about:blank"
-          title="Estuary excerpts (placeholder)"
-        ></iframe>
-      </div>
-    </div>
+          <p class="mb-2"><strong>Program Note:</strong></p>
 
-    <!-- Row 2: Performance video + Score-follower + Score PDF -->
-    <div class="row piece-row">
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>YouTube (Performance):</strong></p>
-        <div class="embed-responsive embed-16by9">
-          <iframe
-            src="https://www.youtube.com/embed/R_cI44pHR68?si=ztYKF56JvxEc8_l9"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <p>
+            The Colorado River is the lifeblood of the American Southwest. Starting
+            from its source in the Rockies, throughout an otherwise arid region
+            the river irrigates vast hectares of agricultural land and provides
+            millions of people with drinking water. As one of those millions
+            during my childhood, thoughts of where the water came from or where it
+            went rarely crossed my mind.
+          </p>
+          <p>
+            But today, as climate change places an
+            ever greater strain on the river system, I often think about its
+            imperiled future. A combination of drought, poor planning,
+            and bad policy nearly emptied the river's reservoirs last year,
+            but for decades before it had been drying up downstream, dammed and
+            diverted for human consumption. At the Colorado's mouth, where in
+            centuries past the river formed an estuary with the Gulf of California,
+            the desert has overtaken the riverbed and water rarely reaches
+            the ocean. Now, like so much of the natural world in the anthropocene,
+            the estuary exists only in the traces left behind in the memory of the
+            earth.
+          </p>
+          <p class="mb-0">
+            My piece follows the river's course, from the stillness of
+            snow-capped peaks to the stillness of the dry desert riverbed,
+            in my own small contribution to this memory.
+          </p>
         </div>
       </div>
 
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <div class="embed-responsive embed-16by9">
+      <div class="col-sm-12 col-md-7">
+        <div class="piece-card piece-media-card score-shell">
+          <p class="media-label mb-2">
+            <strong>Score:</strong>
+            <a href="/Files/Scores/Hare-Estuary.pdf" target="_blank" rel="noopener">PDF download</a>
+          </p>
+
           <iframe
+            id="scoreInlineEstuary"
+            class="pdfjs-viewer"
+            title="Estuary score"
+            loading="lazy"
+            src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-Estuary.pdf#page=1&zoom=page-width&spreadMode=1&scrollMode=0&sidebarview=0&pagemode=none"
+          ></iframe>
+
+          <div class="score-bottom-bar">
+            <button
+              type="button"
+              class="btn btn-default btn-sm score-expand-btn"
+              data-inline="#scoreInlineEstuary"
+              data-title="Estuary — Score"
+            >
+              ⤢ Expand score
+            </button>
+            <span class="score-bottom-hint hidden-xs">Two-page spread • Use viewer controls to zoom / navigate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: SoundCloud (Excerpts left, Full right) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
+          <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
             src="about:blank"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Estuary score follower (placeholder)"
+            title="Estuary excerpts (placeholder)"
           ></iframe>
         </div>
       </div>
 
-      <div class="col-md-4 media-card">
-        <p class="media-label">
-          <strong>Score:</strong>
-          <a href="/Files/Scores/Hare-Estuary.pdf" target="_blank">download/open</a>
-        </p>
-
-        <iframe
-          class="pdf-embed pdfjs-embed"
-          data-pdf="/Files/Scores/Hare-Estuary.pdf"
-          title="Estuary score PDF"
-        ></iframe>
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Full):</strong></p>
+          <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1697226831%3Fsecret_token%3Ds-CmceU4IfCTo&color=%23090f14"
+            title="Estuary full track"
+          ></iframe>
+        </div>
       </div>
     </div>
 
-    <!-- Optional cover image -->
-    <div class="row">
-      <div class="col-md-4 col-md-offset-8">
-        <a href="/Files/Scores/Hare-Estuary.pdf" target="_blank">
-          <img
-            src="photos/covers/Estuary.png"
-            alt="Estuary Score"
-            class="img-responsive"
-            style="max-height: 250px; margin-top: 10px;"
-          >
-        </a>
+    <!-- ROW 3: Videos (Performance left, Score follower right) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Performance):</strong></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/R_cI44pHR68?si=ztYKF56JvxEc8_l9"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Estuary performance video"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Score follower):</strong></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="about:blank"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Estuary score follower (placeholder)"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -375,129 +404,170 @@
   <div class="page-header container">
     <h2>An object of some concern</h2>
   </div>
-  <div class="container" style="font-size: 18px;">
-    <p>
-      <strong>Title:</strong> An object of some concern<br>
-      <strong>Instrumentation:</strong> Piano Trio<br>
-      <strong>Duration:</strong> 10&#8242;<br>
-      <strong>Year:</strong> 2021<br>
-    </p>
 
-    <p><strong>Program Note:</strong></p>
-    <p>
-      Most of my friends could tell you that I have a tendency towards
-      understatement, especially when it comes to talking about my inner life.
-      When I say, then, that something is &ldquo;an object of some concern,&rdquo;
-      you can be sure it's actually quite a large point of worry for me,
-      the kind of anxiety-inducing thing I often become fixated on,
-      turning around and around in my mind and worrying myself more
-      all the while.
-    </p>
-    <p>
-      This piece is about that experience of becoming stuck on a troubling
-      feeling, in general, and about a specific worrisome fixation of mine
-      in particular, the climate crisis. The piece opens with a violent
-      plunge in the strings that mimics the feeling of suddenly
-      awakening in the middle of the night, unable to breath.
-      From there the trio propels itself forward with music that is
-      unrelenting and obsessive, constantly straining higher and higher,
-      threatening to snap, until finally it reaches its breaking point.
-    </p>
-    <p>
-      This, of course, represents the experience of mounting anxiety, of
-      becoming consumed by the feeling. But more than that, at the risk of
-      being a bit too on the nose, I find that it also mimics the trajectory
-      of global temperatures and the climate emergency.
-    </p>
-    <br>
+  <div class="container piece-container" style="font-size: 18px;">
 
-    <!-- Row 1: Full track + Excerpts SoundCloud -->
+    <!-- ROW 1: Text (left) + Score (right) -->
     <div class="row piece-row">
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>SoundCloud (Full):</strong></p>
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1092901120&color=%23091014"
-        ></iframe>
-      </div>
+      <div class="col-sm-12 col-md-5">
+        <div class="piece-card piece-text-card">
+          <p class="piece-meta">
+            <strong>Title:</strong> An object of some concern<br>
+            <strong>Instrumentation:</strong> Piano Trio<br>
+            <strong>Duration:</strong> 10&#8242;<br>
+            <strong>Year:</strong> 2021<br>
+          </p>
 
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="about:blank"
-          title="Object excerpts (placeholder)"
-        ></iframe>
-      </div>
-    </div>
+          <p class="mb-2"><strong>Program Note:</strong></p>
 
-    <!-- Row 2: Performance video + Score-follower + Score PDF -->
-    <div class="row piece-row">
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>YouTube (Performance):</strong></p>
-        <div class="embed-responsive embed-16by9">
-          <iframe
-            src="https://www.youtube.com/embed/Tq3k4x0mVmA"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <p>
+            Most of my friends could tell you that I have a tendency towards
+            understatement, especially when it comes to talking about my inner life.
+            When I say, then, that something is &ldquo;an object of some concern,&rdquo;
+            you can be sure it's actually quite a large point of worry for me,
+            the kind of anxiety-inducing thing I often become fixated on,
+            turning around and around in my mind and worrying myself more
+            all the while.
+          </p>
+          <p>
+            This piece is about that experience of becoming stuck on a troubling
+            feeling, in general, and about a specific worrisome fixation of mine
+            in particular, the climate crisis. The piece opens with a violent
+            plunge in the strings that mimics the feeling of suddenly
+            awakening in the middle of the night, unable to breath.
+            From there the trio propels itself forward with music that is
+            unrelenting and obsessive, constantly straining higher and higher,
+            threatening to snap, until finally it reaches its breaking point.
+          </p>
+          <p class="mb-0">
+            This, of course, represents the experience of mounting anxiety, of
+            becoming consumed by the feeling. But more than that, at the risk of
+            being a bit too on the nose, I find that it also mimics the trajectory
+            of global temperatures and the climate emergency.
+          </p>
         </div>
       </div>
 
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <div class="embed-responsive embed-16by9">
+      <div class="col-sm-12 col-md-7">
+        <div class="piece-card piece-media-card score-shell">
+          <p class="media-label mb-2">
+            <strong>Score:</strong>
+            <a href="/Files/Scores/Hare-Object.pdf" target="_blank" rel="noopener">PDF download</a>
+          </p>
+
           <iframe
+            id="scoreInlineObject"
+            class="pdfjs-viewer"
+            title="An object of some concern score"
+            loading="lazy"
+            src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-Object.pdf#page=1&zoom=page-width&spreadMode=1&scrollMode=0&sidebarview=0&pagemode=none"
+          ></iframe>
+
+          <div class="score-bottom-bar">
+            <button
+              type="button"
+              class="btn btn-default btn-sm score-expand-btn"
+              data-inline="#scoreInlineObject"
+              data-title="An object of some concern — Score"
+            >
+              ⤢ Expand score
+            </button>
+            <span class="score-bottom-hint hidden-xs">Two-page spread • Use viewer controls to zoom / navigate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: SoundCloud (Excerpts left, Full right) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
+          <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
             src="about:blank"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Object score follower (placeholder)"
+            title="Object excerpts (placeholder)"
           ></iframe>
         </div>
       </div>
 
-      <div class="col-md-4 media-card">
-        <p class="media-label">
-          <strong>Score:</strong>
-          <a href="/Files/Scores/Hare-Object.pdf" target="_blank">download/open</a>
-        </p>
-
-        <iframe
-          class="pdf-embed pdfjs-embed"
-          data-pdf="/Files/Scores/Hare-Object.pdf"
-          title="An object of some concern score PDF"
-        ></iframe>
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Full):</strong></p>
+          <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1092901120&color=%23091014"
+            title="Object full track"
+          ></iframe>
+        </div>
       </div>
     </div>
 
-    <!-- Optional cover image -->
-    <div class="row">
-      <div class="col-md-4 col-md-offset-8">
-        <a href="/Files/Scores/Hare-Object.pdf" target="_blank">
-          <img
-            src="photos/covers/AnObject.png"
-            alt="An object of some concern score"
-            class="img-responsive"
-            style="max-height: 250px; margin-top: 10px;"
-          >
-        </a>
+    <!-- ROW 3: Videos (Performance left, Score follower right) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Performance):</strong></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/Tq3k4x0mVmA"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Object performance video"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Score follower):</strong></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="about:blank"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Object score follower (placeholder)"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ========================= PIECE 4 (Score Only) ========================= -->
+  <!-- ========================= PIECE 4 (Score Only-ish) ========================= -->
   <div class="page-header container">
     <h2>spiral bound</h2>
+  </div>
+
+  <div class="container piece-container" style="font-size: 18px;">
+
+    <!-- ROW 1: Text (left) + Score (right) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-5">
+        <div class="piece-card piece-text-card">
+          <p class="piece-meta">
+            <strong>Title:</strong> spiral bound<br>
+            <strong>Instrumentation:</strong> Orchestra<br>
+            <strong>Duration:</strong> 10&#8242;<br>
+            <em>No recordings currently available; to be premiered by the New York Youth Symphony in March, 2025</em>
+          </p>
+
+          <p class="mb-2"><strong>Description:</strong></p>
+
+              <h2>spiral bound</h2>
   </div>
   <div class="container" style="font-size: 18px;">
     <p>
@@ -507,95 +577,149 @@
       <em>No recordings currently available; to be premiered by the New York Youth Symphony in March, 2025</em>
     </p>
 
-    <p>
-      <strong>Description:</strong><br>
-      Over the last year or so, I've been returning again and again
-      to the idea of spirals as a structure. A form built out of
-      continuous recursion in ever tightening circles, the natural world
-      seems full of them. Whether it's spiral seashells, leaf structures,
-      weather formations like hurricanes, or any number of other examples,
-      everywhere I seem to turn, there they are.
-    </p>
-    <p>
-      Human psychology,
-      too, seems to be imbued with them in the form of recurring, obsessive,
-      thought patterns that are difficult to break free from. My spiral
-      fixation is itself an example of this.
-      So when I learned that this commissioned piece for the New York
-      Youth Symphony was to be programmed alongside Brahms' final symphony,
-      whose last movement is a magnificent passacaglia, it felt like the
-      perfect opportunity to try it musically. A passacaglia, after all,
-      is almost a kind of musical spiral, a repeating structure that
-      governs the form and direction of the music.
-    </p>
-    <p>
-      I set out to write my own, more-explicitly-spiral,
-      less-explicitly-passacaglia passacaglia. Broadly speaking,
-      the piece is built out of two contrasting types of material.
-      The first, the  &ldquo;spiral&rdquo; theme, is a constantly
-      transposing tone row that seems to circle back on itself,
-      as if eating its own tail. Throughout the sections of the
-      piece where it predominates, it undergoes a gradual process
-      of intensification, starting extremely slow but
-      getting faster and faster until, by the end, it has no
-      choice but to disintegrate into chaos. The other type of
-      material is a resistance to this process, a lyrical and
-      reflective music that remains in a fixed harmonic place,
-      contrasting with the spiral theme's harmonic itinerance.
-      Over time, the spiral music infiltrates these calmer
-      sections, wearing down their resistance, drawing them back
-      into its orbit, until the piece, as it was ever bound to,
-      has no choice but to spiral out of existence.
-    </p>
+        <p>
+          <strong>Description:</strong><br>
+          Over the last year or so, I've been returning again and again
+          to the idea of spirals as a structure. A form built out of
+          continuous recursion in ever tightening circles, the natural world
+          seems full of them. Whether it's spiral seashells, leaf structures,
+          weather formations like hurricanes, or any number of other examples,
+          everywhere I seem to turn, there they are.
+        </p>
+        <p>
+          Human psychology,
+          too, seems to be imbued with them in the form of recurring, obsessive,
+          thought patterns that are difficult to break free from. My spiral
+          fixation is itself an example of this.
+          So when I learned that this commissioned piece for the New York
+          Youth Symphony was to be programmed alongside Brahms' final symphony,
+          whose last movement is a magnificent passacaglia, it felt like the
+          perfect opportunity to try it musically. A passacaglia, after all,
+          is almost a kind of musical spiral, a repeating structure that
+          governs the form and direction of the music.
+        </p>
+        <p>
+          I set out to write my own, more-explicitly-spiral,
+          less-explicitly-passacaglia passacaglia. Broadly speaking,
+          the piece is built out of two contrasting types of material.
+          The first, the  &ldquo;spiral&rdquo; theme, is a constantly
+          transposing tone row that seems to circle back on itself,
+          as if eating its own tail. Throughout the sections of the
+          piece where it predominates, it undergoes a gradual process
+          of intensification, starting extremely slow but
+          getting faster and faster until, by the end, it has no
+          choice but to disintegrate into chaos. The other type of
+          material is a resistance to this process, a lyrical and
+          reflective music that remains in a fixed harmonic place,
+          contrasting with the spiral theme's harmonic itinerance.
+          Over time, the spiral music infiltrates these calmer
+          sections, wearing down their resistance, drawing them back
+          into its orbit, until the piece, as it was ever bound to,
+          has no choice but to spiral out of existence.
+        </p>
 
-    <!-- Optional: excerpts audio for spiral bound -->
-    <div class="row piece-row">
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="about:blank"
-          title="spiral bound excerpts (placeholder)"
-        ></iframe>
+        </div>
       </div>
 
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <div class="embed-responsive embed-16by9">
+      <div class="col-sm-12 col-md-7">
+        <div class="piece-card piece-media-card score-shell">
+          <p class="media-label mb-2">
+            <strong>Score:</strong>
+            <a href="/Files/Scores/Hare-spiral-bound.pdf" target="_blank" rel="noopener">PDF download</a>
+          </p>
+
           <iframe
-            src="about:blank"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="spiral bound score follower (placeholder)"
+            id="scoreInlineSpiral"
+            class="pdfjs-viewer"
+            title="spiral bound score"
+            loading="lazy"
+            src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-spiral-bound.pdf#page=1&zoom=page-width&spreadMode=1&scrollMode=0&sidebarview=0&pagemode=none"
           ></iframe>
+
+          <div class="score-bottom-bar">
+            <button
+              type="button"
+              class="btn btn-default btn-sm score-expand-btn"
+              data-inline="#scoreInlineSpiral"
+              data-title="spiral bound — Score"
+            >
+              ⤢ Expand score
+            </button>
+            <span class="score-bottom-hint hidden-xs">Two-page spread • Use viewer controls to zoom / navigate</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <p class="section-spacer">
-      <strong>Score:</strong>
-      <a href="/Files/Scores/Hare-spiral-bound.pdf" target="_blank">Spiral Bound Score Download Link</a>
-    </p>
+    <!-- ROW 2: SoundCloud row (Excerpts left, Full right placeholder) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
+          <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="about:blank"
+            title="spiral bound excerpts (placeholder)"
+          ></iframe>
+        </div>
+      </div>
 
-    <iframe
-      class="pdf-embed pdfjs-embed"
-      data-pdf="/Files/Scores/Hare-spiral-bound.pdf"
-      title="Spiral Bound Score PDF"
-    ></iframe>
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Full):</strong> <span style="color: lightgrey;">(not available)</span></p>
+          <div style="height: 150px; min-height: 140px; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.20); display:flex; align-items:center; justify-content:center; color: lightgrey;">
+            Full track coming soon
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <a href="/Files/Scores/Hare-spiral-bound.pdf" target="_blank">
-      <img
-        src="photos/covers/IMG_1296.jpeg"
-        alt="Spiral bound score"
-        class="img-responsive"
-        style="max-height: 250px; margin-top: 10px;"
-      >
-    </a>
+    <!-- ROW 3: Videos (Performance left placeholder, Score follower right placeholder) -->
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Performance):</strong> <span style="color: lightgrey;">(not available)</span></p>
+          <div style="height: 0; padding-bottom: 56.25%; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.20); position: relative;">
+            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color: lightgrey;">
+              Performance video coming soon
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Score follower):</strong></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="about:blank"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="spiral bound score follower (placeholder)"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row piece-row">
+      <div class="col-sm-12 col-md-4 col-md-offset-8">
+        <a href="/Files/Scores/Hare-spiral-bound.pdf" target="_blank" rel="noopener">
+          <img
+            src="photos/covers/IMG_1296.jpeg"
+            alt="Spiral bound score"
+            class="img-responsive"
+            style="max-height: 250px; margin-top: 10px;"
+          >
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- ========================= ADDITIONAL LISTENING ========================= -->
@@ -606,49 +730,56 @@
   <div class="container" style="font-size: 18px;">
     <p>
       If you&rsquo;d like to hear a bit more, here are a few additional recordings. (More are available on my
-      <a href="https://daytonhare.github.io" target="_blank">full website</a>.)
+      <a href="https://daytonhare.github.io" target="_blank" rel="noopener">full website</a>.)
     </p>
 
     <div class="row piece-row">
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>Selection 1:</strong> <em>Title (instrumentation, year)</em></p>
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="about:blank"
-          title="Additional listening selection 1 (placeholder)"
-        ></iframe>
-      </div>
-
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>Selection 2:</strong> <em>Title (instrumentation, year)</em></p>
-        <div class="embed-responsive embed-16by9">
+      <div class="col-sm-12 col-md-4">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>Selection 1:</strong> <em>Title (instrumentation, year)</em></p>
           <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
             src="about:blank"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Additional listening selection 2 (placeholder)"
+            title="Additional listening selection 1 (placeholder)"
           ></iframe>
         </div>
       </div>
 
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>Selection 3:</strong> <em>Title (instrumentation, year)</em></p>
-        <p style="margin-top: 10px;">
-          <a href="about:blank" onclick="return false;" style="color: lightgrey; text-decoration: underline;">(Add link here)</a>
-        </p>
-        <p style="color: lightgrey; font-size: 15px;">
-          (Optional short one-sentence blurb about why this piece is a good complement.)
-        </p>
+      <div class="col-sm-12 col-md-4">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>Selection 2:</strong> <em>Title (instrumentation, year)</em></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="about:blank"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Additional listening selection 2 (placeholder)"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>Selection 3:</strong> <em>Title (instrumentation, year)</em></p>
+          <p style="margin-top: 10px;">
+            <a href="about:blank" onclick="return false;" style="color: lightgrey; text-decoration: underline;">(Add link here)</a>
+          </p>
+          <p style="color: lightgrey; font-size: 15px;">
+            (Optional short one-sentence blurb about why this piece is a good complement.)
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="row piece-row">
-      <div class="col-md-12">
+      <div class="col-sm-12">
         <p style="color: lightgrey; font-size: 15px;">
           Prefer one click? Here&rsquo;s a single playlist link:
           <a href="about:blank" onclick="return false;" style="color: lightgrey; text-decoration: underline;">(Add playlist link here)</a>
@@ -672,52 +803,63 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script
-    src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-  ></script>
+  <!-- =========================
+       Shared "Expanded Score" Modal
+       ========================= -->
+  <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="scoreModalLabel">
+    <div class="modal-dialog modal-score-dialog modal-score" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="scoreModalLabel">Score</h4>
+        </div>
+        <div class="modal-body">
+          <iframe
+            id="scoreModalViewer"
+            class="pdfjs-viewer-modal"
+            title="Score (expanded)"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- PDF.js embed helper: 2-page spread on wide screens -->
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Expand-score behavior (shared across all pieces) -->
   <script>
     (function () {
-      function isWide() {
-        return window.matchMedia && window.matchMedia('(min-width: 992px)').matches;
+      var modal = $("#scoreModal");
+      var modalViewer = document.getElementById("scoreModalViewer");
+      var modalTitle = document.getElementById("scoreModalLabel");
+
+      function onExpandClick(e) {
+        var btn = e.currentTarget;
+        var inlineSel = btn.getAttribute("data-inline");
+        var title = btn.getAttribute("data-title") || "Score";
+
+        var inlineFrame = inlineSel ? document.querySelector(inlineSel) : null;
+        if (!inlineFrame) return;
+
+        modalTitle.textContent = title;
+        modalViewer.src = inlineFrame.src;
+
+        modal.modal("show");
       }
 
-      function buildPdfJsUrl(pdfPath) {
-        // Root-absolute viewer path so it works no matter where this HTML file lives.
-        var viewer = '/pdfjs/web/viewer.html';
-
-        // Root-absolute pdfPath (starts with /) so PDF.js does NOT treat it as relative to /pdfjs/web/
-        var spread = isWide() ? 1 : 0;
-
-        // Use thumbnails by default; change pagemode=thumbs to pagemode=none if you want it hidden.
-        return viewer
-          + '?file=' + encodeURIComponent(pdfPath)
-          + '#zoom=page-width&pagemode=thumbs&spreadMode=' + spread;
+      var expandButtons = document.querySelectorAll(".score-expand-btn");
+      for (var i = 0; i < expandButtons.length; i++) {
+        expandButtons[i].addEventListener("click", onExpandClick);
       }
 
-      function applyPdfViewers() {
-        var frames = document.querySelectorAll('iframe.pdfjs-embed[data-pdf]');
-        for (var i = 0; i < frames.length; i++) {
-          var f = frames[i];
-          var pdfPath = f.getAttribute('data-pdf');
-          var src = buildPdfJsUrl(pdfPath);
-          if (f.getAttribute('src') !== src) {
-            f.setAttribute('src', src);
-          }
-        }
-      }
-
-      window.addEventListener('load', applyPdfViewers);
-
-      var t = null;
-      window.addEventListener('resize', function () {
-        clearTimeout(t);
-        t = setTimeout(applyPdfViewers, 150);
+      // Optional: unload the PDF when modal closes (reduces CPU usage)
+      modal.on("hidden.bs.modal", function () {
+        modalViewer.src = "";
       });
     })();
   </script>
