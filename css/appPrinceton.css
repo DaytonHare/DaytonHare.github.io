@@ -161,6 +161,12 @@ a:active {
   padding: 16px;
 }
 
+.piece-media-card .row {
+  display: flex;
+  align-items: center;
+}
+
+
 .piece-meta {
   margin-bottom: 14px;
   line-height: 1.45;
