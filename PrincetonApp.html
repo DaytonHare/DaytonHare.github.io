@@ -29,156 +29,8 @@
     rel="stylesheet"
   >
 
-  <style type="text/css">
-    html {
-      position: relative;
-      min-height: 100%;
-    }
+  <link rel="stylesheet" href="/css/appPrinceton.css">
 
-    body {
-      padding-top: 0px;
-      margin-bottom: 60px;
-      font-size: 15px;
-      background-color: black;
-      color: white;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-    }
-
-    /* Footer */
-    .footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 60px;
-      background-color: black;
-    }
-    .footer > .container {
-      margin-top: 20px;
-    }
-
-    /* Page Header */
-    .page-header {
-      padding-top: 30px;
-      margin-top: 0px;
-    }
-
-    /* Navbar - force solid black background */
-    .navbar {
-      font-size: x-large;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      color: white;
-      margin-bottom: 0px;
-      background-color: black;
-    }
-    .navbar-inverse {
-      background-color: black !important;
-      border-color: black;
-      color: white;
-    }
-    .navbar-inverse .navbar-nav > li > a {
-      color: white;
-    }
-    .navbar-inverse .navbar-brand {
-      cursor: default;
-      margin: 0px;
-      font-family: 'Playfair Display', serif;
-      color: white;
-      font-size: xx-large;
-    }
-
-    /* Navbar links */
-    .navbar-nav > li > a {
-      line-height: 50px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    /* Adjust print view */
-    @media print {
-      body {
-        padding-top: 0px;
-        margin-bottom: 0px;
-      }
-      .page-header {
-        padding-top: 0px;
-      }
-      .navbar, .footer {
-        display: none !important;
-      }
-      .pdf-embed {
-        height: 700px !important;
-      }
-    }
-
-    /* Heading styles */
-    h1, .h1 {
-      color: white;
-      font-family: 'Crimson Text', serif;
-      font-size: 36px;
-    }
-    h2, .h2 {
-      color: white;
-      font-family: 'Crimson Text', serif;
-    }
-    h3, .h3 {
-      color: white;
-      font-family: 'Crimson Text', serif;
-      font-size: x-large;
-    }
-
-    /* Footer text color */
-    footer {
-      color: white;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-    }
-
-    /* Link Styles */
-    a:link, a:visited {
-      color: lightskyblue;
-      text-decoration: underline;
-    }
-    a:hover {
-      color: cornflowerblue;
-      text-decoration: underline;
-    }
-    a:active {
-      color: blue;
-      text-decoration: underline;
-    }
-
-    /* Custom flex classes (Bootstrap 3 does not have .d-flex, etc.) */
-    .d-flex { display: flex; }
-    .flex-column { flex-direction: column; }
-    .justify-content-center { justify-content: center; }
-    .align-items-center { align-items: center; }
-
-    /* --- Media helpers --- */
-    .media-label { margin: 0 0 6px 0; }
-    .media-card { margin-bottom: 18px; }
-    .piece-row { margin-top: 10px; }
-
-    /* Responsive embeds (works in Bootstrap 3) */
-    .embed-responsive { position: relative; display: block; height: 0; overflow: hidden; }
-    .embed-responsive.embed-16by9 { padding-bottom: 56.25%; }
-    .embed-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-    /* Score PDF embed box (PDF.js viewer embedded) */
-    .pdf-embed {
-      width: 100%;
-      height: 820px;
-      border: 1px solid #222;
-      background: #0a0a0a;
-    }
-    @media (max-width: 991px) {
-      .pdf-embed { height: 650px; }
-    }
-
-    /* Slightly nicer spacing between sections */
-    .section-spacer { margin-top: 8px; }
-  </style>
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="10">
@@ -267,107 +119,131 @@
   <div class="page-header container">
     <h2>whereof one cannot speak</h2>
   </div>
-  <div class="container" style="font-size: 18px;">
-    <p>
-      <strong>Title:</strong> whereof one cannot speak<br>
-      <strong>Instrumentation:</strong> SATB A Cappella Choir<br>
-      <strong>Duration:</strong> 6&#8242;<br>
-      <strong>Year:</strong> 2024<br>
-    </p>
 
-    <p><strong>Program Note:</strong></p>
-    <p>
-      When I was a kid I had an impossibly difficult time understanding lyrics in music. Whether it was the top
-      40 hits on the car radio or hymns in church, my brain always wanted to classify the voices I heard as just more
-      instruments, timbres and nothing more. It took a deliberate effort on my part to be able to hear the voices as
-      actually saying something, as meaning something, adding an additional layer
-      of communication to the message of the music.
-    </p>
-    <p>
-      &lsquo;whereof one cannot speak&rsquo; in some ways tries to dramatize
-      this experiential movement. It starts with the text &mdash; a little poem about
-      language I cobbled together from fragments of Wittgenstein &mdash; broken into their smallest
-      constituent phonemes, signifying nothing, functioning as sound alone. Over the course of the
-      piece these sounds are pulled together into larger and larger chunks of the text, laboriously moved out
-      of the realm of abstraction and, bit by bit, into recognizable language with meaning to convey. Only by the final
-      sections of the piece can one actually hear what the words are trying to say.
-    </p>
-    <br>
+  <div class="container piece-container" style="font-size: 18px;">
 
-    <!-- Row 1: Full track + Excerpts SoundCloud -->
-    <div class="row piece-row">
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>SoundCloud (Full):</strong></p>
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1902301800&color=%23090f14"
-        ></iframe>
-      </div>
+    <!-- ROW 1: Text (left) + Score PDF.js (right) -->
+    <div class="row piece-row align-items-start">
 
-      <div class="col-md-6 media-card">
-        <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
-        <!-- Replace about:blank with your excerpts embed when ready -->
-        <iframe
-          width="100%"
-          height="150"
-          style="min-height:140px;"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="about:blank"
-          title="whereof excerpts (placeholder)"
-        ></iframe>
-      </div>
-    </div>
+      <!-- LEFT: Metadata + Program Note -->
+      <div class="col-12 col-lg-6">
+        <div class="piece-card piece-text-card">
+          <p class="piece-meta">
+            <strong>Title:</strong> whereof one cannot speak<br>
+            <strong>Instrumentation:</strong> SATB A Cappella Choir<br>
+            <strong>Duration:</strong> 6&#8242;<br>
+            <strong>Year:</strong> 2024<br>
+          </p>
 
-    <!-- Row 2: Performance video + Score-follower + Score PDF -->
-    <div class="row piece-row">
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>YouTube (Performance):</strong></p>
-        <div class="embed-responsive embed-16by9">
-          <iframe
-            src="https://www.youtube.com/embed/wnemVnCwy40?si=58i0wFX1_xk3ut3d"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <p class="mb-2"><strong>Program Note:</strong></p>
+
+          <p>
+            When I was a kid I had an impossibly difficult time understanding lyrics in music. Whether it was the top
+            40 hits on the car radio or hymns in church, my brain always wanted to classify the voices I heard as just more
+            instruments, timbres and nothing more. It took a deliberate effort on my part to be able to hear the voices as
+            actually saying something, as meaning something, adding an additional layer
+            of communication to the message of the music.
+          </p>
+
+          <p class="mb-0">
+            &lsquo;whereof one cannot speak&rsquo; in some ways tries to dramatize
+            this experiential movement. It starts with the text &mdash; a little poem about
+            language I cobbled together from fragments of Wittgenstein &mdash; broken into their smallest
+            constituent phonemes, signifying nothing, functioning as sound alone. Over the course of the
+            piece these sounds are pulled together into larger and larger chunks of the text, laboriously moved out
+            of the realm of abstraction and, bit by bit, into recognizable language with meaning to convey. Only by the final
+            sections of the piece can one actually hear what the words are trying to say.
+          </p>
         </div>
       </div>
 
-      <div class="col-md-4 media-card">
-        <p class="media-label"><strong>YouTube (Score follower):</strong></p>
-        <!-- Replace about:blank with your score-follower embed when ready -->
-        <div class="embed-responsive embed-16by9">
+      <!-- RIGHT: Score -->
+      <div class="col-12 col-lg-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label mb-2">
+            <strong>Score:</strong>
+            <a href="/Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank" rel="noopener">
+              PDF download
+            </a>
+          </p>
+
+          <!-- PDF.js viewer (no thumbnails/sidebar; two-page spread) -->
           <iframe
+            class="pdfjs-viewer"
+            title="whereof one cannot speak score"
+            loading="lazy"
+            src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-whereof-one-cannot-speak.pdf#page=1&zoom=page-width&spreadMode=1&scrollMode=0&sidebarview=0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: SoundCloud (Excerpts left, Full right) -->
+    <div class="row piece-row">
+      <div class="col-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Excerpts):</strong></p>
+          <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
             src="about:blank"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="whereof score follower (placeholder)"
+            title="whereof excerpts (placeholder)"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>SoundCloud (Full):</strong></p>
+          <iframe
+            width="100%"
+            height="150"
+            style="min-height:140px;"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1902301800&color=%23090f14"
           ></iframe>
         </div>
       </div>
     </div>
 
-    <div class="col-md-2 spacer"></div>
+    <!-- ROW 3: Videos (Performance left, Score follower right) -->
     <div class="row piece-row">
-      <div class="col-md-6 media-card">
-        <p class="media-label">
-          <strong>Score:</strong>
-          <a href="/Files/Scores/Hare-whereof-one-cannot-speak.pdf" target="_blank">whereof one cannot speak score PDF download</a>
-        </p>
+      <div class="col-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Performance):</strong></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/wnemVnCwy40?si=58i0wFX1_xk3ut3d"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="whereof performance video"
+            ></iframe>
+          </div>
+        </div>
+      </div>
 
-        <iframe
-          class="pdf-embed pdfjs-embed"
-          data-pdf="/Files/Scores/Hare-whereof-one-cannot-speak.pdf"
-          title="whereof one cannot speak score PDF"
-        ></iframe>
+      <div class="col-12 col-md-6">
+        <div class="piece-card piece-media-card">
+          <p class="media-label"><strong>YouTube (Score follower):</strong></p>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="about:blank"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="whereof score follower (placeholder)"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-2 spacer"></div> 
   </div>
 
   <!-- ========================= PIECE 2 ========================= -->
