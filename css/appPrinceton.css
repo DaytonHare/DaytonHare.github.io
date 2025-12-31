@@ -161,11 +161,19 @@ a:active {
   padding: 16px;
 }
 
-.piece-media-card .row {
+/* ❗ IMPORTANT CHANGE:
+   Don't force *all* nested .row in media cards to be flex.
+   That can mess with Bootstrap's grid wrapping in other places. */
+/* .piece-media-card .row {
+  display: flex;
+  align-items: center;
+} */
+
+/* Use flex alignment ONLY where you intended it: excerpt rows. */
+.excerpt-row {
   display: flex;
   align-items: center;
 }
-
 
 .piece-meta {
   margin-bottom: 14px;
@@ -176,12 +184,29 @@ a:active {
   margin: 0 0 10px 0;
 }
 
-.excerpt-row > .col-sm-4 {
-  padding-right: 6px;
+/* ✅ Unified excerpt gutter control (works on xs/sm/md/lg columns) */
+.excerpt-row > [class*="col-"] {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.excerpt-row > .col-sm-8 {
-  padding-left: 6px;
+/* Optional: keep excerpt description from looking too spaced out */
+.excerpt-row p {
+  margin-bottom: 0;
+}
+
+/* On extra-small screens the excerpt stacks; give it a touch of air */
+@media (max-width: 767px) {
+  .excerpt-row {
+    display: block; /* let it stack naturally */
+  }
+  .excerpt-row > [class*="col-"] {
+    padding-left: 15px;  /* restore normal bootstrap feel on stacked layout */
+    padding-right: 15px;
+  }
+  .excerpt-row iframe {
+    margin-bottom: 10px;
+  }
 }
 
 /* =========================
