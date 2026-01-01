@@ -344,3 +344,40 @@ a:active {
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 }
+
+/* =========================
+   Additional Minute Excerpts layout
+   ========================= */
+
+.excerpt-title {
+  margin: 0;
+}
+
+.excerpt-row2 .piece-card {
+  height: 100%;
+}
+
+.full-link {
+  margin: 10px 0 0 0;
+  font-size: 15px;
+}
+
+.full-link a {
+  text-decoration: underline;
+}
+
+/* Mini embedded PDF viewer: keep it from towering */
+.score-mini-shell .pdfjs-mini {
+  width: 100%;
+  height: 210px;      /* tweak: 180–260 depending on taste */
+  border: 1px solid #222;
+  background: #000;
+}
+
+/* Optional: on small screens, give a little breathing room */
+@media (max-width: 991px) {
+  .score-mini-shell .pdfjs-mini {
+    height: 260px;
+  }
+}
+
