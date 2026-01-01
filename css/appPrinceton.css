@@ -209,6 +209,19 @@ a:active {
   }
 }
 
+/* Mini score expand bar */
+.score-mini-shell .score-bottom-bar {
+  margin-top: 8px;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.score-mini-shell .btn {
+  padding: 3px 8px;
+  font-size: 13px;
+}
+
+
 /* =========================
    Responsive embeds (Bootstrap 3)
    ========================= */

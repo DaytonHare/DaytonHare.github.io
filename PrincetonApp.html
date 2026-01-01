@@ -572,12 +572,13 @@
 
   <div class="container piece-container" style="font-size: 18px;">
 
-    <!-- Excerpt block 1 -->
+    <!-- ================= Excerpt 1 ================= -->
     <div class="excerpt-block">
       <h3 class="excerpt-title">Additional Minute Excerpt 1&mdash;spiral bound</h3>
 
       <div class="row piece-row excerpt-row2">
-        <!-- Left: SoundCloud excerpt + link to full -->
+
+        <!-- Left: SoundCloud -->
         <div class="col-sm-12 col-md-4">
           <div class="piece-card piece-media-card">
             <p class="media-label"><strong>Excerpt:</strong></p>
@@ -604,14 +605,14 @@
           <div class="piece-card piece-text-card">
             <p class="mb-2"><strong>Why this excerpt:</strong></p>
             <p class="mb-0">
-              <!-- TODO: replace with your real text -->
-              A one-minute window that highlights the core texture / gesture of the piece.
-              <br><span style="color: lightgrey;">(timestamp range here)</span>
+              A concentrated window that foregrounds the harmonic pacing and registral motion
+              that underpin the larger structure of the piece.
+              <br><span style="color: lightgrey;">(8'30&quot;&ndash;9'30&quot;)</span>
             </p>
           </div>
         </div>
 
-        <!-- Right: Tiny score PDF -->
+        <!-- Right: Mini score + expand -->
         <div class="col-sm-12 col-md-4">
           <div class="piece-card piece-media-card score-shell score-mini-shell">
             <p class="media-label mb-2">
@@ -620,22 +621,36 @@
             </p>
 
             <iframe
+              id="scoreInlineSpiralMini"
               class="pdfjs-viewer pdfjs-mini"
               title="spiral bound score (mini)"
               loading="lazy"
               src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-spiral-bound.pdf#page=1&zoom=page-width&spreadMode=0&scrollMode=0&sidebarview=0&pagemode=none"
             ></iframe>
+
+            <div class="score-bottom-bar">
+              <button
+                type="button"
+                class="btn btn-default btn-sm score-expand-btn"
+                data-inline="#scoreInlineSpiralMini"
+                data-title="spiral bound — Score"
+              >
+                ⤢ Expand score
+              </button>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
 
 
-    <!-- Excerpt block 2 -->
+    <!-- ================= Excerpt 2 ================= -->
     <div class="excerpt-block">
       <h3 class="excerpt-title">Additional Minute Excerpt 2&mdash;Fits and Starts</h3>
 
       <div class="row piece-row excerpt-row2">
+
         <div class="col-sm-12 col-md-4">
           <div class="piece-card piece-media-card">
             <p class="media-label"><strong>Excerpt:</strong></p>
@@ -661,9 +676,9 @@
           <div class="piece-card piece-text-card">
             <p class="mb-2"><strong>Why this excerpt:</strong></p>
             <p class="mb-0">
-              <!-- TODO -->
-              A tight minute that shows the “fits / starts” character change and the piece’s harmonic language.
-              <br><span style="color: lightgrey;">(timestamp range here)</span>
+              This excerpt highlights the piece’s stop–start rhetoric and abrupt shifts in
+              character, compressed into a single, tightly argued minute.
+              <br><span style="color: lightgrey;">(excerpted passage)</span>
             </p>
           </div>
         </div>
@@ -676,38 +691,51 @@
             </p>
 
             <iframe
+              id="scoreInlineFitsMini"
               class="pdfjs-viewer pdfjs-mini"
               title="Fits and Starts score (mini)"
               loading="lazy"
               src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-Fits-and-Starts.pdf#page=1&zoom=page-width&spreadMode=0&scrollMode=0&sidebarview=0&pagemode=none"
             ></iframe>
+
+            <div class="score-bottom-bar">
+              <button
+                type="button"
+                class="btn btn-default btn-sm score-expand-btn"
+                data-inline="#scoreInlineFitsMini"
+                data-title="Fits and Starts — Score"
+              >
+                ⤢ Expand score
+              </button>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
 
 
-    <!-- Excerpt block 3 -->
+    <!-- ================= Excerpt 3 ================= -->
     <div class="excerpt-block">
       <h3 class="excerpt-title">Additional Minute Excerpt 3&mdash;how to be both</h3>
 
       <div class="row piece-row excerpt-row2">
+
         <div class="col-sm-12 col-md-4">
           <div class="piece-card piece-media-card">
             <p class="media-label"><strong>Excerpt:</strong></p>
 
-            <!-- TODO: paste SoundCloud excerpt embed src -->
             <iframe
               class="sc-excerpt"
               scrolling="no"
               frameborder="no"
               allow="autoplay"
-              src="PASTE_HOW_TO_BE_BOTH_EXCERPT_SOUNDCLOUD_EMBED_SRC_HERE"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2240103539%3Fsecret_token%3Ds-sqlTyxwZR1H&color=%23030303&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
               title="how to be both (Excerpt)"
             ></iframe>
 
             <p class="full-link">
-              <a href="PASTE_HOW_TO_BE_BOTH_FULL_SOUNDCLOUD_URL_HERE" target="_blank" rel="noopener">
+              <a href="https://soundcloud.com/dayton-hare-410661494/how-to-be-both-excerpt/s-sqlTyxwZR1H" target="_blank" rel="noopener">
                 Full track on SoundCloud
               </a>
             </p>
@@ -718,9 +746,9 @@
           <div class="piece-card piece-text-card">
             <p class="mb-2"><strong>Why this excerpt:</strong></p>
             <p class="mb-0">
-              <!-- TODO -->
-              A minute that best captures the atmosphere + the “both/and” duality in the material.
-              <br><span style="color: lightgrey;">(timestamp range here)</span>
+              A minute that best captures the piece’s layered sense of stasis and motion,
+              and the coexistence of contrasting musical identities.
+              <br><span style="color: lightgrey;">(9'40&quot;&ndash;10'40&quot;)</span>
             </p>
           </div>
         </div>
@@ -733,74 +761,31 @@
             </p>
 
             <iframe
+              id="scoreInlineHowMini"
               class="pdfjs-viewer pdfjs-mini"
               title="how to be both score (mini)"
               loading="lazy"
               src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FHare-how-to-be-both.pdf#page=1&zoom=page-width&spreadMode=0&scrollMode=0&sidebarview=0&pagemode=none"
             ></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
 
-
-    <!-- Excerpt block 4 -->
-    <div class="excerpt-block">
-      <h3 class="excerpt-title">Additional Minute Excerpt 4&mdash;ebb, flow</h3>
-
-      <div class="row piece-row excerpt-row2">
-        <div class="col-sm-12 col-md-4">
-          <div class="piece-card piece-media-card">
-            <p class="media-label"><strong>Excerpt:</strong></p>
-
-            <!-- TODO: paste SoundCloud excerpt embed src -->
-            <iframe
-              class="sc-excerpt"
-              scrolling="no"
-              frameborder="no"
-              allow="autoplay"
-              src="PASTE_EBB_FLOW_EXCERPT_SOUNDCLOUD_EMBED_SRC_HERE"
-              title="ebb, flow (Excerpt)"
-            ></iframe>
-
-            <p class="full-link">
-              <a href="PASTE_EBB_FLOW_FULL_SOUNDCLOUD_URL_HERE" target="_blank" rel="noopener">
-                Full track on SoundCloud
-              </a>
-            </p>
+            <div class="score-bottom-bar">
+              <button
+                type="button"
+                class="btn btn-default btn-sm score-expand-btn"
+                data-inline="#scoreInlineHowMini"
+                data-title="how to be both — Score"
+              >
+                ⤢ Expand score
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="col-sm-12 col-md-4">
-          <div class="piece-card piece-text-card">
-            <p class="mb-2"><strong>Why this excerpt:</strong></p>
-            <p class="mb-0">
-              <!-- TODO -->
-              A minute that shows the flow-state continuity and the ensemble’s coloristic blend.
-              <br><span style="color: lightgrey;">(timestamp range here)</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4">
-          <div class="piece-card piece-media-card score-shell score-mini-shell">
-            <p class="media-label mb-2">
-              <strong>Score excerpt:</strong>
-              <a href="/Files/Scores/PASTE_EBB_FLOW_SCORE_FILENAME.pdf" target="_blank" rel="noopener">PDF</a>
-            </p>
-
-            <iframe
-              class="pdfjs-viewer pdfjs-mini"
-              title="ebb, flow score (mini)"
-              loading="lazy"
-              src="/pdfjs/web/viewer.html?file=%2FFiles%2FScores%2FPASTE_EBB_FLOW_SCORE_FILENAME.pdf#page=1&zoom=page-width&spreadMode=0&scrollMode=0&sidebarview=0&pagemode=none"
-            ></iframe>
-          </div>
-        </div>
       </div>
     </div>
 
   </div>
+
 
 
 
