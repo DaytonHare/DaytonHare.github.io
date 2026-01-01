@@ -346,11 +346,18 @@ a:active {
 }
 
 /* =========================
-   Additional Minute Excerpts layout
+   Additional Minute Excerpts (no divider lines)
    ========================= */
 
+.excerpt-block {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
 .excerpt-title {
-  margin: 0;
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .excerpt-row2 .piece-card {
@@ -358,18 +365,24 @@ a:active {
 }
 
 .full-link {
-  margin: 10px 0 0 0;
+  margin: 8px 0 0 0;
   font-size: 15px;
 }
-
 .full-link a {
   text-decoration: underline;
+}
+
+/* SoundCloud excerpt embeds in the new 3-column excerpt layout */
+.sc-excerpt {
+  width: 100%;
+  height: 170px; /* keeps it compact so it matches text + mini score */
+  border: 0;
 }
 
 /* Mini embedded PDF viewer: keep it from towering */
 .score-mini-shell .pdfjs-mini {
   width: 100%;
-  height: 210px;      /* tweak: 180–260 depending on taste */
+  height: 200px;      /* tweak: 180–260 depending on taste */
   border: 1px solid #222;
   background: #000;
 }
@@ -377,7 +390,6 @@ a:active {
 /* Optional: on small screens, give a little breathing room */
 @media (max-width: 991px) {
   .score-mini-shell .pdfjs-mini {
-    height: 260px;
+    height: 240px;
   }
 }
-
