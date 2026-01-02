@@ -298,6 +298,8 @@ a:active {
   background: rgba(255,255,255,0.10);
   border-color: rgba(255,255,255,0.18);
   color: white;
+  text-shadow: none;
+  font-size: medium;
 }
 .btn-default:hover,
 .btn-default:focus {
