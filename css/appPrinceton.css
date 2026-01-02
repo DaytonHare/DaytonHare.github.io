@@ -289,8 +289,8 @@ a:active {
 }
 
 .score-bottom-hint {
-  opacity: 0.95;
-  font-size: 14px;
+  opacity: 1;
+  font-size: medium;
 }
 
 /* Make small Bootstrap buttons fit your dark theme a bit better */
