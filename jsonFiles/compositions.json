@@ -1,5 +1,28 @@
 [ 
-{   
+{
+    "id": 29,
+    "type": "solo / duo",
+    "instrumentation": "prepared piano",
+    "title": "lying eyes",
+    "year": "2026",
+    "duration": "8'00",
+    "premierDate": "11 April, 2026",
+    "premierLocation": "Hochschule für Musik und Darstellende Kunst Frankfurt am Main, Germany",
+    "premierEnsemble": "Ariela Bohrod",
+    "commission": true,
+    "commissioner": "Concours international de piano d'Orléans",
+    "programNote": "It’s impossible to see a painting such as the Orléans’s St. Thomas of Velázquez without the famous story of “doubting Thomas” coming to mind. While the apostle Thomas is usually criticized for this episode—when he refused to believe in Jesus’s resurrection without having seen the risen Christ with his own eyes—I find that I have a lot of sympathy for the sceptical disciple. There’s something deeply human about wanting to witness something for yourself before accepting it. This basic instinct is so ubiquitous that it serves as the fulcrum for classic comedic lines that have entered into anglophone culture, such as the famous question: “Who are you going to trust, me or your lying eyes?”
+
+But one of the great ironies of life is that appearances can be deceiving. More and more in recent years we’ve learned about how eyewitness testimony can be unreliable, that people often think they saw one thing when in reality they saw another, a fact which has become even more true with the advent of AI generated media. Our eyes can play tricks on us: Eyes, ultimately, do sometimes lie. And, like Velázquez’s painting, the truth often has many layers, some concealing the others hidden beneath. 
+
+My piece lying eyes is an exploration of musical ambiguity, doubt, and uncertainty in which the listener’s perception is tricked, misdirected, and deceived. The music revolves around two competing harmonic poles situated a tritone apart, and slips in and out of their influence fluidly. Similarly, its metric language is unsettled, with a continuous stream of notes that suggest a shifting pulse and shifting tempos, rarely finding stability or certainty. Ears, after all, sometimes lie as well, and by drawing techniques inspired by auditory illusions like the Shepard–Risset glissandi, my piece has overlapping strata of voices that converge, diverge, appear and disappear without clear beginnings or endings, folding into one another seamlessly. Through these techniques, hidden layers are concealed under a seemingly-transparent texture. And just as in Velázquez’s painting, each certainty dissolves the moment it is scrutinized more deeply.
+",
+    "scoreImageLoc": "photos/covers/MaliciousCompliance.png",
+    "soundCloudLink": "soundcloud%3Atracks%3A2111731647%3Fsecret_token%3Ds-USusnhF2AUq",
+    "youtubeLink": "hJ4DXGx6SzA",
+    "thumbnail": "photos/covers/MaliciousCompliance.png"
+},
+    {   
     "id": 28,
     "type": "small ensemble",
     "instrumentation": "flute, bass clarinet, violin, viola, cello",
